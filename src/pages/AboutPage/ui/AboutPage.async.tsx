@@ -1,4 +1,5 @@
 import { lazy, FC } from 'react';
+import { withSuspense } from 'shared/libs';
 
-
-export const AboutPageAsync: FC = lazy(() => import('./AboutPage'));
+const AboutPageLazy: FC = lazy(() => import('./AboutPage'));
+export const AboutPageAsync = withSuspense(AboutPageLazy)

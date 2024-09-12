@@ -1,18 +1,21 @@
 import { FC } from 'react'
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import cls from 'shared/libs/classnames/classnames';
 import { useTheme } from 'app/providers';
+import { NavBar } from 'widgets/NavBar/index';
+import { SideBar } from 'widgets/SideBar/ui/SideBar';
 
 
 export const RootPage: FC = () => {
-  const { theme, toggleTheme } = useTheme()
-  console.log(theme)
+  const { theme } = useTheme()
+
   return (
     <div className={cls('app', {}, [theme])}>
-      <button onClick={toggleTheme}>toggle theme</button>
-      <Link to={'/'}>Home Link</Link>
-      <Link to={'about'}>About Link</Link>
-      <Outlet/>
+      <NavBar />
+      <div className='content-page'>
+        <SideBar />
+        <Outlet/>
+      </div>
     </div>
   );
 };

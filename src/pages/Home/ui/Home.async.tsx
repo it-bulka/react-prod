@@ -1,4 +1,6 @@
 import { lazy, FC } from 'react';
+import { withSuspense } from 'shared/libs';
 
 
-export const HomeAsync: FC = lazy(() => import('./Home'));
+const HomeLazy: FC = lazy(() => import('./Home'));
+export const HomeAsync = withSuspense(HomeLazy)

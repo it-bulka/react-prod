@@ -10,7 +10,6 @@ export const useTheme = () => {
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
   }, [theme])
 
-  console.log('theme', theme)
 
   return { theme, toggleTheme };
 }
