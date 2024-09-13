@@ -5,6 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+build/
+!config/build/
+
 # Visual Studio Code
 .vscode/
 
@@ -19,7 +22,6 @@ yarn-error.log*
 
 # NetBeans
 nbproject/private/
-build/
 dist/
 
 # Xcode
@@ -32,7 +34,6 @@ dist/
 # Android Studio
 .idea/
 .gradle/
-build/
 local.properties
 
 # Sublime Text
