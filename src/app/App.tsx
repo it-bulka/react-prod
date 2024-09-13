@@ -4,6 +4,8 @@ import { router } from 'app/config/router/router';
 import './styles/index.scss'
 import { ThemeProvider } from 'app/providers';
 
+import 'shared/config/i18n/i18n'
+
 export const App: FC = () => {
   return (
     <ThemeProvider>
