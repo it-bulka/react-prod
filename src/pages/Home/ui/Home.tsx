@@ -1,11 +1,9 @@
 import { FC } from 'react'
 
-const Home: FC = () => {
-  return (
-    <div>
-      HomePage
-    </div>
-  )
-}
+const Home: FC = () => (
+  <div>
+    HomePage
+  </div>
+)
 
 export default Home
