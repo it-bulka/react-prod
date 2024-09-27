@@ -2,5 +2,8 @@
   "about": "About a site",
   "main": "Main",
   "lang": "uk",
-  "notFound": "Page not found"
+  "notFound": "Page not found",
+  "errorPage": "Error has happened",
+  "reload": "Reload page"
+
 }
