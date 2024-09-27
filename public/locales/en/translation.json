@@ -1,4 +1,6 @@
 {
   "about": "About a site",
-  "lang": "uk"
+  "main": "Main",
+  "lang": "uk",
+  "notFound": "Page not found"
 }

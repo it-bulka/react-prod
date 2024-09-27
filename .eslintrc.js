@@ -6,7 +6,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb'
+    'airbnb',
+    'plugin:i18next/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -23,6 +24,14 @@ module.exports = {
   globals: {
     __IS_DEV__: true
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    }
+  ],
   rules: {
     semi: ['error', 'never'],
     'no-underscore-dangle': 'off',
