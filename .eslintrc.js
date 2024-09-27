@@ -2,25 +2,26 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
+    'airbnb'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 15,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: [
     'react',
-    '@typescript-eslint',
+    '@typescript-eslint'
   ],
   globals: {
-    __IS_DEV__: true,
+    __IS_DEV__: true
   },
   rules: {
     semi: ['error', 'never'],
@@ -37,20 +38,22 @@ module.exports = {
       'error',
       {
         namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      },
+        unnamedComponents: 'arrow-function'
+      }
     ],
     'react/jsx-filename-extension': [
       'warn',
       {
-        extensions: ['.jsx', '.tsx'],
-      },
+        extensions: ['.jsx', '.tsx']
+      }
     ],
     'react/jsx-props-no-spreading': ['warn', {
       html: 'ignore',
-      exceptions: ['Link', 'WrappedComponent'],
+      exceptions: ['Link', 'WrappedComponent']
     }],
     'no-unused-vars': ['error', { destructuredArrayIgnorePattern: '^_' }],
     quotes: ['error', 'single', { allowTemplateLiterals: true, avoidEscape: true }],
-  },
+    'comma-dangle': ['error', 'never'],
+    'quote-props': ['error', 'as-needed', { unnecessary: false }]
+  }
 }
