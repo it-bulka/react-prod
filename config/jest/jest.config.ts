@@ -1,3 +1,5 @@
+import path from 'path'
+
 const config = {
   clearMocks: false,
   coveragePathIgnorePatterns: [
@@ -20,7 +22,13 @@ const config = {
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
   // for absolute paths
-  modulePaths: ['<rootDir>src']
+  modulePaths: ['<rootDir>src'],
+  // additional set-up for react-testing-library
+  setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+  moduleNameMapper: {
+    '\\.svg': path.resolve(__dirname, 'mockComponent.tsx'),
+    '\\.s?css$': 'identity-obj-proxy'
+  }
 }
 
-module.exports = config
+export default config
