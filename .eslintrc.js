@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended'
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -60,7 +56,7 @@ module.exports = {
       html: 'ignore',
       exceptions: ['Link', 'WrappedComponent']
     }],
-    'no-unused-vars': ['error', { destructuredArrayIgnorePattern: '^_' }],
+    'no-unused-vars': ['error', { destructuredArrayIgnorePattern: '^_', argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     quotes: ['error', 'single', { allowTemplateLiterals: true, avoidEscape: true }],
     'comma-dangle': ['error', 'never'],
     'quote-props': ['error', 'as-needed', { unnecessary: false }]

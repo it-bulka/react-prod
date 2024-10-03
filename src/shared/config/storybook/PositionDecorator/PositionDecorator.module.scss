@@ -1,0 +1,38 @@
+@mixin pos($justify: center, $align: center) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen {
+  min-width: 100%;
+  min-height: 100vh;
+}
+.center {
+  @include pos;
+}
+
+.top_center {
+  @include pos($align: flex-start);
+}
+.top_left {
+  @include pos($align: flex-start, $justify: start)
+}
+.top_right {
+  @include pos($align: flex-start, $justify: end)
+}
+.bottom_center {
+  @include pos($align: flex-end)
+}
+.bottom_left {
+  @include pos($align: flex-end, $justify: start)
+}
+.bottom_right {
+  @include pos($align: flex-end, $justify: end)
+}
+.left_center {
+  @include pos($justify: start)
+}
+.right_center {
+  @include pos($justify: end)
+}

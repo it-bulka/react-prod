@@ -51,3 +51,4 @@ local.properties
 .env.*
 logs/
 coverage/
+*storybook.log
