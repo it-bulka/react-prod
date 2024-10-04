@@ -1,6 +1,6 @@
 import '../../src/app/styles/index.scss'
 import type { Preview } from "@storybook/react";
-import { ThemeDecorator, withI18nDecorator } from 'shared/config/storybook';
+import { ThemeDecorator, withI18nDecorator, RouterDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/providers/lib/ThemeContext';
 
 const preview: Preview = {
@@ -45,7 +45,8 @@ const preview: Preview = {
       const theme = context.globals.theme === 'dark' ? Theme.DARK : Theme.LIGHT;
       return ThemeDecorator(theme)(Story, context)
     },
-    withI18nDecorator
+    withI18nDecorator,
+    RouterDecorator
   ]
 };
 
