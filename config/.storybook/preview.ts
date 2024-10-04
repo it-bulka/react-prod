@@ -1,6 +1,6 @@
 import '../../src/app/styles/index.scss'
 import type { Preview } from "@storybook/react";
-import { ThemeDecorator } from 'shared/config/storybook';
+import { ThemeDecorator, withI18nDecorator } from 'shared/config/storybook';
 import { Theme } from 'app/providers/lib/ThemeContext';
 
 const preview: Preview = {
@@ -13,9 +13,22 @@ const preview: Preview = {
         items: ['light', 'dark'],
       },
     },
+    locale: {
+      description: 'Control global locale',
+      toolbar: {
+        title: 'Locale',
+        icon: 'globe',
+        dynamicTitle: true,
+        items: [
+          { value: 'uk', title: 'Ukrainian', left: '' },
+          { value: 'en', title: 'English', left: '' },
+        ],
+      },
+    }
   },
   initialGlobals: {
     theme: 'light',
+    locale: 'en',
   },
   parameters: {
     layout: 'fullscreen',
@@ -31,7 +44,8 @@ const preview: Preview = {
     (Story, context) => {
       const theme = context.globals.theme === 'dark' ? Theme.DARK : Theme.LIGHT;
       return ThemeDecorator(theme)(Story, context)
-    }
+    },
+    withI18nDecorator
   ]
 };
 

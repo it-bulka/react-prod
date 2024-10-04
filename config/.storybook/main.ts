@@ -3,6 +3,7 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 import { BuildPaths } from '../build/types/config';
 import webpack, { RuleSetRule } from 'webpack';
 import { buildCSSLoader } from '../loaders/buildCSSLoader';
+import { buildDefinePlugin } from '../plugins/buildDefinePlugin';
 
 const config: StorybookConfig = {
   stories: ["../../src/**/*.mdx", "../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -17,6 +18,7 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  staticDirs: ['../../public'],
   swc: () => ({
     jsc: {
       transform: {
@@ -53,6 +55,9 @@ const config: StorybookConfig = {
 
       config.module.rules.push(buildCSSLoader(true))
     }
+
+    const isDev = process.env.NODE_ENV !== 'production'
+    config.plugins?.push(buildDefinePlugin(isDev));
 
     return config
   },
