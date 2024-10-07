@@ -110,7 +110,8 @@
   "include": [
     "src/**/*",
     "config/**/*",
-    "global.d.ts"
+    "global.d.ts",
+    "./.eslintrc.js"
   ],
   "ts-node": {
     "compilerOptions": {

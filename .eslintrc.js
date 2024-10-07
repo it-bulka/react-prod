@@ -4,14 +4,15 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'airbnb-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
     ecmaVersion: 15,
-    sourceType: 'module'
+    sourceType: 'module',
+    project: './tsconfig.eslint.json'
   },
   plugins: [
     'react',
@@ -56,9 +57,36 @@ module.exports = {
       html: 'ignore',
       exceptions: ['Link', 'WrappedComponent']
     }],
-    'no-unused-vars': ['error', { destructuredArrayIgnorePattern: '^_', argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    'no-unused-vars': 'off',
     quotes: ['error', 'single', { allowTemplateLiterals: true, avoidEscape: true }],
     'comma-dangle': ['error', 'never'],
-    'quote-props': ['error', 'as-needed', { unnecessary: false }]
+    'quote-props': ['error', 'as-needed', { unnecessary: false }],
+    'no-shadow': 'off', // bug, same ts rule is on
+    '@typescript-eslint/no-shadow': ['error'],
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'enum',
+        format: ['PascalCase', 'UPPER_CASE']
+      }
+    ],
+    '@typescript-eslint/no-unused-vars': ['error', { destructuredArrayIgnorePattern: '^_', argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    'react/jsx-indent': ['error', 2],
+    // Deprecated rules. Make bug with rule no found. They should be off.
+    '@typescript-eslint/brace-style': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/comma-spacing': 'off',
+    '@typescript-eslint/func-call-spacing': 'off',
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/keyword-spacing': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off',
+    '@typescript-eslint/no-extra-semi': 'off',
+    '@typescript-eslint/space-infix-ops': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/space-before-blocks': 'off',
+    '@typescript-eslint/quotes': 'off',
+    '@typescript-eslint/object-curly-spacing': 'off',
+    '@typescript-eslint/semi': 'off',
+    '@typescript-eslint/no-throw-literal': 'off'
   }
 }
