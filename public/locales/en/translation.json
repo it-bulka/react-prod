@@ -1,7 +1,8 @@
 {
   "about": "About a site",
   "main": "Main",
-  "lang": "uk",
+  "lang": "ukrainian",
+  "lang_short": "uk",
   "notFound": "Page not found",
   "errorPage": "Error has happened",
   "reload": "Reload page"
