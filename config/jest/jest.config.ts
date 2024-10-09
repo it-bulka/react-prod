@@ -27,7 +27,8 @@ const config = {
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
   moduleNameMapper: {
     '\\.svg': path.resolve(__dirname, 'mockComponent.tsx'),
-    '\\.s?css$': 'identity-obj-proxy'
+    '\\.s?css$': 'identity-obj-proxy',
+    '@locales/(.*)$': '<rootDir>/public/locales/$1'
   }
 }
 

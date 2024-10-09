@@ -8,7 +8,6 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { useTranslation } from 'react-i18next'
 import HomeIcon from 'shared/assets/icons/main-20-20.svg'
 import AboutIcon from 'shared/assets/icons/about-20-20.svg'
-import i18n from 'shared/config/i18n/i18n'
 import cls from './SideBar.module.scss'
 
 interface SideBarProps {
@@ -23,9 +22,11 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
 
   return (
     <div
+      data-testid="sidebar"
       className={classnames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
       <Button
+        data-testid="toggle-btn"
         onClick={onToggle}
         className={cls.collapseBtn}
         theme={ThemeButton.BACKGROUND_INVERTED}
