@@ -24,18 +24,19 @@ type Story = StoryObj<typeof meta>
 
 export const Normal: Story = {
   name: 'Modal',
-  render: function Render() {
+  render: function Render(_, context) {
     const [{ isOpen, children }, updateArgs] = useArgs()
 
     const open = () => updateArgs({ isOpen: true })
     const close = () => updateArgs({ isOpen: false })
+    const { theme } = context.globals
 
     return (
       <>
         {/* eslint-disable-next-line i18next/no-literal-string */}
         <button onClick={open} type="button">Open modal</button>
-        <Modal isOpen={isOpen} onClose={close}>
-          <div style={{ backgroundColor: '#fff' }}>
+        <Modal isOpen={isOpen} onClose={close} className={theme}>
+          <div>
             {children}
           </div>
         </Modal>

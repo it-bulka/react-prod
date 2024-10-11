@@ -2,8 +2,8 @@ import { createContext } from 'react'
 
 /* eslint-disable no-unused-vars */
 export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
+  LIGHT = 'app_theme_light',
+  DARK = 'app_theme_dark',
 }
 /* eslint-disable no-unused-vars */
 

@@ -14,6 +14,7 @@ const meta = {
       options: [
         ThemeButton.MAIN,
         ThemeButton.CLEAR,
+        ThemeButton.CLEAR_INVERTED,
         ThemeButton.OUTLINE,
         ThemeButton.BACKGROUND,
         ThemeButton.BACKGROUND_INVERTED
@@ -40,6 +41,11 @@ export const Main: Story = {}
 export const Clear: Story = {
   args: {
     theme: ThemeButton.CLEAR
+  }
+}
+export const ClearInverted: Story = {
+  args: {
+    theme: ThemeButton.CLEAR_INVERTED
   }
 }
 export const Outline: Story = {

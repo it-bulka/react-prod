@@ -5,7 +5,7 @@ import {
 import classnames from 'shared/libs/classnames/classnames'
 import cls from './Modal.module.scss'
 
-interface ModalProps {
+export interface ModalProps {
   className?: string;
   isOpen?: boolean;
   onClose?: () => void;
@@ -57,13 +57,20 @@ export const Modal = ({
   return (
     <Portal>
       <div
+        data-testid="modal"
         className={classnames(cls.modal, mods, [className])}
         onClick={closeHandler}
         onKeyDown={undefined}
         role="button"
         tabIndex={0}
       >
-        <div className={classnames(cls.content)}>
+        <div
+          className={classnames(cls.content)}
+          onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => e.stopPropagation()}
+          role="button"
+          tabIndex={0}
+        >
           {children}
         </div>
       </div>

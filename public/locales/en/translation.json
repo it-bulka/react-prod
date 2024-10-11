@@ -5,6 +5,8 @@
   "lang_short": "uk",
   "notFound": "Page not found",
   "errorPage": "Error has happened",
-  "reload": "Reload page"
-
+  "reload": "Reload page",
+  "log_in": "Log in",
+  "set_password": "Set password",
+  "set_username": "Set username"
 }

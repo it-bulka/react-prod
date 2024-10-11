@@ -1,6 +1,8 @@
 import classnames from 'shared/libs/classnames/classnames'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { useTranslation } from 'react-i18next'
+import { LoginModal } from 'features/AuthByUsername'
+import { useState } from 'react'
+import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import cls from './NavBar.module.scss'
 
 interface NavBarProps {
@@ -9,16 +11,24 @@ interface NavBarProps {
 
 export const NavBar = ({ className }: NavBarProps) => {
   const { t } = useTranslation()
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
+
+  const openModal = () => setIsAuthModalOpen(true)
+  const closeModal = () => setIsAuthModalOpen(false)
+
   return (
     <nav className={classnames(cls.navbar, {}, [className])}>
-      <div className={cls.links}>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
-          {t('main')}
-        </AppLink>
-        <AppLink theme={AppLinkTheme.RED} to="/about">
-          {t('about')}
-        </AppLink>
-      </div>
+      <Button
+        theme={ThemeButton.CLEAR_INVERTED}
+        className={cls.links}
+        onClick={openModal}
+      >
+        {t('log_in')}
+      </Button>
+      <LoginModal
+        isOpen={isAuthModalOpen}
+        onClose={closeModal}
+      />
     </nav>
   )
 }

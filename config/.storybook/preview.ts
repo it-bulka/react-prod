@@ -10,7 +10,10 @@ const preview: Preview = {
       toolbar: {
         title: 'Theme',
         icon: 'circlehollow',
-        items: ['light', 'dark'],
+        items: [
+          { value: Theme.DARK, title: 'dark' },
+          { value: Theme.LIGHT, title: 'light' },
+        ],
       },
     },
     locale: {
@@ -41,10 +44,7 @@ const preview: Preview = {
   },
   tags: ['autodocs'],
   decorators: [
-    (Story, context) => {
-      const theme = context.globals.theme === 'dark' ? Theme.DARK : Theme.LIGHT;
-      return ThemeDecorator(theme)(Story, context)
-    },
+    ThemeDecorator,
     withI18nDecorator,
     RouterDecorator
   ]
