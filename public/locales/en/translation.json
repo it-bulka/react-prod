@@ -8,5 +8,7 @@
   "reload": "Reload page",
   "log_in": "Log in",
   "set_password": "Set password",
-  "set_username": "Set username"
+  "set_username": "Set username",
+  "auth form": "Auth form",
+  "uncorrect username or password": "Uncorrect username or password"
 }

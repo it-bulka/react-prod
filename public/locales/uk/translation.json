@@ -8,5 +8,7 @@
   "reload": "Перезагрузити сторінку",
   "log_in": "Ввійти",
   "set_password": "Введіть пароль",
-  "set_username": "Введіть username"
+  "set_username": "Введіть username",
+  "auth form": "Форма авторизації",
+  "uncorrect username or password": "Ви ввели невірне ім'я юзера або пароль"
 }
