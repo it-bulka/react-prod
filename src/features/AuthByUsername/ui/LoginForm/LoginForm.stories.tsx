@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { LoginForm } from 'features/AuthByUsername/ui/LoginForm/LoginForm'
+import LoginForm from 'features/AuthByUsername/ui/LoginForm/LoginForm'
 
 const meta = {
   title: 'shared/LoginForm',
