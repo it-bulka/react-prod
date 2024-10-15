@@ -7,7 +7,7 @@ import {
 export interface StateSchema {
   user: UserSchema
   // async reducers
-  loginForm?: LoginSchema | undefined
+  loginForm?: LoginSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

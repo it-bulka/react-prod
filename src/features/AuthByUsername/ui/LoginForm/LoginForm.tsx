@@ -6,7 +6,7 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import { Text, TextTheme } from 'shared/ui/Text/ui/Text'
 import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
-import { loginByUserName } from 'features/AuthByUsername/model/services/loginByUserName'
+import { loginByUserName } from 'features/AuthByUsername/model/services/loginByUsername/loginByUserName'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
 import {
