@@ -20,9 +20,10 @@ const initialReducers: ReducersList = {
 
 export interface LoginFormProps {
   className?: string
-  withFocus?: boolean
+  withFocus?: boolean,
+  onSuccess: () => void
 }
-const LoginForm = memo(({ className, withFocus }: LoginFormProps) => {
+const LoginForm = memo(({ className, withFocus, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const error = useSelector(getLoginError)
@@ -38,9 +39,12 @@ const LoginForm = memo(({ className, withFocus }: LoginFormProps) => {
     dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUserName({ username, password }))
-  }, [dispatch, password, username])
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUserName({ username, password }))
+    if(result.meta.requestStatus === 'fulfilled') {
+      onSuccess?.()
+    }
+  }, [dispatch, password, username, onSuccess])
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>

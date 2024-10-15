@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { LoginModal } from 'features/AuthByUsername'
 import { useArgs } from '@storybook/preview-api'
+import { fn } from '@storybook/test'
 
 const meta = {
   title: 'feature/LoginModal',
   component: LoginModal,
   tags: ['!autodocs'],
   args: {
-    isOpen: true
+    isOpen: true,
+    onSuccess: fn()
   }
 } satisfies Meta<typeof LoginModal>
 
@@ -28,7 +30,7 @@ export const Normal: Story = {
       <>
         {/* eslint-disable-next-line i18next/no-literal-string */}
         <button onClick={open} type="button">Open modal</button>
-        <LoginModal isOpen={isOpen} onClose={close} className={theme} />
+        <LoginModal isOpen={isOpen} onClose={close} className={theme} onSuccess={close} />
       </>
     )
   }

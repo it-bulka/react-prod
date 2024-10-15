@@ -1,12 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import LoginForm from 'features/AuthByUsername/ui/LoginForm/LoginForm'
+import { fn } from '@storybook/test'
 
 const meta = {
   title: 'shared/LoginForm',
   component: LoginForm,
   tags: ['!autodocs'],
   args: {
-    withFocus: true
+    withFocus: true,
+    onSuccess: fn()
   }
 } satisfies Meta<typeof LoginForm>
 
