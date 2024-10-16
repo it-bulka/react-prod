@@ -26,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Iv",
+    "lastname": "G",
+    "age": 29,
+    "currency": "UAN",
+    "country": "Ukraine",
+    "city": "Kyiv",
+    "username": "admin",
+    "avatar": "https://static.vecteezy.com/system/resources/previews/020/437/389/non_2x/admin-icon-vector.jpg"
   }
 }

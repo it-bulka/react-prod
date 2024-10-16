@@ -25,7 +25,9 @@ export const NavBar = ({ className }: NavBarProps) => {
       >
         {t('log_in')}
       </Button>
-      {isAuthModalOpen && <LoginModal isOpen={isAuthModalOpen} onClose={closeModal} onSuccess={closeModal} />}
+      {isAuthModalOpen && (
+        <LoginModal isOpen={isAuthModalOpen} onClose={closeModal} onSuccess={closeModal} />
+      )}
     </nav>
   )
 }

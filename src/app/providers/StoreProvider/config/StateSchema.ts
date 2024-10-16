@@ -1,5 +1,6 @@
 import { UserSchema } from 'entities/User'
 import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema'
+import { ProfileSchema } from 'entities/Profile'
 import {
   ReducersMapObject, UnknownAction, Reducer
 } from '@reduxjs/toolkit'
@@ -8,6 +9,7 @@ export interface StateSchema {
   user: UserSchema
   // async reducers
   loginForm?: LoginSchema
+  profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -7,7 +7,12 @@ interface LoginModalProps extends ModalProps {
   onSuccess: () => void
 }
 
-export const LoginModal: FC<LoginModalProps> = ({ className, onClose, isOpen, onSuccess }) => {
+export const LoginModal: FC<LoginModalProps> = ({
+  className,
+  onClose,
+  isOpen,
+  onSuccess
+}) => {
   return (
     <Modal
       className={className}
