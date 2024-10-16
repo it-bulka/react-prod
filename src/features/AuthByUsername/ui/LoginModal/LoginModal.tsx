@@ -1,4 +1,4 @@
-import { type FC, Suspense } from 'react'
+import { Suspense, memo } from 'react'
 import { Modal, ModalProps } from 'shared/ui/Modal/Modal'
 import { LoginFormAsync } from 'features/AuthByUsername/ui/LoginForm/LoginForm.async'
 import { Loader } from 'shared/ui/Loader/ui/Loader'
@@ -7,12 +7,12 @@ interface LoginModalProps extends ModalProps {
   onSuccess: () => void
 }
 
-export const LoginModal: FC<LoginModalProps> = ({
+export const LoginModal = memo(({
   className,
   onClose,
   isOpen,
   onSuccess
-}) => {
+}: LoginModalProps) => {
   return (
     <Modal
       className={className}
@@ -24,4 +24,6 @@ export const LoginModal: FC<LoginModalProps> = ({
       </Suspense>
     </Modal>
   )
-}
+})
+
+LoginModal.displayName = 'LoginModal'

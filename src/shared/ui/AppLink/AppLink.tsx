@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 import classnames from 'shared/libs/classnames/classnames'
 import cls from './AppLink.module.scss'
@@ -15,10 +16,12 @@ interface AppLinkProps extends LinkProps{
   theme?: AppLinkTheme
 }
 
-export const AppLink = ({
+export const AppLink = memo(({
   to, className, children, theme = AppLinkTheme.PRIMARY, ...rest
 }: AppLinkProps) => (
   <Link to={to} className={classnames(cls.appLink, { [cls[theme]]: true }, [className])} {...rest}>
     {children}
   </Link>
-)
+))
+
+AppLink.displayName = 'AppLink'

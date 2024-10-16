@@ -1,4 +1,4 @@
-import { type FC, useCallback, useState } from 'react'
+import { useCallback, useState, memo } from 'react'
 import classnames from 'shared/libs/classnames/classnames'
 import { Button, ThemeButton, ButtonSize } from 'shared/ui/Button/Button'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
@@ -10,11 +10,11 @@ import cls from './SideBar.module.scss'
 interface SideBarProps {
   className?: string
 }
-export const SideBar: FC<SideBarProps> = ({ className }) => {
+export const SideBar = memo(({ className }: SideBarProps) => {
   const [collapsed, setCollapsed] = useState(false)
 
   const onToggle = useCallback(() => {
-    setCollapsed((prev) => !prev)
+    setCollapsed(prev => !prev)
   }, [])
 
   return (
@@ -33,7 +33,7 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={cls.items}>
-        {sidebarItemsList.map((item) => (
+        {sidebarItemsList.map(item => (
           <SidebarItem item={item} collapsed={collapsed} key={item.path} />
         ))}
       </div>
@@ -46,4 +46,6 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
       </div>
     </div>
   )
-}
+})
+
+SideBar.displayName = 'SideBar'

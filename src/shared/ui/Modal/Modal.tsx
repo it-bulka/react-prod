@@ -1,6 +1,6 @@
 import { Portal } from 'shared/ui/Portal/Portal'
 import {
-  PropsWithChildren, useCallback, useEffect, useRef, useState
+  PropsWithChildren, useCallback, useEffect, useRef, useState, memo
 } from 'react'
 import classnames from 'shared/libs/classnames/classnames'
 import cls from './Modal.module.scss'
@@ -13,7 +13,7 @@ export interface ModalProps {
 
 const ANIMATION_DELAY = 300
 
-export const Modal = ({
+export const Modal = memo(({
   children,
   className,
   isOpen = false,
@@ -76,4 +76,6 @@ export const Modal = ({
       </div>
     </Portal>
   )
-}
+})
+
+Modal.displayName = 'Modal'

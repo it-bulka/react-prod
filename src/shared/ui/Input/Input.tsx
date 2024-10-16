@@ -1,5 +1,5 @@
 import {
-  type FC, InputHTMLAttributes, SyntheticEvent,
+  InputHTMLAttributes, SyntheticEvent, memo,
   useCallback, useRef, useState, useEffect, ChangeEvent
 } from 'react'
 import classnames from 'shared/libs/classnames/classnames'
@@ -15,7 +15,7 @@ interface InputProps extends HTMLInputProps {
   focus?: boolean;
 }
 
-export const Input: FC<InputProps> = ({
+export const Input = memo(({
   className,
   value,
   onChange,
@@ -24,7 +24,7 @@ export const Input: FC<InputProps> = ({
   type = 'text',
   focus,
   ...rest
-}) => {
+}: InputProps) => {
   const [isFocused, setFocused] = useState(false)
   const [caretPosition, setCaretPosition] = useState(0)
   const ref = useRef<HTMLInputElement>(null)
@@ -83,4 +83,6 @@ export const Input: FC<InputProps> = ({
       </div>
     </div>
   )
-}
+})
+
+Input.displayName = 'Input'
