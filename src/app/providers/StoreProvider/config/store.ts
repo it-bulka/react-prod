@@ -2,6 +2,7 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 import { userReducers } from 'entities/User/model/slice/userSlice'
 import { useDispatch, useStore } from 'react-redux'
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
+import { api } from 'shared/api/api'
 import { ReducerManager, StateSchema } from './StateSchema'
 
 export const createStore = () => {
@@ -13,7 +14,16 @@ export const createStore = () => {
   const store = configureStore({
     devTools: __IS_DEV__,
     reducer: reducerManager.reduce,
-    preloadedState: {}
+    preloadedState: {},
+    middleware: getDefaultMiddleware => {
+      return getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api
+          }
+        }
+      })
+    }
   })
 
   // @ts-ignore

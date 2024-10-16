@@ -4,6 +4,7 @@ import { ProfileSchema } from 'entities/Profile'
 import {
   ReducersMapObject, UnknownAction, Reducer
 } from '@reduxjs/toolkit'
+import { AxiosInstance } from 'axios'
 
 export interface StateSchema {
   user: UserSchema
@@ -20,4 +21,13 @@ export interface ReducerManager {
   reduce: (state: StateSchema, action: UnknownAction) => ReducerReturn
   add: (key: StateSchemaKey, reducer: Reducer) => void
   remove: (key: StateSchemaKey) => void
+}
+
+export interface ThunkExtraArg {
+  api: AxiosInstance
+}
+
+export type ThunkConfig = {
+  rejectValue: string
+  extra: ThunkExtraArg
 }
