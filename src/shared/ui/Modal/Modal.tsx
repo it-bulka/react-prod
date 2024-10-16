@@ -66,8 +66,8 @@ export const Modal = memo(({
       >
         <div
           className={classnames(cls.content)}
-          onClick={(e) => e.stopPropagation()}
-          onKeyDown={(e) => e.stopPropagation()}
+          onClick={e => e.stopPropagation()}
+          onKeyDown={e => e.stopPropagation()}
           role="button"
           tabIndex={0}
         >

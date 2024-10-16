@@ -19,7 +19,7 @@ type DecoratorFactory = (_position?: DECORATOR_POSITION) => Decorator
 
 export const PositionDecorator: DecoratorFactory = (
   position = DECORATOR_POSITION._CENTER
-) => (Story) => (
+) => Story => (
   <div className={`${style.fullscreen} ${style[position]}`}>
     <Story />
   </div>

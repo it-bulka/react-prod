@@ -73,6 +73,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error', { destructuredArrayIgnorePattern: '^_', argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     'react/jsx-indent': ['error', 2],
     'no-param-reassign': ['error', { 'props': false }],
+    'arrow-parens': ['error', 'as-needed'],
     // Deprecated rules. Make bug with rule no found. They should be off.
     '@typescript-eslint/brace-style': 'off',
     '@typescript-eslint/comma-dangle': 'off',
