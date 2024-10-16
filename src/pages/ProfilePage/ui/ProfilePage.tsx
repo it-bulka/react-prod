@@ -1,8 +1,10 @@
-import { type FC } from 'react'
+import { useEffect } from 'react'
 import classnames from 'shared/libs/classnames/classnames'
-import { useTranslation } from 'react-i18next'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
 import { profileReducer } from 'entities/Profile'
+import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard'
+import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData'
+import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 
 const reducers: ReducersList = {
   profile: profileReducer
@@ -12,8 +14,12 @@ interface ProfilePageProps {
   className?: string
 }
 
-const ProfilePage: FC<ProfilePageProps> = ({ className = '' }) => {
-  const { t } = useTranslation()
+const ProfilePage = ({ className }: ProfilePageProps) => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProfileData())
+  }, [dispatch])
 
   return (
     <DynamicModuleLoader
@@ -21,7 +27,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className = '' }) => {
       reducers={reducers}
     >
       <div className={classnames('', {}, [className])}>
-        {t('profile page')}
+        <ProfileCard />
       </div>
     </DynamicModuleLoader>
   )

@@ -9,3 +9,8 @@ export enum Country {
   Armenia = 'Armenia',
   France = 'France'
 }
+
+export enum Translations {
+  ABOUT = 'about',
+  PROFILE = 'profile'
+}
