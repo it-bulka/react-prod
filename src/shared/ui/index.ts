@@ -5,7 +5,7 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 import { Loader } from 'shared/ui/Loader/ui/Loader'
 import { Modal } from 'shared/ui/Modal/Modal'
 import { PageLoader } from 'shared/ui/PageLoader/ui/PageLoader'
-import { Text } from 'shared/ui/Text/ui/Text'
+import { Text, TextTheme, TextAlign } from 'shared/ui/Text/ui/Text'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 
 export {
@@ -18,5 +18,7 @@ export {
   Modal,
   PageLoader,
   Text,
+  TextTheme,
+  TextAlign,
   ThemeSwitcher
 }
