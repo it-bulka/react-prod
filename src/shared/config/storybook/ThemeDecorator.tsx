@@ -1,9 +1,8 @@
 import { Decorator } from '@storybook/react'
 import { Theme } from 'app/providers/lib/ThemeContext'
+import { DecoratorFactory } from 'shared/config/storybook/types'
 
-type DecoratorFactory = (_theme: Theme) => Decorator
-
-const ThemeDecoratorFactory: DecoratorFactory = theme => Story => (
+const ThemeDecoratorFactory: DecoratorFactory<Theme> = theme => Story => (
   <div className={`app ${theme}`}>
     <Story />
   </div>

@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { NavBar } from 'widgets/NavBar'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 
 const meta = {
   title: 'widgets/NavBar',
-  component: NavBar
+  component: NavBar,
+  decorators: [StoreDecorator({})]
 } satisfies Meta<typeof NavBar>
 
 export default meta

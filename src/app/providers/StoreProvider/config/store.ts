@@ -5,8 +5,13 @@ import { createReducerManager } from 'app/providers/StoreProvider/config/reducer
 import { api } from 'shared/api/api'
 import { ReducerManager, StateSchema } from './StateSchema'
 
-export const createStore = () => {
+interface createStoreProps {
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>
+}
+export const createStore = ({ initialState, asyncReducers }: createStoreProps) => {
   const rootReducer: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     user: userReducers
   }
 
@@ -14,7 +19,7 @@ export const createStore = () => {
   const store = configureStore({
     devTools: __IS_DEV__,
     reducer: reducerManager.reduce,
-    preloadedState: {},
+    preloadedState: initialState || {},
     middleware: getDefaultMiddleware => {
       return getDefaultMiddleware({
         thunk: {
