@@ -11,5 +11,7 @@
   "set_username": "Set username",
   "auth form": "Auth form",
   "uncorrect username or password": "Uncorrect username or password",
-  "profile page": "Profile page"
+  "profile page": "Profile page",
+  "specify the currency": "Specify the currency",
+  "specify the country": "Specify the country"
 }

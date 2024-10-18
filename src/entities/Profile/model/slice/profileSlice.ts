@@ -12,7 +12,15 @@ const initialState: ProfileSchema = {
 const profileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {},
+  reducers: {
+    updateProfile: (state, action: PayloadAction<Profile>) => {
+      state.form = {
+        ...state.data,
+        ...state.form,
+        ...action.payload
+      }
+    }
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchProfileData.pending, state => {

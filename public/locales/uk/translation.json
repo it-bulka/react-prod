@@ -11,5 +11,7 @@
   "set_username": "Введіть username",
   "auth form": "Форма авторизації",
   "uncorrect username or password": "Ви ввели невірне ім'я юзера або пароль",
-  "profile page": "Сторінка профілю"
+  "profile page": "Сторінка профілю",
+  "specify the currency": "Вкажи валюту",
+  "specify the country": "Вкажи країну"
 }
