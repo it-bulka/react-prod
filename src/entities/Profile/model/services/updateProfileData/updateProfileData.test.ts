@@ -2,11 +2,21 @@ import { TestAsyncThunk } from 'shared/libs/test/TestAsyncThunk/TestAsyncThunk'
 import { DeepPartial } from 'shared/types/DeepPartial'
 import { StateSchema } from 'app/providers/StoreProvider'
 import { Profile } from 'entities/Profile'
+import { ValidateProfileError } from 'entities/Profile/model/types/profile'
+import { Country, Currency } from 'shared/const/common'
 import { updateProfileData } from './updateProfileData'
 
 describe('updateProfileData', () => {
   it('should return updated profile data', async () => {
-    const profileData: DeepPartial<Profile> = { first: 'Iv'}
+    const profileData: DeepPartial<Profile> = {
+      'first': 'Iv',
+      'lastname': 'G',
+      'age': 29,
+      'currency': Currency.UAH,
+      'country': Country.Ukraine,
+      'city': 'Kyiv',
+      'username': 'admin'
+    }
 
     const partialState: DeepPartial<StateSchema> = {
       profile: { form: profileData }
@@ -24,13 +34,14 @@ describe('updateProfileData', () => {
   })
 
   it('should return error', async () => {
+    const error = [ValidateProfileError.NO_DATA]
     const thunk = new TestAsyncThunk(updateProfileData)
-    thunk.api.put.mockRejectedValue('error')
+    thunk.api.put.mockRejectedValue(error)
 
     const result = await thunk.callThunk()
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
     expect(result.meta.requestStatus).toEqual('rejected')
-    expect(result.payload).toEqual('error')
+    expect(result.payload).toEqual(error)
   })
 })

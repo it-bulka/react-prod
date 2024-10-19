@@ -10,5 +10,11 @@
   "your username": "Твій нікнейм",
   "your age": "Твій вік",
   "your city": "Твоє місто",
-  "your avatar": "Твій аватар"
+  "your avatar": "Твій аватар",
+
+  "server_error": "Серверна помилка при збереженні",
+  "incorrect_country": "Некорректний регіон",
+  "incorrect_user_data": "Ім'я та прізвище обов'язкові",
+  "no_data": "Данні не вказані",
+  "incorrect_age": "Некоректний вік"
 }

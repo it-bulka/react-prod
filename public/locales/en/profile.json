@@ -10,5 +10,11 @@
   "your username": "Your username",
   "your age": "your age",
   "your city": "your city",
-  "your avatar": "your avatar"
+  "your avatar": "your avatar",
+
+  "server_error": "Server error while saving data",
+  "incorrect_country": "Incorrect country",
+  "incorrect_user_data": "First and last name are required",
+  "no_data": "No data",
+  "incorrect_age": "Incorrect age"
 }

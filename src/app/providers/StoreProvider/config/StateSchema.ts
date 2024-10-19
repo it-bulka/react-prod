@@ -28,8 +28,8 @@ export interface ThunkExtraArg {
   api: AxiosInstance
 }
 
-export type ThunkConfig = {
-  rejectValue: string
+export type ThunkConfig<T> = {
+  rejectValue: T
   extra: ThunkExtraArg
   // TODO: check typing:
   // RootState typing: no match with StateSchema using getState() inside createAsyncThunk

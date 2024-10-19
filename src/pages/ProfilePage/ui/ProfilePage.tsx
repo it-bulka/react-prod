@@ -1,15 +1,23 @@
 import { useCallback, useEffect } from 'react'
 import classnames from 'shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
-import { profileReducer, profileActions, getProfileReadonly } from 'entities/Profile'
-import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard'
-import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData'
+import {
+  profileReducer,
+  profileActions,
+  getProfileReadonly,
+  getProfileValidateErrors,
+  getProfileError,
+  getProfileFormData,
+  fetchProfileData,
+  ProfileCard
+} from 'entities/Profile'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { useSelector } from 'react-redux'
-import { getProfileFormData } from 'entities/Profile/model/selectors/getProfileFormData/getProfileFormData'
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError'
 import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading'
 import { Country, Currency } from 'shared/const/common'
+import { useTranslation } from 'react-i18next'
+import { ValidateProfileError } from 'entities/Profile/model/types/profile'
+import { Text, TextTheme } from 'shared/ui'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
@@ -22,13 +30,24 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const dispatch = useAppDispatch()
+  const { t } = useTranslation('profile')
 
   const formData = useSelector(getProfileFormData)
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
   const readOnly = useSelector(getProfileReadonly)
+  const validateErrors = useSelector(getProfileValidateErrors)
+
+  const validatedErrTranslation = {
+    [ValidateProfileError.SERVER_ERROR]: t(ValidateProfileError.SERVER_ERROR),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t(ValidateProfileError.INCORRECT_COUNTRY),
+    [ValidateProfileError.NO_DATA]: t(ValidateProfileError.NO_DATA),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t(ValidateProfileError.INCORRECT_USER_DATA),
+    [ValidateProfileError.INCORRECT_AGE]: t(ValidateProfileError.INCORRECT_AGE)
+  }
 
   useEffect(() => {
+    if(__PROJECT_ENV__ === 'storybook') return
     dispatch(fetchProfileData())
   }, [dispatch])
 
@@ -61,6 +80,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   }, [dispatch])
 
   const onChangeCurrency = useCallback((currency: Currency) => {
+    if(__PROJECT_ENV__ === 'storybook') return
     dispatch(profileActions.updateProfile({ currency }))
   }, [dispatch])
 
@@ -71,6 +91,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     >
       <div className={classnames('', {}, [className])}>
         <ProfilePageHeader />
+        {validateErrors?.length && validateErrors.map(err => (
+          <Text
+            key={err}
+            theme={TextTheme.ERROR}
+            text={validatedErrTranslation[err]}
+          />
+        ))}
         <ProfileCard
           data={formData}
           readOnly={readOnly}
