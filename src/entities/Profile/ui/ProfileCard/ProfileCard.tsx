@@ -12,6 +12,7 @@ import {
 import { Profile } from 'entities/Profile'
 import { CurrencySelect } from 'entities/Currency'
 import { CountrySelect } from 'entities/Country/ui/CountrySelect'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
 import cls from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
@@ -68,8 +69,13 @@ export const ProfileCard = ({
   }
 
   return (
-    <div className={classnames(cls.profileCard, {}, [className])}>
+    <div className={classnames(cls.profileCard, { [cls.editing]: !readOnly }, [className])}>
       <div className={cls.data}>
+        {data?.avatar && (
+          <div className={cls.avatarWrapper}>
+            <Avatar src={data?.avatar} />
+          </div>
+        )}
         <Input
           readOnly={readOnly}
           value={data?.username}
