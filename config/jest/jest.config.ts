@@ -3,7 +3,8 @@ import path from 'path'
 const config = {
   globals: {
     __IS_DEV__: true,
-    __API__: ''
+    __API__: '',
+    __PROJECT_ENV__: 'jest'
   },
   clearMocks: false,
   coveragePathIgnorePatterns: [

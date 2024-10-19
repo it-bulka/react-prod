@@ -57,7 +57,7 @@ const config: StorybookConfig = {
     }
 
     const isDev = process.env.NODE_ENV !== 'production'
-    config.plugins?.push(buildDefinePlugin({ isDev, apiUrl: '' }));
+    config.plugins?.push(buildDefinePlugin({ isDev, apiUrl: '', projectEnv: 'storybook' }));
 
     return config
   },
