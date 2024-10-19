@@ -15,6 +15,7 @@ interface SelectProps {
   options?: SelectOption[]
   value?: string
   onChange?: (value: string) => void
+  readOnly?: boolean
 }
 
 export const Select = memo(({
@@ -22,7 +23,8 @@ export const Select = memo(({
   label,
   options,
   value,
-  onChange
+  onChange,
+  readOnly = false
 }: SelectProps) => {
   const onChangeHandler = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
     onChange?.(e.target.value)
@@ -46,6 +48,7 @@ export const Select = memo(({
         </span>
       )}
       <select
+        disabled={readOnly}
         className={cls.select}
         value={value}
         onChange={onChangeHandler}

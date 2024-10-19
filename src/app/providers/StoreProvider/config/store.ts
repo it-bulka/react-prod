@@ -39,7 +39,7 @@ export const createStore = ({ initialState, asyncReducers }: createStoreProps) =
 export type AppStore = ReturnType<typeof createStore> & {
   reduceManager: ReducerManager
 }
-export type RootState = ReturnType<typeof createStore>['getState']
+export type RootState = ReturnType<ReturnType<typeof createStore>['getState']>
 export type AppDispatch = ReturnType<typeof createStore>['dispatch']
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>()
 export const useAppStore = useStore.withTypes<AppStore>()

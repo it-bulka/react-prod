@@ -5,6 +5,7 @@ import {
   ReducersMapObject, UnknownAction, Reducer
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
+import { RootState } from 'app/providers/StoreProvider/config/store'
 
 export interface StateSchema {
   user: UserSchema
@@ -30,4 +31,8 @@ export interface ThunkExtraArg {
 export type ThunkConfig = {
   rejectValue: string
   extra: ThunkExtraArg
+  // TODO: check typing:
+  // RootState typing: no match with StateSchema using getState() inside createAsyncThunk
+  // impossible typing with StateSchema: no overload match with dispatch thunks
+  state: RootState
 }

@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react'
 import classnames from 'shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
-import { profileReducer, profileActions } from 'entities/Profile'
+import { profileReducer, profileActions, getProfileReadonly } from 'entities/Profile'
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard'
 import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
@@ -10,6 +10,7 @@ import { getProfileFormData } from 'entities/Profile/model/selectors/getProfileF
 import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError'
 import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading'
 import { Country, Currency } from 'shared/const/common'
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
   profile: profileReducer
@@ -25,6 +26,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const formData = useSelector(getProfileFormData)
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
+  const readOnly = useSelector(getProfileReadonly)
 
   useEffect(() => {
     dispatch(fetchProfileData())
@@ -68,8 +70,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
       reducers={reducers}
     >
       <div className={classnames('', {}, [className])}>
+        <ProfilePageHeader />
         <ProfileCard
           data={formData}
+          readOnly={readOnly}
           isLoading={isLoading}
           error={error}
           onChangeFirstname={onChangeFirstname}

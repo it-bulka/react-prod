@@ -6,7 +6,7 @@ import {
   Country
 } from 'shared/const/common'
 import {
-  Text, TextTheme, TextAlign, Button, ThemeButton, Input,
+  Text, TextTheme, TextAlign, Input,
   Loader
 } from 'shared/ui'
 import { Profile } from 'entities/Profile'
@@ -17,6 +17,7 @@ import cls from './ProfileCard.module.scss'
 interface ProfileCardProps {
   className?: string
   data?: Profile
+  readOnly?: boolean
   error?: string
   isLoading?: boolean
   onChangeLastname?: (value?: string) => void
@@ -31,6 +32,7 @@ interface ProfileCardProps {
 export const ProfileCard = ({
   className,
   data,
+  readOnly = false,
   error,
   isLoading,
   onChangeFirstname,
@@ -67,41 +69,37 @@ export const ProfileCard = ({
 
   return (
     <div className={classnames(cls.profileCard, {}, [className])}>
-      <div className={cls.header}>
-        <Text title={t('profile')} />
-        <Button
-          className={cls.editBtn}
-          theme={ThemeButton.OUTLINE}
-        >
-          {t('edit')}
-        </Button>
-      </div>
       <div className={cls.data}>
         <Input
+          readOnly={readOnly}
           value={data?.username}
           onChange={onChangeUsername}
           placeholder={t('your username')}
           className={cls.input}
         />
         <Input
+          readOnly={readOnly}
           value={data?.first}
           onChange={onChangeFirstname}
           placeholder={t('your name')}
           className={cls.input}
         />
         <Input
+          readOnly={readOnly}
           value={data?.lastname}
           onChange={onChangeLastname}
           placeholder={t('your surname')}
           className={cls.input}
         />
         <Input
+          readOnly={readOnly}
           value={data?.age?.toString()}
           onChange={onChangeAge}
           placeholder={t('your age')}
           className={cls.input}
         />
         <Input
+          readOnly={readOnly}
           value={data?.city}
           onChange={onChangeAvatar}
           placeholder={t('your avatar')}

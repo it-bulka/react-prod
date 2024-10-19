@@ -8,6 +8,7 @@ interface CurrencySelectProps {
   className?: string
   onChange?: (value: Currency) => void
   value?: Currency
+  readOnly?: boolean
 }
 
 const options = [
@@ -16,7 +17,12 @@ const options = [
   { value: Currency.UAH, content: Currency.UAH }
 ]
 
-export const CurrencySelect = memo(({ className, onChange, value }: CurrencySelectProps) => {
+export const CurrencySelect = memo(({
+  className,
+  onChange,
+  value,
+  readOnly
+}: CurrencySelectProps) => {
   const { t } = useTranslation()
 
   const onChangeHandler = useCallback((val: string) => {
@@ -30,6 +36,7 @@ export const CurrencySelect = memo(({ className, onChange, value }: CurrencySele
       options={options}
       onChange={onChangeHandler}
       value={value}
+      readOnly={readOnly}
     />
   )
 })

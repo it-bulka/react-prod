@@ -1,6 +1,8 @@
 {
   "profile": "Profile",
   "edit": "Edit",
+  "cancel": "Cancel",
+  "apply": "Apply",
   "your surname": "Your surname",
   "your name": "Your name",
   "upload error": "Upload error",

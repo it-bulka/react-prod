@@ -57,12 +57,14 @@ const LoginForm = memo(({ className, withFocus, onSuccess }: LoginFormProps) => 
           className={cls.input}
           placeholder={t('set_username')}
           onChange={onChangeUsername}
+          value={username}
         />
         <Input
           type="text"
           className={cls.input}
           placeholder={t('set_password')}
           onChange={onChangePassword}
+          value={password}
         />
         <Button
           theme={ThemeButton.OUTLINE}
