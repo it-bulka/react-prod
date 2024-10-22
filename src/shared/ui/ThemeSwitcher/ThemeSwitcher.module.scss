@@ -1,0 +1,53 @@
+$svg-size: 40px;
+
+.themeswitcher {
+  position: relative;
+  display: inline-block;
+
+  div {
+    cursor: pointer;
+    width: $svg-size;
+  }
+
+  ul {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 10;
+    display: none;
+    left: 0;
+    width: fit-content;
+    transition: opacity 0.4s;
+  }
+
+  &:hover ul,
+  &:focus-within ul {
+    display: block;
+  }
+
+  li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+
+    &[aria-selected="true"] {
+      background-color: #d0e4ff;
+    }
+
+    & svg {
+      max-width: calc($svg-size / 2);
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  & svg {
+    max-width: $svg-size;
+  }
+}

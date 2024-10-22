@@ -1,7 +1,7 @@
 import '../../src/app/styles/index.scss'
 import type { Preview } from "@storybook/react";
-import { ThemeDecorator, withI18nDecorator, RouterDecorator } from 'shared/config/storybook';
-import { Theme } from 'app/providers/lib/ThemeContext';
+import { ThemeDecorator, withI18nDecorator, RouterDecorator } from '../../src/shared/config/storybook'
+import { Theme } from '../../src/app/providers/lib/ThemeContext'
 
 const preview: Preview = {
   globalTypes: {
@@ -13,6 +13,7 @@ const preview: Preview = {
         items: [
           { value: Theme.DARK, title: 'dark' },
           { value: Theme.LIGHT, title: 'light' },
+          { value: Theme.ORANGE, title: 'orange' },
         ],
       },
     },
@@ -30,7 +31,7 @@ const preview: Preview = {
     }
   },
   initialGlobals: {
-    theme: 'light',
+    theme: Theme.LIGHT,
     locale: 'en',
   },
   parameters: {

@@ -3,9 +3,36 @@ import { BuildOptions } from './types/config';
 import { buildCSSLoader } from '../loaders/buildCSSLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-  const svgLoader = {
+  const svgUrlCssLoader = {
     test: /\.svg$/,
+    type: 'asset/resource',
+    issuer: /\.(s?)css$/,
+    use: [
+      {
+        loader: 'svgo-loader',
+        options: {
+          plugins: [
+            { name: 'removeDoctype', active: true },
+            { name: 'removeComments', active: true },
+            { name: 'removeMetadata', active: true },
+            { name: 'removeXMLNS', active: false },
+          ]
+        }
+      }
+    ]
+  }
+
+  const svgUrlJsxLoader = {
+    test: /\.svg$/i,
+    type: 'asset',
+    resourceQuery: /url/, // *.svg?url
+  }
+
+  const svgComponentLoader = {
+    test: /\.svg$/,
+    issuer: /\.[jt]sx?$/,
     use: ['@svgr/webpack'],
+    resourceQuery: { not: [/url/] }
   }
 
   const fileLoader = {
@@ -15,6 +42,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         loader: 'file-loader',
       },
     ],
+    type: 'javascript/auto'
   };
 
   const cssLoader = buildCSSLoader(isDev)
@@ -28,7 +56,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
   return [
     fileLoader,
-    svgLoader,
+    svgUrlCssLoader,
+    svgUrlJsxLoader,
+    svgComponentLoader,
     typescriptLoader,
     cssLoader,
   ]
