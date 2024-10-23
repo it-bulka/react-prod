@@ -3,6 +3,7 @@ import { AboutPage } from 'pages/AboutPage'
 import { HomePage } from 'pages/Home'
 import { ProfilePage } from 'pages/ProfilePage'
 import { ArticlesPageAsync } from 'pages/ArticlesPage'
+import { ArticleDetailsPageAsync } from 'pages/ArticleDetailsPage'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { ProtectedRoutes } from 'app/providers/ProtectedRoutes/ProtectedRoutes'
 import { RootPage } from '../../RootPage'
@@ -33,6 +34,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoutes>
             <ArticlesPageAsync />
+          </ProtectedRoutes>
+        )
+      },
+      {
+        path: `${RoutePath.article_details}:id`,
+        element: (
+          <ProtectedRoutes>
+            <ArticleDetailsPageAsync />
           </ProtectedRoutes>
         )
       }

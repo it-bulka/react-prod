@@ -6,12 +6,14 @@ import {
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
 import { RootState } from 'app/providers/StoreProvider/config/store'
+import { ArticleDetailsSchema } from 'entities/Article'
 
 export interface StateSchema {
   user: UserSchema
   // async reducers
   loginForm?: LoginSchema
   profile?: ProfileSchema
+  articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
