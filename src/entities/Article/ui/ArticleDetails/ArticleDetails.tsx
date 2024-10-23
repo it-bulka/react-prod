@@ -16,6 +16,7 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
 import { useCallback , useEffect, memo } from 'react'
 import { ArticleBlock, ArticleBlockType } from 'entities/Article'
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import cls from './ArticleDetails.module.scss'
 import {
   ArticleCodeBlockComponent,
@@ -80,8 +81,15 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   let content = null
 
   if (isLoading) {
-    // TODO: add skeleton
-    content = <div>Loading ...</div>
+    content = (
+      <>
+        <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+        <Skeleton className={cls.title} width={300} height={32} />
+        <Skeleton className={cls.skeleton} width={600} height={24} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
+      </>
+    )
   } else if (error) {
     content = (
       <Text
