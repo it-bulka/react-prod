@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         element: <AboutPage />
       },
       {
-        path: RoutePath.profile,
+        path: `${RoutePath.profile}:id`,
         element: (
           <ProtectedRoutes>
             <ProfilePage />

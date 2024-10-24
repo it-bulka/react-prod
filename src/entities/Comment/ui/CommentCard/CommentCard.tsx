@@ -1,8 +1,9 @@
 import classnames from 'shared/libs/classnames/classnames'
 import { memo } from 'react'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { Text } from 'shared/ui'
+import { Text, AppLink } from 'shared/ui'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { Comment } from '../../model/types/comment'
 import cls from './CommentCard.module.scss'
 
@@ -30,11 +31,11 @@ export const CommentCard = memo(({
   }
 
   return (
-    <div className={classnames(cls.CommentCard, {}, [className])}>
-      <div className={cls.header}>
+    <div className={classnames(cls.commentCard, {}, [className])}>
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
         {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
         <Text className={cls.username} title={comment.user.username} />
-      </div>
+      </AppLink>
       <Text className={cls.text} text={comment.text} />
     </div>
   )

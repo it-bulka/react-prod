@@ -26,16 +26,30 @@
       "avatar": "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
     }
   ],
-  "profile": {
-    "first": "Iv",
-    "lastname": "G",
-    "age": 29,
-    "currency": "UAN",
-    "country": "Ukraine",
-    "city": "Kyiv",
-    "username": "admin",
-    "avatar": "https://static.vecteezy.com/system/resources/previews/020/437/389/non_2x/admin-icon-vector.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Iv",
+      "lastname": "G",
+      "age": 29,
+      "currency": "UAN",
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "username": "admin",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/020/437/389/non_2x/admin-icon-vector.jpg"
+    },
+    {
+      "id": "2",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "UAN",
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "username": "admin213",
+      "avatar": "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
+    }
+  ],
   "articles": [
     {
       "id": "1",

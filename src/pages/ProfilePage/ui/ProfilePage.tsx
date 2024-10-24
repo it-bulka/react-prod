@@ -18,6 +18,7 @@ import { Country, Currency } from 'shared/const/common'
 import { useTranslation } from 'react-i18next'
 import { ValidateProfileError } from 'entities/Profile/model/types/profile'
 import { Text, TextTheme } from 'shared/ui'
+import { useParams } from 'react-router'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
@@ -31,6 +32,7 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const dispatch = useAppDispatch()
   const { t } = useTranslation('profile')
+  const { id } = useParams<{id: string}>()
 
   const formData = useSelector(getProfileFormData)
   const error = useSelector(getProfileError)
@@ -48,7 +50,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   useEffect(() => {
     if(__PROJECT_ENV__ === 'storybook') return
-    dispatch(fetchProfileData())
+    if(!id) return
+    dispatch(fetchProfileData(id))
   }, [dispatch])
 
   const onChangeFirstname = useCallback((value?: string) => {
