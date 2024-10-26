@@ -144,37 +144,33 @@
     },
     {
       "articleId": "1",
-      "user": {
-        "id": "1",
-        "username": "admin",
-        "password": "123",
-        "avatar": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724457600&semt=ais_hybrid"
-      },
+      "userId": "1",
       "text": "hjk",
       "id": "j9Lg1Jw"
     },
     {
       "articleId": "1",
-      "user": {
-        "id": "1",
-        "username": "admin",
-        "password": "123",
-        "avatar": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724457600&semt=ais_hybrid"
-      },
+      "userId": "1",
       "text": "hjk",
       "id": "rUVVcm2"
     },
     {
       "articleId": "1",
-      "user": {
-        "id": "2",
-        "username": "user",
-        "password": "123",
-        "role": "USER",
-        "avatar": "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
-      },
+      "userId": "1",
       "text": "hjkhk",
       "id": "_AtCOZN"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1111111111111111111111111",
+      "id": "WQtoZGx"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "222222222222",
+      "id": "zA7VOsx"
     }
   ]
 }

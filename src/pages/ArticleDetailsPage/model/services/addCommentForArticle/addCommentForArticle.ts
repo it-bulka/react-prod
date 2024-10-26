@@ -28,7 +28,7 @@ export const addCommentForArticle = createAsyncThunk<
     try {
       const res = await extra.api.post<Comment>('/comments', {
         articleId: article?.id,
-        user: currentUser,
+        userId: currentUser?.id,
         text
       })
 
