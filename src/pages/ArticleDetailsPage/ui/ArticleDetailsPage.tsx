@@ -1,5 +1,5 @@
 import classnames from 'shared/libs/classnames/classnames'
-import { memo, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArticleDetails } from 'entities/Article'
 import { useParams } from 'react-router'
@@ -8,6 +8,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/Dynami
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { useSelector } from 'react-redux'
 import { Text } from 'shared/ui'
+import { AddCommentFormAsync } from 'features/addCommentForm'
 import {
   articleDetailsCommentsReducer,
   getArticleDetailsComments
@@ -17,6 +18,9 @@ import { getArticleCommentsIsLoading } from '../model/selectors/comments'
 import {
   fetchCommentsByArticleId
 } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import {
+  addCommentForArticle
+} from '../model/services/addCommentForArticle/addCommentForArticle'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -47,11 +51,16 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     }
   }, [dispatch, params.id])
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text))
+  }, [dispatch])
+
   return (
     <DynamicModuleLoader reducers={reducers}>
       <div className={classnames(cls.articleDetailsPage, {}, [className])}>
         <ArticleDetails id={params.id} />
         <Text className={cls.commentTitle} title={t('comments')} />
+        <AddCommentFormAsync onSendComment={onSendComment} />
         <CommentList
           isLoading={commentsIsLoading}
           comments={comments}

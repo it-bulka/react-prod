@@ -8,6 +8,7 @@ import { AxiosInstance } from 'axios'
 import { RootState } from 'app/providers/StoreProvider/config/store'
 import { ArticleDetailsSchema } from 'entities/Article'
 import { ArticleDetailsComments } from 'pages/ArticleDetailsPage'
+import { AddCommentFormSchema } from 'features/addCommentForm'
 
 export interface StateSchema {
   user: UserSchema
@@ -16,6 +17,7 @@ export interface StateSchema {
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
   articleDetailsComments?: ArticleDetailsComments
+  addCommentForm?: AddCommentFormSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
