@@ -9,7 +9,7 @@ import cls from './CommentCard.module.scss'
 
 interface CommentCardProps {
   className?: string
-  comment: Comment
+  comment?: Comment
   isLoading?: boolean
 }
 
@@ -20,7 +20,7 @@ export const CommentCard = memo(({
 }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <div className={classnames(cls.commentCard, {}, [className])}>
+      <div className={classnames(cls.commentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton height={16} width={100} className={cls.username} />
@@ -29,6 +29,8 @@ export const CommentCard = memo(({
       </div>
     )
   }
+
+  if (!comment) return null
 
   return (
     <div className={classnames(cls.commentCard, {}, [className])}>
