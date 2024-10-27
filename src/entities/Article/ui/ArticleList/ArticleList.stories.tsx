@@ -5,7 +5,7 @@ import {
 } from '../../model/types/articles'
 import { article } from '../ArticleDetails/ArticleDetails.stories'
 
-export const articles: Article[] = [
+const articles: Article[] = [
   article, article, article, article, article
 ]
 const meta = {

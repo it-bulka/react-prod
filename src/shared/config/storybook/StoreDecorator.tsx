@@ -6,11 +6,13 @@ import { profileReducer } from 'entities/Profile'
 import { DeepPartial } from 'shared/types/DeepPartial'
 import { StateSchema } from 'app/providers/StoreProvider'
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
+import { articlesPageReducer } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
-  articleDetails: articleDetailsReducer
+  articleDetails: articleDetailsReducer,
+  articlesPage: articlesPageReducer
 }
 
 interface IStoreDecorator {

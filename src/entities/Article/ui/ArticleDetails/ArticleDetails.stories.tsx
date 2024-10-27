@@ -3,6 +3,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 import { Article, ArticleType, ArticleBlockType } from 'entities/Article/model/types/articles'
 import { ArticleDetails } from './ArticleDetails'
 
+// eslint-disable-next-line storybook/prefer-pascal-case
 export const article: Article = {
   'id': '1',
   'title': 'Javascript news',

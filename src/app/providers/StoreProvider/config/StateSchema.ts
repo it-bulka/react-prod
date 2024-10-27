@@ -9,6 +9,7 @@ import { RootState } from 'app/providers/StoreProvider/config/store'
 import { ArticleDetailsSchema } from 'entities/Article'
 import { ArticleDetailsComments } from 'pages/ArticleDetailsPage'
 import { AddCommentFormSchema } from 'features/addCommentForm'
+import { ArticlesPageSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
   user: UserSchema
@@ -18,6 +19,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema
   articleDetailsComments?: ArticleDetailsComments
   addCommentForm?: AddCommentFormSchema
+  articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
