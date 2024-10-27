@@ -3,7 +3,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 import { Article, ArticleType, ArticleBlockType } from 'entities/Article/model/types/articles'
 import { ArticleDetails } from './ArticleDetails'
 
-const article: Article = {
+export const article: Article = {
   'id': '1',
   'title': 'Javascript news',
   'subtitle': 'What is new in JS?',
@@ -22,7 +22,12 @@ const article: Article = {
         "There are other ways to run JS code in a browser. For example, when we talk about the usual use of JavaScript programs, they are loaded into the browser to ensure the functionality of web pages. Typically, the code is arranged in separate files with the .js extension, which are connected to web pages, but the program code can also be included directly in the page’s code. All this is done using the <script> tag. When the browser detects such code, it executes it. You can find more details about the <script> tag on the website w3school.com. Specifically, let’s consider an example demonstrating interaction with a web page using JavaScript, presented on this resource. This example can be run directly on the site (look for the 'Try it Yourself' button), but we will do things a little differently. Namely, we will create a new file in some text editor (for example, in VS Code or Notepad++) and name it hello.html, then add the following code to it:"
       ]
     }
-  ]
+  ],
+  'user': {
+    'id': '2',
+    'username': 'user',
+    'avatar': 'https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png'
+  }
 }
 const meta = {
   title: 'entities/ArticleDetails',

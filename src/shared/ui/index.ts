@@ -9,6 +9,8 @@ import {
  Text, TextTheme, TextAlign, TextSize
 } from 'shared/ui/Text/ui/Text'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
+import { Card } from 'shared/ui/Card/Card'
+import { Icon } from 'shared/ui/Icon/Icon'
 
 export {
   AppLink,
@@ -23,5 +25,7 @@ export {
   TextTheme,
   TextAlign,
   TextSize,
-  ThemeSwitcher
+  ThemeSwitcher,
+  Card,
+  Icon
 }
