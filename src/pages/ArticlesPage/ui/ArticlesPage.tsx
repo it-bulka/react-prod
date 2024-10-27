@@ -1,6 +1,6 @@
 import classnames from 'shared/libs/classnames/classnames'
-import { memo , useEffect } from 'react'
-import { ArticleList, ArticleView } from 'entities/Article'
+import { memo, useCallback, useEffect } from 'react'
+import { ArticleList, ArticleView , ArticleViewSelector } from 'entities/Article'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { useSelector } from 'react-redux'
@@ -9,6 +9,7 @@ import {
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
 import { fetchArticlesList } from '../model/service/fetchArticlesList/fetchArticlesList'
 import { articlesPageReducer, articlesPageActions, getArticles } from '../model/slice/articlesPageSlice'
+import { getArticlesPageView } from '../model/selectors/articlesPageSelectors'
 import cls from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {
@@ -22,6 +23,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
   const dispatch = useAppDispatch()
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageIsLoading)
+  const view = useSelector(getArticlesPageView)
 
   useEffect(() => {
     if(__PROJECT_ENV__ === 'storybook') return
@@ -29,12 +31,17 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     dispatch(articlesPageActions.initState())
   }, [dispatch])
 
+  const onChangeView = useCallback((viewType: ArticleView) => {
+    dispatch(articlesPageActions.setView(viewType))
+  }, [dispatch])
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classnames(cls.ArticlesPage, {}, [className])}>
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList
           isLoading={isLoading}
-          view={ArticleView.SMALL}
+          view={view}
           articles={articles}
         />
       </div>
