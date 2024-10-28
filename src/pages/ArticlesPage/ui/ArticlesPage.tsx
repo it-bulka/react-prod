@@ -7,7 +7,9 @@ import { useSelector } from 'react-redux'
 import {
   getArticlesPageIsLoading
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
+import { PageWithInfinite } from 'shared/ui'
 import { fetchArticlesList } from '../model/service/fetchArticlesList/fetchArticlesList'
+import { fetchNextArticlesPage } from '../model/service/fetchNextArticlesPage/fetchNextArticlesPage'
 import { articlesPageReducer, articlesPageActions, getArticles } from '../model/slice/articlesPageSlice'
 import { getArticlesPageView } from '../model/selectors/articlesPageSelectors'
 import cls from './ArticlesPage.module.scss'
@@ -31,20 +33,27 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     dispatch(articlesPageActions.initState())
   }, [dispatch])
 
+  const onLoadNextPage = useCallback(() => {
+    dispatch(fetchNextArticlesPage())
+  }, [dispatch])
+
   const onChangeView = useCallback((viewType: ArticleView) => {
     dispatch(articlesPageActions.setView(viewType))
   }, [dispatch])
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classnames(cls.ArticlesPage, {}, [className])}>
+      <PageWithInfinite
+        className={classnames(cls.ArticlesPage, {}, [className])}
+        onScrollEnd={onLoadNextPage}
+      >
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList
           isLoading={isLoading}
           view={view}
           articles={articles}
         />
-      </div>
+      </PageWithInfinite>
     </DynamicModuleLoader>
   )
 })
