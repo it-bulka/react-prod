@@ -2,13 +2,14 @@ import classnames from 'shared/libs/classnames/classnames'
 import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArticleDetails } from 'entities/Article'
-import { useParams } from 'react-router'
+import { useParams , useNavigate } from 'react-router'
 import { CommentList } from 'entities/Comment'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { useSelector } from 'react-redux'
-import { Text } from 'shared/ui'
+import { Text, Button, ThemeButton } from 'shared/ui'
 import { AddCommentFormAsync } from 'features/addCommentForm'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import {
   articleDetailsCommentsReducer,
   getArticleDetailsComments
@@ -36,6 +37,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch()
   const comments = useSelector(getArticleDetailsComments.selectAll)
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
+  const navigate = useNavigate()
 
   if(!params.id) {
     return (
@@ -55,9 +57,16 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     dispatch(addCommentForArticle(text))
   }, [dispatch])
 
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles)
+  }, [navigate])
+
   return (
-    <DynamicModuleLoader reducers={reducers}>
-      <div className={classnames(cls.articleDetailsPage, {}, [className])}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+      <div className={classnames(cls.articleDetailsPage, {}, ['page-wrapper', className])}>
+        <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
+          {t('back to list')}
+        </Button>
         <ArticleDetails id={params.id} />
         <Text className={cls.commentTitle} title={t('comments')} />
         <AddCommentFormAsync onSendComment={onSendComment} />

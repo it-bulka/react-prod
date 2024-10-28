@@ -42,7 +42,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
   }, [dispatch])
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <PageWithInfinite
         className={classnames(cls.ArticlesPage, {}, [className])}
         onScrollEnd={onLoadNextPage}

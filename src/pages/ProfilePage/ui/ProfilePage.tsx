@@ -92,7 +92,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
       removeAfterUnmount
       reducers={reducers}
     >
-      <div className={classnames('', {}, [className])}>
+      <div className={classnames('page-wrapper', {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map(err => (
           <Text
