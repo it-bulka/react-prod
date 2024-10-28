@@ -29,6 +29,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 
   useEffect(() => {
     if(__PROJECT_ENV__ === 'storybook') return
+    if(articles.length) return
     dispatch(fetchArticlesList())
     dispatch(articlesPageActions.initState())
   }, [dispatch])
