@@ -11,7 +11,7 @@ import {
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 import { Card } from 'shared/ui/Card/Card'
 import { Icon } from 'shared/ui/Icon/Icon'
-import { PageWithInfinite } from './PageWithInfinite/PageWithInfinite'
+import { PageWithInfinite } from 'widgets/PageWithInfinite/PageWithInfinite'
 
 export {
   AppLink,

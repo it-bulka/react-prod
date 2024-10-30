@@ -3,6 +3,7 @@ import { userReducers } from 'entities/User/model/slice/userSlice'
 import { useDispatch, useStore } from 'react-redux'
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
 import { api } from 'shared/api/api'
+import { uiReducer } from 'features/UI'
 import { ReducerManager, StateSchema } from './StateSchema'
 
 interface createStoreProps {
@@ -12,7 +13,8 @@ interface createStoreProps {
 export const createStore = ({ initialState, asyncReducers }: createStoreProps) => {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    user: userReducers
+    user: userReducers,
+    ui: uiReducer
   }
 
   const reducerManager = createReducerManager(rootReducer)
