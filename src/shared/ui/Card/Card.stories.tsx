@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './Card'
+import { Card, CardTheme } from './Card'
 
 const meta = {
   title: 'shared/Card',
@@ -10,4 +10,14 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Main: Story = {}
+export const NORMAL: Story = {
+  args: {
+    theme: CardTheme.NORMAL
+  }
+}
+
+export const Outlined: Story = {
+  args: {
+    theme: CardTheme.OUTLINED
+  }
+}
