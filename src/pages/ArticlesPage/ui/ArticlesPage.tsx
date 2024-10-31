@@ -1,6 +1,6 @@
 import classnames from 'shared/libs/classnames/classnames'
 import { memo, useCallback, useEffect } from 'react'
-import { ArticleList, ArticleView , ArticleViewSelector } from 'entities/Article'
+import { ArticleList } from 'entities/Article'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { useSelector } from 'react-redux'
@@ -12,6 +12,7 @@ import { fetchArticlesList } from '../model/service/fetchArticlesList/fetchArtic
 import { fetchNextArticlesPage } from '../model/service/fetchNextArticlesPage/fetchNextArticlesPage'
 import { articlesPageReducer, articlesPageActions, getArticles } from '../model/slice/articlesPageSlice'
 import { getArticlesPageView } from '../model/selectors/articlesPageSelectors'
+import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters'
 import cls from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {
@@ -38,17 +39,13 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     dispatch(fetchNextArticlesPage())
   }, [dispatch])
 
-  const onChangeView = useCallback((viewType: ArticleView) => {
-    dispatch(articlesPageActions.setView(viewType))
-  }, [dispatch])
-
   return (
     <DynamicModuleLoader reducers={reducers}>
       <PageWithInfinite
         className={classnames(cls.ArticlesPage, {}, [className])}
         onScrollEnd={onLoadNextPage}
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlesPageFilters />
         <ArticleList
           isLoading={isLoading}
           view={view}

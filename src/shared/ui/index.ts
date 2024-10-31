@@ -9,9 +9,10 @@ import {
  Text, TextTheme, TextAlign, TextSize
 } from 'shared/ui/Text/ui/Text'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
-import { Card } from 'shared/ui/Card/Card'
+import { Card, CardTheme } from 'shared/ui/Card/Card'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { PageWithInfinite } from 'widgets/PageWithInfinite/PageWithInfinite'
+import { Tabs, TabItem } from 'shared/ui/Tabs/Tabs'
 
 export {
   AppLink,
@@ -28,6 +29,9 @@ export {
   TextSize,
   ThemeSwitcher,
   Card,
+  CardTheme,
   Icon,
-  PageWithInfinite
+  PageWithInfinite,
+  Tabs,
+  TabItem
 }

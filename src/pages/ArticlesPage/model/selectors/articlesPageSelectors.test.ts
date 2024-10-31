@@ -4,11 +4,15 @@ import {
   getArticlesPageView,
   getArticlesPageNum,
   getArticlesPageLimit,
-  getArticlesPageHasMore
+  getArticlesPageHasMore,
+  getArticlesPageSort,
+  getArticlesPageType,
+  getArticlesPageOrder,
+  getArticlesPageSearch
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
 import { DeepPartial } from 'shared/types/DeepPartial'
 import { StateSchema } from 'app/providers/StoreProvider'
-import { ArticleView } from 'entities/Article'
+import { ArticleView, ArticleSortField, ArticleType } from 'entities/Article'
 
 describe('getArticlesPageIsLoading', () => {
   it('should return loading', () => {
@@ -125,5 +129,77 @@ describe('getArticlesPageHasMore', () => {
     const state: DeepPartial<StateSchema> = {}
 
     expect(getArticlesPageHasMore(state as StateSchema)).toBe(false)
+  })
+})
+
+describe('getArticlesPageSort', () => {
+  it('should set sort', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        sort: ArticleSortField.VIEWS
+      }
+    }
+
+    expect(getArticlesPageSort(state as StateSchema)).toBe(ArticleSortField.VIEWS)
+  })
+
+  it('should work with empty state and return ArticleSortField.CREATED', () => {
+    const state: DeepPartial<StateSchema> = {}
+
+    expect(getArticlesPageSort(state as StateSchema)).toBe(ArticleSortField.CREATED)
+  })
+})
+
+describe('getArticlesPageType', () => {
+  it('should set type', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        type: ArticleType.IT
+      }
+    }
+
+    expect(getArticlesPageType(state as StateSchema)).toBe(ArticleType.IT)
+  })
+
+  it('should work with empty state and return ArticleType.ALL', () => {
+    const state: DeepPartial<StateSchema> = {}
+
+    expect(getArticlesPageType(state as StateSchema)).toBe(ArticleType.ALL)
+  })
+})
+
+describe('getArticlesPageOrder', () => {
+  it('should set order', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        order: 'desc'
+      }
+    }
+
+    expect(getArticlesPageOrder(state as StateSchema)).toBe('desc')
+  })
+
+  it('should work with empty state and return asc', () => {
+    const state: DeepPartial<StateSchema> = {}
+
+    expect(getArticlesPageOrder(state as StateSchema)).toBe('asc')
+  })
+})
+
+describe('getArticlesPageSearch', () => {
+  it('should set search', () => {
+    const state: DeepPartial<StateSchema> = {
+      articlesPage: {
+        search: 'search'
+      }
+    }
+
+    expect(getArticlesPageSearch(state as StateSchema)).toBe('search')
+  })
+
+  it('should work with empty state and return empty string', () => {
+    const state: DeepPartial<StateSchema> = {}
+
+    expect(getArticlesPageSearch(state as StateSchema)).toBe('')
   })
 })

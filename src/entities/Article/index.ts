@@ -4,3 +4,7 @@ export { ArticleBlock, ArticleBlockType, ArticleCodeBlock } from 'entities/Artic
 export { ArticleList } from './ui/ArticleList/ArticleList'
 export { ArticleView, Article } from 'entities/Article/model/types/articles'
 export { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector'
+export { ArticleSortField } from 'entities/Article/model/types/articles'
+export { ArticleType } from 'entities/Article/model/types/articles'
+export { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector'
+export { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs'

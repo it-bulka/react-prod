@@ -2,5 +2,15 @@
   "error loading article": "Відбулась помилка при загрузці статті",
   "article is not found": "Стаття не знайдена",
   "comments": "Коментарі",
-  "back to list": "Назад до списку"
+  "back to list": "Назад до списку",
+  "asc":  "зростанню",
+  "desc":  "спаданню",
+  "creation date": "даті створення",
+  "name": "назві",
+  "views": "переглядам",
+  "sort by": "сортувати по",
+  "all": "усі статті",
+  "it": "IT",
+  "economic": "економіка",
+  "science": "наука"
 }

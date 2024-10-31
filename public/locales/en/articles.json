@@ -2,5 +2,15 @@
   "error loading article": "Error has happened loading article",
   "article is not found": "An article is not found",
   "comments": "Comments",
-  "back to list": "Back to list"
+  "back to list": "Back to list",
+  "asc":  "ascending",
+  "desc":  "descending",
+  "creation date": "creation date",
+  "name": "name",
+  "views": "views",
+  "sort by": "sort by",
+  "all": "all articles",
+  "it": "IT",
+  "economic": "economic",
+  "science": "science"
 }
