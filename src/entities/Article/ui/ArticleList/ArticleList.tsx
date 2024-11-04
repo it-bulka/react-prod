@@ -1,5 +1,5 @@
 import classnames from 'shared/libs/classnames/classnames'
-import { memo } from 'react'
+import { memo, HTMLAttributeAnchorTarget } from 'react'
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
 import cls from './ArticleList.module.scss'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
@@ -8,8 +8,9 @@ import { Article, ArticleView } from '../../model/types/articles'
 interface ArticleListProps {
   className?: string
   articles: Article[]
-  isLoading?: boolean;
+  isLoading?: boolean
   view?: ArticleView
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -21,7 +22,8 @@ export const ArticleList = memo(({
   className,
   articles,
   isLoading,
-  view = ArticleView.SMALL
+  view = ArticleView.SMALL,
+  target
 }: ArticleListProps) => {
   if(isLoading) {
     return (
@@ -39,6 +41,7 @@ export const ArticleList = memo(({
             article={article}
             view={view}
             key={article.id}
+            target={target}
           />
           ))
         : null}

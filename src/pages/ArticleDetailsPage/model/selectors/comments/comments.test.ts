@@ -1,7 +1,7 @@
 import {
   getArticleCommentsIsLoading,
   getArticleCommentsError
-} from 'pages/ArticleDetailsPage/model/selectors/comments'
+} from 'pages/ArticleDetailsPage/model/selectors/comments/comments'
 
 import { DeepPartial } from 'shared/types/DeepPartial'
 import { StateSchema } from 'app/providers/StoreProvider'
@@ -9,7 +9,9 @@ import { StateSchema } from 'app/providers/StoreProvider'
 describe('getArticleCommentsIsLoading', () => {
   it('should return loading', () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: { isLoading: true }
+      articleDetailsPage: {
+        comments: { isLoading: true }
+      }
     }
 
     expect(getArticleCommentsIsLoading(state as StateSchema)).toBe(true)
@@ -25,9 +27,10 @@ describe('getArticleCommentsIsLoading', () => {
 describe('getArticleCommentsError', () => {
   it('should return error', () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: { error: 'error' }
+      articleDetailsPage: {
+        comments: { error: 'error' }
+      }
     }
-
     expect(getArticleCommentsError(state as StateSchema)).toBe('error')
   })
 
