@@ -31,3 +31,7 @@ declare module '*.gif' {
 declare const __IS_DEV__: boolean;
 declare const __API__: string;
 declare const __PROJECT_ENV__: 'storybook' | 'frontend' | 'jest';
+
+type OptionalRecord<K extends keyof any, T> = {
+  [P in K]?: T;
+}
