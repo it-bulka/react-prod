@@ -7,6 +7,10 @@ import { getUserAuthData } from 'entities/User'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { userActions } from 'entities/User/model/slice/userSlice'
+import {
+  Text, TextTheme, AppLink, AppLinkTheme
+} from 'shared/ui'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import cls from './NavBar.module.scss'
 
 interface NavBarProps {
@@ -26,6 +30,18 @@ export const NavBar = memo(({ className }: NavBarProps) => {
   if(authData) {
     return (
       <nav className={classnames(cls.navbar, {}, [className])}>
+        <Text
+          className={cls.appName}
+          title={t('Iv.G. App')}
+          theme={TextTheme.INVERTED}
+        />
+        <AppLink
+          to={RoutePath.article_create}
+          theme={AppLinkTheme.SECONDARY}
+          className={cls.createBtn}
+        >
+          {t('Создать статью')}
+        </AppLink>
         <Button
           theme={ThemeButton.CLEAR_INVERTED}
           className={cls.links}

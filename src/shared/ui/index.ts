@@ -1,4 +1,4 @@
-import { AppLink } from 'shared/ui/AppLink/AppLink'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
@@ -16,6 +16,7 @@ import { Tabs, TabItem } from 'shared/ui/Tabs/Tabs'
 
 export {
   AppLink,
+  AppLinkTheme,
   Button,
   ThemeButton,
   Input,
