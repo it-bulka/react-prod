@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { BuildOptions } from './types/config';
 import { buildDefinePlugin } from '../plugins/buildDefinePlugin';
+import CopyPlugin from 'copy-webpack-plugin'
 
 export function buildPlugins({ paths, isDev, apiUrl, projectEnv }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
@@ -15,7 +16,12 @@ export function buildPlugins({ paths, isDev, apiUrl, projectEnv }: BuildOptions)
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
-    buildDefinePlugin({ isDev, apiUrl, projectEnv })
+    buildDefinePlugin({ isDev, apiUrl, projectEnv }),
+    new CopyPlugin({
+      patterns: [
+        { from: paths.locales, to: paths.buildLocales },
+      ],
+    })
   ]
 
   if (isDev) {
