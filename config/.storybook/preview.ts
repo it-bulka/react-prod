@@ -2,6 +2,7 @@ import '../../src/app/styles/index.scss'
 import type { Preview } from "@storybook/react";
 import { ThemeDecorator, withI18nDecorator, RouterDecorator } from '../../src/shared/config/storybook'
 import { Theme } from '../../src/app/providers/lib/ThemeContext'
+import { withRouter } from 'storybook-addon-react-router-v6'
 
 const preview: Preview = {
   globalTypes: {
@@ -47,7 +48,7 @@ const preview: Preview = {
   decorators: [
     ThemeDecorator,
     withI18nDecorator,
-    RouterDecorator
+    withRouter
   ]
 };
 
