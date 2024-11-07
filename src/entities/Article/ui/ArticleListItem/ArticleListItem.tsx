@@ -17,13 +17,15 @@ interface ArticleListItemProps {
   article: Article
   view: ArticleView
   target?: HTMLAttributeAnchorTarget
+  onClick?: () => void
 }
 
 export const ArticleListItem = memo(({
   className,
   article,
   view,
-  target
+  target,
+  onClick
 }: ArticleListItemProps) => {
   const { t } = useTranslation()
 
@@ -42,8 +44,8 @@ export const ArticleListItem = memo(({
       <div className={classnames(cls.ArticleListItem, {}, [className, cls[view]])}>
         <Card className={cls.card}>
           <div className={cls.header}>
-            <Avatar size={30} src={article.user.avatar} />
-            <Text text={article.user.username} className={cls.username} />
+            <Avatar size={30} src={article.user?.avatar} />
+            <Text text={article?.user?.username} className={cls.username} />
             <Text text={article.createdAt} className={cls.date} />
           </div>
           <Text title={article.title} className={cls.title} />
@@ -57,7 +59,7 @@ export const ArticleListItem = memo(({
               target={target}
               to={RoutePath.article_details + article.id}
             >
-              <Button theme={ThemeButton.OUTLINE}>
+              <Button theme={ThemeButton.OUTLINE} onClick={onClick}>
                 {t('read more')}
               </Button>
             </AppLink>

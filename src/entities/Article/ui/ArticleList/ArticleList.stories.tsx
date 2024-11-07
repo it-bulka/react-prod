@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { ArticleList } from './ArticleList'
 import {
  Article, ArticleView
@@ -12,7 +13,8 @@ const meta = {
   title: 'shared/ArticleList',
   component: ArticleList,
   args: {
-    articles
+    articles,
+    onLoadNextPage: action('onLoadNextPage')
   }
 } satisfies Meta<typeof ArticleList>
 

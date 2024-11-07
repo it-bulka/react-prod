@@ -1,4 +1,3 @@
-import classnames from 'shared/libs/classnames/classnames'
 import { memo, useCallback, useEffect } from 'react'
 import { ArticleList } from 'entities/Article'
 import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
@@ -7,12 +6,12 @@ import { useSelector } from 'react-redux'
 import {
   getArticlesPageIsLoading
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
-import { PageWithInfinite } from 'shared/ui'
+import { ArticlesPageFilters } from 'entities/Article/ui/ArticlesPageFilters/ArticlesPageFilters'
+import classnames from 'shared/libs/classnames/classnames'
 import { fetchArticlesList } from '../model/service/fetchArticlesList/fetchArticlesList'
 import { fetchNextArticlesPage } from '../model/service/fetchNextArticlesPage/fetchNextArticlesPage'
 import { articlesPageReducer, articlesPageActions, getArticles } from '../model/slice/articlesPageSlice'
 import { getArticlesPageView } from '../model/selectors/articlesPageSelectors'
-import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters'
 import cls from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {
@@ -41,17 +40,16 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <PageWithInfinite
-        className={classnames(cls.ArticlesPage, {}, [className])}
-        onScrollEnd={onLoadNextPage}
-      >
+      <div className={classnames(cls.ArticlesPage, {}, [className, 'page-wrapper'])}>
         <ArticlesPageFilters />
         <ArticleList
           isLoading={isLoading}
           view={view}
           articles={articles}
+          onLoadNextPage={onLoadNextPage}
+          virtualization
         />
-      </PageWithInfinite>
+      </div>
     </DynamicModuleLoader>
   )
 })

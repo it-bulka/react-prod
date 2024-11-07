@@ -90,6 +90,7 @@ module.exports = {
     '@typescript-eslint/quotes': 'off',
     '@typescript-eslint/object-curly-spacing': 'off',
     '@typescript-eslint/semi': 'off',
-    '@typescript-eslint/no-throw-literal': 'off'
+    '@typescript-eslint/no-throw-literal': 'off',
+    'consistent-return': 'off'
   }
 }

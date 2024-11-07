@@ -1,7 +1,11 @@
 .ArticlesPage {
   color: #9a1a0e;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-.list {
-  margin-top: 30px;
+  & > *:nth-child(2) {
+    flex: 1;
+  }
+
 }

@@ -15,14 +15,14 @@ import {
 } from 'entities/Article'
 import { SortOrder } from 'shared/types'
 import { Card, Input } from 'shared/ui'
-import { fetchArticlesList } from '../../model/service/fetchArticlesList/fetchArticlesList'
+import { fetchArticlesList } from '../../../../pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList'
 import {
   getArticlesPageSort,
   getArticlesPageType,
   getArticlesPageSearch,
   getArticlesPageOrder,
   getArticlesPageView
-} from '../../model/selectors/articlesPageSelectors'
+} from '../../../../pages/ArticlesPage/model/selectors/articlesPageSelectors'
 import cls from './ArticlesPageFilters.module.scss'
 
 interface ArticlesPageFiltersProps {
