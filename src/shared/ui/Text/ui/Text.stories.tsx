@@ -1,16 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PositionDecorator, DECORATOR_POSITION } from 'shared/config/storybook'
-import { Text, TextTheme } from './Text'
+import {
+ Text, TextTheme, TextAlign, TextSize
+} from './Text'
 
 const meta = {
   title: 'shared/Text',
   component: Text,
   argTypes: {
-    theme: { control: 'select', options: [TextTheme.PRIMARY, TextTheme.ERROR] },
+    theme: { control: 'radio', options: [TextTheme.PRIMARY, TextTheme.ERROR, TextTheme.INVERTED] },
     title: { control: 'text' },
-    text: { control: 'text' }
-  },
-  decorators: [PositionDecorator(DECORATOR_POSITION._CENTER)]
+    text: { control: 'text' },
+    align: { control: 'radio', options: [TextAlign.LEFT, TextAlign.RIGHT, TextAlign.CENTER] },
+    size: { control: 'radio', options: [TextSize.S, TextSize.M, TextSize.L] }
+  }
 } satisfies Meta<typeof Text>
 
 export default meta
