@@ -53,14 +53,14 @@ export const PageWithInfinite = memo(({
   }, [])
 
   return (
-    <section
+    <main
       ref={wrapperRef}
       className={classnames(cls.page, {}, ['page-wrapper', className])}
       onScroll={onScroll}
     >
       {children}
       <div className={cls.trigger} ref={triggerRef} />
-    </section>
+    </main>
   )
 })
 
