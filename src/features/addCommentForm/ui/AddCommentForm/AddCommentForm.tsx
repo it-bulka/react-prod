@@ -6,6 +6,7 @@ import { Input, Button, ThemeButton } from 'shared/ui'
 import { useSelector } from 'react-redux'
 import { useCallback, memo } from 'react'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
+import { HStack } from 'shared/ui/Stack'
 import cls from './AddCommentForm.module.scss'
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 
@@ -34,7 +35,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classnames(cls.addCommentForm, {}, [className])}>
+      <HStack justify="between" max className={classnames(cls.addCommentForm, {}, [className])}>
         <Input
           className={cls.input}
           placeholder={t('write a comment')}
@@ -49,7 +50,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
         >
           {t('send')}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   )
 })

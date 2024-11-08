@@ -19,6 +19,7 @@ import { useTranslation } from 'react-i18next'
 import { ValidateProfileError } from 'entities/Profile/model/types/profile'
 import { Text, TextTheme } from 'shared/ui'
 import { useParams } from 'react-router'
+import { VStack } from 'shared/ui/Stack'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
@@ -93,28 +94,30 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
       reducers={reducers}
     >
       <div className={classnames('page-wrapper', {}, [className])}>
-        <ProfilePageHeader />
-        {validateErrors?.length && validateErrors.map(err => (
-          <Text
-            key={err}
-            theme={TextTheme.ERROR}
-            text={validatedErrTranslation[err]}
+        <VStack gap="16" max>
+          <ProfilePageHeader />
+          {validateErrors?.length && validateErrors.map(err => (
+            <Text
+              key={err}
+              theme={TextTheme.ERROR}
+              text={validatedErrTranslation[err]}
+            />
+          ))}
+          <ProfileCard
+            data={formData}
+            readOnly={readOnly}
+            isLoading={isLoading}
+            error={error}
+            onChangeFirstname={onChangeFirstname}
+            onChangeLastname={onChangeLastname}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUsername={onChangeUsername}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCountry={onChangeCountry}
+            onChangeCurrency={onChangeCurrency}
           />
-        ))}
-        <ProfileCard
-          data={formData}
-          readOnly={readOnly}
-          isLoading={isLoading}
-          error={error}
-          onChangeFirstname={onChangeFirstname}
-          onChangeLastname={onChangeLastname}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUsername={onChangeUsername}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCountry={onChangeCountry}
-          onChangeCurrency={onChangeCurrency}
-        />
+        </VStack>
       </div>
     </DynamicModuleLoader>
   )
