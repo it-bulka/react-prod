@@ -1,6 +1,6 @@
 import classnames, { Mods } from 'shared/libs/classnames/classnames'
 import {
- ReactNode, memo, DetailedHTMLProps, HTMLAttributes
+ ReactNode, memo, HTMLAttributes
 } from 'react'
 import cls from './Flex.module.scss'
 
@@ -34,7 +34,7 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gap32
 }
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 export interface FlexProps extends DivProps {
   className?: string
