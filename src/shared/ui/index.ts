@@ -13,6 +13,7 @@ import { Card, CardTheme } from 'shared/ui/Card/Card'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { PageWithInfinite } from 'widgets/PageWithInfinite/PageWithInfinite'
 import { Tabs, TabItem } from 'shared/ui/Tabs/Tabs'
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
 
 export {
   AppLink,
@@ -34,5 +35,6 @@ export {
   Icon,
   PageWithInfinite,
   Tabs,
-  TabItem
+  TabItem,
+  Dropdown
 }
