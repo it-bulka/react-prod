@@ -17,7 +17,8 @@
     "test:file": "jest --config ./config/jest/jest.config.ts --testPathPattern",
     "storybook": "storybook dev -p 6006 -c config/.storybook",
     "build-storybook": "storybook build -c config/.storybook",
-    "prepare": "npx husky"
+    "prepare": "npx husky",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "author": "",
   "license": "ISC",
