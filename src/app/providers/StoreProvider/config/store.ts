@@ -4,6 +4,7 @@ import { useDispatch, useStore } from 'react-redux'
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
 import { api } from 'shared/api/api'
 import { uiReducer } from 'features/UI'
+import { rtkApi } from 'shared/api/rtkApi'
 import { ReducerManager, StateSchema } from './StateSchema'
 
 interface createStoreProps {
@@ -14,7 +15,8 @@ export const createStore = ({ initialState, asyncReducers }: createStoreProps) =
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducers,
-    ui: uiReducer
+    ui: uiReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootReducer)
@@ -29,7 +31,7 @@ export const createStore = ({ initialState, asyncReducers }: createStoreProps) =
             api
           }
         }
-      })
+      }).concat(rtkApi.middleware as any) // without any mismatch typing using rtk middleware
     }
   })
 

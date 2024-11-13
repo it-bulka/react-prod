@@ -73,7 +73,7 @@ export const ArticleList = memo(({
   )
 
   useEffect(() => {
-    if (virtuosoRef.current && !startArticleIndex) return
+    if (!virtuosoRef.current || !startArticleIndex) return
 
     const timerId = setTimeout(() => {
       virtuosoRef.current!.scrollToIndex({ index: startArticleIndex })
