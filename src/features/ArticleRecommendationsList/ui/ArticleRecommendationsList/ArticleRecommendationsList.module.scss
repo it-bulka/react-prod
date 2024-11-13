@@ -1,5 +1,5 @@
-.ArticleRecommendationsList {
+.recommendations {
+  display: flex;
   flex-wrap: nowrap;
-  overflow-y: hidden;
-  overflow-x: auto;
+  gap: 10px;
 }
