@@ -8,6 +8,7 @@ import cls from './ArticleList.module.scss'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { Article, ArticleView } from '../../model/types/articles'
 
+// Should be fixed height for virtualization from parent component className
 interface ArticleListProps {
   className?: string
   articles: Article[]

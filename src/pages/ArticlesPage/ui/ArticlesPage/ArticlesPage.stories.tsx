@@ -4,7 +4,7 @@ import { article } from 'entities/Article/ui/ArticleDetails/ArticleDetails.stori
 import ArticlesPage from './ArticlesPage'
 
 const meta = {
-  title: 'pages/ArticlesPage',
+  title: 'pages/ArticlesPage/ArticlesPage',
   component: ArticlesPage
 } satisfies Meta<typeof ArticlesPage>
 

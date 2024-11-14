@@ -4,7 +4,7 @@ import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article'
 import { ArticlesPageFilters } from './ArticlesPageFilters'
 
 const meta = {
-  title: 'pages/ArticlesPageFilters',
+  title: 'pages/ArticlesPage/ArticlesPageFilters',
   component: ArticlesPageFilters,
   decorators: [
     StoreDecorator({

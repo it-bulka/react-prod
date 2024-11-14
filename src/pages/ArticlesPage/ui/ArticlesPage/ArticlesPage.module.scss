@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 10px;
 
-  & > *:nth-child(2) {
+  .list {
     flex: 1;
   }
 
