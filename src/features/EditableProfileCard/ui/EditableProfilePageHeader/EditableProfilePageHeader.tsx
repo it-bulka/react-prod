@@ -8,13 +8,13 @@ import { useCallback } from 'react'
 import { profileActions, updateProfileData, getProfileReadonly } from 'entities/Profile'
 import { getUserAuthData } from 'entities/User'
 import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData'
-import cls from './ProfilePageHeader.module.scss'
+import cls from './EditableProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {
   className?: string
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
+export const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const { t } = useTranslation(Translations.PROFILE)
 
   const readOnly = useSelector(getProfileReadonly)
