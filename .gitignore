@@ -52,3 +52,6 @@ local.properties
 logs/
 coverage/
 *storybook.log
+
+# Tests report
+/reports

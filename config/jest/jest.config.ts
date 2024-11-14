@@ -34,7 +34,16 @@ const config = {
     '\\.svg': path.resolve(__dirname, 'mockComponent.tsx'),
     '\\.s?css$': 'identity-obj-proxy',
     '@locales/(.*)$': '<rootDir>/public/locales/$1'
-  }
+  },
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+      inlineSource: true
+    }]
+  ]
 }
 
 export default config
