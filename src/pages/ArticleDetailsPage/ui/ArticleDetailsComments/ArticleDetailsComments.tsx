@@ -42,7 +42,7 @@ export const ArticleDetailsComments = ({
   }, [dispatch, id])
 
   return (
-    <VStack gap="16" className={classnames('', {}, [className])}>
+    <VStack gap="16" max className={classnames('', {}, [className])}>
       <Text className={cls.commentTitle} title={t('comments')} />
       <AddCommentFormAsync onSendComment={onSendComment} />
       <CommentList
