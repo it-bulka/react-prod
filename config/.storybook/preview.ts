@@ -1,6 +1,6 @@
 import '../../src/app/styles/index.scss'
 import type { Preview } from "@storybook/react";
-import { ThemeDecorator, withI18nDecorator } from '../../src/shared/config/storybook'
+import { ThemeDecorator, withI18nDecorator, SuspenseDecorator } from '../../src/shared/config/storybook'
 import { Theme } from '../../src/app/providers/lib/ThemeContext'
 import { withRouter } from 'storybook-addon-react-router-v6'
 import { initialize, mswLoader } from 'msw-storybook-addon'
@@ -52,7 +52,8 @@ const preview: Preview = {
   decorators: [
     ThemeDecorator,
     withI18nDecorator,
-    withRouter
+    withRouter,
+    //SuspenseDecorator
   ],
   loaders: [
     mswLoader
