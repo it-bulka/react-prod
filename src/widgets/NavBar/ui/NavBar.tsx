@@ -1,9 +1,11 @@
 import classnames from 'shared/libs/classnames/classnames'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
-import { useState, memo, useCallback } from 'react'
+import {
+ useState, memo, useCallback , useMemo
+} from 'react'
 import { Button, ThemeButton } from 'shared/ui/Button/Button'
-import { getUserAuthData } from 'entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager } from 'entities/User'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { userActions } from 'entities/User/model/slice/userSlice'
@@ -24,6 +26,13 @@ export const NavBar = memo(({ className }: NavBarProps) => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const authData = useSelector(getUserAuthData)
   const dispatch = useAppDispatch()
+
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserManager)
+
+  const isAdminPanelAvailable = useMemo(() => {
+    return isAdmin || isManager
+  }, [isAdmin, isManager])
 
   const openModal = useCallback(() => setIsAuthModalOpen(true), [setIsAuthModalOpen])
   const closeModal = useCallback(() => setIsAuthModalOpen(false),[setIsAuthModalOpen])
@@ -48,6 +57,10 @@ export const NavBar = memo(({ className }: NavBarProps) => {
           direction="bottom left"
           className={cls.dropdown}
           items={[
+            ...(isAdminPanelAvailable ? [{
+              content: t('admin'),
+              href: RoutePath.admin_panel
+            }] : []),
             {
               content: t('profile'),
               href: `${RoutePath.profile}${authData.id}`

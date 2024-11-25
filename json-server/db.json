@@ -14,12 +14,14 @@
   "users": [
     {
       "id": "1",
+      "roles": "ADMIN",
       "username": "admin",
       "password": "123",
       "avatar": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724457600&semt=ais_hybrid"
     },
     {
       "id": "2",
+      "roles": "USER",
       "username": "user",
       "password": "123",
       "role": "USER",
