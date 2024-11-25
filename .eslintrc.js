@@ -26,7 +26,8 @@ module.exports = {
     {
       files: ['**/src/**/*.test.{ts,tsx}', '*.stories.{ts,tsx,js, jsx}'],
       rules: {
-        'i18next/no-literal-string': 'off'
+        'i18next/no-literal-string': 'off',
+        'class-methods-use-this': ['error', { 'exceptMethods': ['observe', 'unobserve', 'disconnect'] }]
       }
     }
   ],
