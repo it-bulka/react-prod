@@ -15,9 +15,10 @@ import { Icon } from 'shared/ui/Icon/Icon'
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
 import { useCallback , useEffect, memo } from 'react'
-import { ArticleBlock, ArticleBlockType } from 'entities/Article'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import { HStack, VStack } from 'shared/ui/Stack'
+import { ArticleBlockType } from '../../model/const/const'
+import { ArticleBlock } from '../../model/types/articles'
 import cls from './ArticleDetails.module.scss'
 import {
   ArticleCodeBlockComponent,
