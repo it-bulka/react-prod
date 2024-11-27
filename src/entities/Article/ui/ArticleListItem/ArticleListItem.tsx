@@ -8,7 +8,8 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Article, ArticleView, ArticleBlockType } from '../../model/types/articles'
+import { ArticleView, ArticleBlockType } from '../../model/const/const'
+import { Article } from '../../model/types/articles'
 import cls from './ArticleListItem.module.scss'
 import { ArticleTextBlockComponent } from '../blocks'
 

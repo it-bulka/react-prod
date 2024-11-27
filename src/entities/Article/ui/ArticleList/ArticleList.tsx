@@ -6,7 +6,8 @@ import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/Art
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso'
 import cls from './ArticleList.module.scss'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
-import { Article, ArticleView } from '../../model/types/articles'
+import { ArticleView } from '../../model/const/const'
+import { Article } from '../../model/types/articles'
 
 // Should be fixed height for virtualization from parent component className
 interface ArticleListProps {

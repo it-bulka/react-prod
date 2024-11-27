@@ -1,12 +1,5 @@
 import { Country, Currency } from 'shared/const/common'
-
-export enum ValidateProfileError {
-  INCORRECT_USER_DATA = 'incorrect_user_data',
-  INCORRECT_AGE = 'incorrect_age',
-  INCORRECT_COUNTRY = 'incorrect_country',
-  NO_DATA = 'no_data',
-  SERVER_ERROR = 'server_error',
-}
+import { ValidateProfileError } from '../const/const'
 
 export interface Profile {
   id?: string

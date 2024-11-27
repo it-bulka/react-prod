@@ -1,1 +1,1 @@
-export { StateSchema } from 'app/providers/StoreProvider/config/StateSchema'
+export type { StateSchema } from 'app/providers/StoreProvider/config/StateSchema'

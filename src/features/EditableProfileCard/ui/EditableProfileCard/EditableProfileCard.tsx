@@ -14,7 +14,7 @@ import {
 import { VStack } from 'shared/ui/Stack'
 import { useSelector } from 'react-redux'
 import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading'
-import { ValidateProfileError } from 'entities/Profile/model/types/profile'
+import { ValidateProfileError } from 'entities/Profile/model/const/const'
 import { Country, Currency } from 'shared/const/common'
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
 import { useParams } from 'react-router'

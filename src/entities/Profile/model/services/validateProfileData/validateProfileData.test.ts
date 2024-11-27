@@ -1,6 +1,6 @@
 import { Currency, Country } from 'shared/const/common'
-import { ValidateProfileError } from 'entities/Profile/model/types/profile'
 import { validateProfileData } from './validateProfileData'
+import { ValidateProfileError } from '../../const/const'
 
 const data = {
   'first': 'Iv',

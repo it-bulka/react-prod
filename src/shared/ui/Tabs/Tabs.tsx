@@ -1,12 +1,8 @@
 import classnames from 'shared/libs/classnames/classnames'
-import { memo, ReactNode, useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { Card, CardTheme } from 'shared/ui'
+import { TabItem } from 'shared/ui/Tabs/types'
 import cls from './Tabs.module.scss'
-
-export interface TabItem {
-  value: string
-  content: ReactNode
-}
 
 interface TabsProps {
   className?: string

@@ -2,8 +2,8 @@ import { TestAsyncThunk } from 'shared/libs/test/TestAsyncThunk/TestAsyncThunk'
 import { DeepPartial } from 'shared/types/DeepPartial'
 import { StateSchema } from 'app/providers/StoreProvider'
 import { Profile } from 'entities/Profile'
-import { ValidateProfileError } from 'entities/Profile/model/types/profile'
 import { Country, Currency } from 'shared/const/common'
+import { ValidateProfileError } from '../../const/const'
 import { updateProfileData } from './updateProfileData'
 
 describe('updateProfileData', () => {
