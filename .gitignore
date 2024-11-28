@@ -7,6 +7,7 @@ yarn-error.log*
 
 build/
 !config/build/
+extractedTranslations/
 
 # Visual Studio Code
 .vscode/

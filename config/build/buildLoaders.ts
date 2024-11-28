@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCSSLoader } from '../loaders/buildCSSLoader';
+import { buildBabelLoader } from '../loaders/buildBabelLoader'
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const svgUrlCssLoader = {
@@ -47,19 +48,26 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
   const cssLoader = buildCSSLoader(isDev)
 
+  /*
   // Если не используем тайпскрипт - нужен babel-loader
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   }
+  */
+
+  const tsBabelLoader = buildBabelLoader({ isDev, isTsx: false })
+  const tsxBabelLoader = buildBabelLoader({ isDev, isTsx: true })
 
   return [
     fileLoader,
     svgUrlCssLoader,
     svgUrlJsxLoader,
     svgComponentLoader,
-    typescriptLoader,
+    //typescriptLoader,
+    tsBabelLoader,
+    tsxBabelLoader,
     cssLoader,
   ]
 }
