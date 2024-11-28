@@ -2,6 +2,7 @@ import { Portal } from 'shared/ui/Portal/Portal'
 import {
   PropsWithChildren, useCallback, useEffect, useRef, useState, memo
 } from 'react'
+import { Overlay } from 'shared/ui/Overlay/Overlay'
 import classnames from 'shared/libs/classnames/classnames'
 import cls from './Modal.module.scss'
 
@@ -59,11 +60,10 @@ export const Modal = memo(({
       <div
         data-testid="modal"
         className={classnames(cls.modal, mods, [className])}
-        onClick={closeHandler}
-        onKeyDown={undefined}
-        role="button"
-        tabIndex={0}
       >
+        <Overlay
+          onClick={closeHandler}
+        />
         <div
           className={classnames(cls.content)}
           onClick={e => e.stopPropagation()}
