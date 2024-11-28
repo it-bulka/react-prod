@@ -12,6 +12,8 @@ import {
 } from 'shared/ui'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { AvatarDropdown } from 'features/AvatarDropdown'
+import { HStack } from 'shared/ui/Stack'
+import { NotificationButton } from 'features/NotificationButton'
 import cls from './NavBar.module.scss'
 
 interface NavBarProps {
@@ -41,7 +43,10 @@ export const NavBar = memo(({ className }: NavBarProps) => {
         >
           {t('Создать статью')}
         </AppLink>
-        <AvatarDropdown className={cls.dropdown} />
+        <HStack gap="16" className={cls.actions}>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
       </nav>
     )
   }
