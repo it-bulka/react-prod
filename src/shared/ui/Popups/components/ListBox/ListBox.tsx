@@ -3,8 +3,9 @@ import { memo, ReactNode, Fragment } from 'react'
 import {
  Listbox as HListbox, ListboxButton, ListboxOption, ListboxOptions, Field, Label
 } from '@headlessui/react'
-import { Button } from '../Button/Button'
+import { Button } from '../../../Button/Button'
 import cls from './ListBox.module.scss'
+import popupCls from '../../styles/popup.module.scss'
 
 export interface ListBoxItem {
   value: string
@@ -50,7 +51,7 @@ export const ListBox = memo(({
         value={value}
         onChange={onChange}
         as="div"
-        className={classnames(cls.listBox, {}, [className])}
+        className={classnames(cls.listBox, {}, [className, popupCls.popup])}
       >
         <ListboxButton as="div" className={cls.trigger}>
           <Button disabled={readonly}>
@@ -71,9 +72,9 @@ export const ListBox = memo(({
               {({ focus, selected }) => (
                 <li
                   className={classnames(cls.item,{
-                    [cls.active]: focus,
+                    [popupCls.active]: focus,
                     [cls.selected]: selected,
-                    [cls.disabled]: !!item.disabled
+                    [popupCls.disabled]: !!item.disabled
                   })}
                 >
                   {item.content}

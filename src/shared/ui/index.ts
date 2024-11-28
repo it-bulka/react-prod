@@ -13,7 +13,7 @@ import { Card, CardTheme } from 'shared/ui/Card/Card'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { PageWithInfinite } from 'widgets/PageWithInfinite/PageWithInfinite'
 import { Tabs } from 'shared/ui/Tabs/Tabs'
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
+import { Dropdown } from 'shared/ui/Popups/components/Dropdown/Dropdown'
 
 export {
   AppLink,
