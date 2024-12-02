@@ -106,6 +106,7 @@
   "dependencies": {
     "@babel/runtime": "^7.26.0",
     "@headlessui/react": "^2.2.0",
+    "@react-spring/web": "^9.7.5",
     "@reduxjs/toolkit": "^2.2.8",
     "axios": "^1.7.7",
     "i18next": "^23.15.1",

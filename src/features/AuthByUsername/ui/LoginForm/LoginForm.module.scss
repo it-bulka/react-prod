@@ -1,11 +1,21 @@
+$viewWidth: 800px;
+
 .loginForm {
   display: flex;
   flex-direction: column;
   width: 400px;
+
+  @media (max-width: $viewWidth) {
+    width: auto;
+  }
 }
 
 .input {
   margin-top: 10px;
+
+  @media (max-width: $viewWidth) {
+    flex-direction: column;
+  }
 }
 
 .loginBtn {

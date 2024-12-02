@@ -1,8 +1,7 @@
 import { Portal } from 'shared/ui/Portal/Portal'
-import {
-  PropsWithChildren, useCallback, useEffect, useRef, useState, memo
-} from 'react'
+import { PropsWithChildren, memo } from 'react'
 import { Overlay } from 'shared/ui/Overlay/Overlay'
+import { useModal } from 'shared/libs/hooks/useModal/useModal'
 import classnames from 'shared/libs/classnames/classnames'
 import cls from './Modal.module.scss'
 
@@ -12,48 +11,21 @@ export interface ModalProps {
   onClose?: () => void;
 }
 
-const ANIMATION_DELAY = 300
-
 export const Modal = memo(({
   children,
   className,
   isOpen = false,
   onClose
 }: PropsWithChildren<ModalProps>) => {
-  const [isClosing, setIsClosing] = useState(false)
-  const timerRef = useRef<NodeJS.Timeout>()
+  const { isClosing, closeHandler } = useModal({
+    onClose,
+    isOpen
+  })
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing
   }
-
-  const closeHandler = useCallback(() => {
-    if(onClose) {
-      setIsClosing(true)
-      timerRef.current = setTimeout(() => {
-        onClose()
-        setIsClosing(false)
-      }, ANIMATION_DELAY)
-    }
-  }, [onClose])
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler()
-    }
-  }, [closeHandler])
-
-  useEffect(() => {
-    if(isOpen) {
-      window.addEventListener('keydown', onKeyDown)
-    }
-
-    return () => {
-      clearTimeout(timerRef.current)
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [onKeyDown])
 
   return (
     <Portal>
