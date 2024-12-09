@@ -4,6 +4,7 @@
     "src/**/*",
     "config/**/*",
     "webpack.config.ts",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "scripts/refactor/*"
   ]
 }
