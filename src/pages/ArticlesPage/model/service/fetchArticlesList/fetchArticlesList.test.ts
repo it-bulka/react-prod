@@ -1,5 +1,5 @@
-import { TestAsyncThunk } from 'shared/libs/test/TestAsyncThunk/TestAsyncThunk'
-import { article } from 'entities/Article/ui/ArticleDetails/ArticleDetails.stories'
+import { TestAsyncThunk } from '@/shared/libs/test/TestAsyncThunk/TestAsyncThunk'
+import { article } from '@/entities/Article/ui/ArticleDetails/ArticleDetails.stories'
 import { fetchArticlesList } from './fetchArticlesList'
 
 describe('fetchArticlesList', () => {

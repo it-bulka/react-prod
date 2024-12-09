@@ -1,10 +1,10 @@
-import classnames from 'shared/libs/classnames/classnames'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
-import { useDebounce } from 'shared/libs/hooks/useDebounce/useDebounce'
 import { useSelector } from 'react-redux'
-import { articlesPageActions } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
+import classnames from '@/shared/libs/classnames/classnames'
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
+import { useDebounce } from '@/shared/libs/hooks/useDebounce/useDebounce'
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
 import {
   ArticleView,
   ArticleType,
@@ -12,9 +12,9 @@ import {
   ArticleViewSelector,
   ArticleSortField,
   ArticleTypeTabs
-} from 'entities/Article'
-import { SortOrder } from 'shared/types'
-import { Card, Input } from 'shared/ui'
+} from '@/entities/Article'
+import { SortOrder } from '@/shared/types'
+import { Card, Input } from '@/shared/ui'
 import { fetchArticlesList } from '../../model/service/fetchArticlesList/fetchArticlesList'
 import {
   getArticlesPageSort,

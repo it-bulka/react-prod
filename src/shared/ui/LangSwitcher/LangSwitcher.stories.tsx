@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { within, userEvent } from '@storybook/test'
-import i18n from 'shared/config/i18n/i18n'
+import i18n from '@/shared/config/i18n/i18n'
 import { LangSwitcher } from './LangSwitcher'
 
 const meta = {

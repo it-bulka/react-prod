@@ -1,9 +1,9 @@
 import {
   getAddCommentFormError,
   getAddCommentFormText
-} from 'features/addCommentForm/model/selectors/addCommentFormSelectors'
-import { DeepPartial } from 'shared/types/DeepPartial'
-import { StateSchema } from 'app/providers/StoreProvider'
+} from '@/features/addCommentForm/model/selectors/addCommentFormSelectors'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getAddCommentFormText', () => {
   it('should return text', () => {

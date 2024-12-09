@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import ProfilePage from 'pages/ProfilePage/ui/ProfilePage'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { Country, Currency } from 'shared/const/common'
+import ProfilePage from '@/pages/ProfilePage/ui/ProfilePage'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+import { Country, Currency } from '@/shared/const/common'
 
 const meta = {
   title: 'pages/ProfilePage',

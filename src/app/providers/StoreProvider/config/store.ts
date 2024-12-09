@@ -1,10 +1,10 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
-import { userReducers } from 'entities/User/model/slice/userSlice'
 import { useDispatch, useStore } from 'react-redux'
-import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
-import { api } from 'shared/api/api'
-import { uiReducer } from 'features/UI'
-import { rtkApi } from 'shared/api/rtkApi'
+import { userReducers } from '@/entities/User/model/slice/userSlice'
+import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager'
+import { api } from '@/shared/api/api'
+import { uiReducer } from '@/features/UI'
+import { rtkApi } from '@/shared/api/rtkApi'
 import { ReducerManager, StateSchema } from './StateSchema'
 
 interface createStoreProps {

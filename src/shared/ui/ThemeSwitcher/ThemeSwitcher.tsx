@@ -1,12 +1,12 @@
 import React, {
   memo, useState, useRef, useCallback, KeyboardEvent
 } from 'react'
-import classnames from 'shared/libs/classnames/classnames'
-import { useTheme } from 'app/providers'
-import { Theme } from 'app/providers/lib/ThemeContext'
-import DarkIcon from 'shared/assets/icons/theme-dark.svg'
-import LightIcon from 'shared/assets/icons/theme-light.svg'
-import OrangeIcon from 'shared/assets/icons/theme-orange.svg'
+import classnames from '@/shared/libs/classnames/classnames'
+import { useTheme } from '@/app/providers'
+import { Theme } from '@/app/providers/lib/ThemeContext'
+import DarkIcon from '@/shared/assets/icons/theme-dark.svg'
+import LightIcon from '@/shared/assets/icons/theme-light.svg'
+import OrangeIcon from '@/shared/assets/icons/theme-orange.svg'
 import cls from './ThemeSwitcher.module.scss'
 
 interface ThemeSwitcherProps {

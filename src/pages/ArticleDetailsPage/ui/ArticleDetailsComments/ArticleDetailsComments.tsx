@@ -1,21 +1,21 @@
 import { useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Text } from 'shared/ui'
-import { VStack } from 'shared/ui/Stack'
-import cls from 'pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss'
-import { AddCommentFormAsync } from 'features/addCommentForm'
-import { CommentList } from 'entities/Comment'
 import { useSelector } from 'react-redux'
-import { getArticleDetailsComments } from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice'
-import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments/comments'
+import { Text } from '@/shared/ui'
+import { VStack } from '@/shared/ui/Stack'
+import cls from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss'
+import { AddCommentFormAsync } from '@/features/addCommentForm'
+import { CommentList } from '@/entities/Comment'
+import { getArticleDetailsComments } from '@/pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice'
+import { getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage/model/selectors/comments/comments'
 import {
   addCommentForArticle
-} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
+} from '@/pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import {
   fetchCommentsByArticleId
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import classnames from 'shared/libs/classnames/classnames'
+} from '@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import classnames from '@/shared/libs/classnames/classnames'
 
 interface ArticleDetailsCommentsProps {
   className?: string

@@ -1,7 +1,7 @@
 import { useEffect, PropsWithChildren } from 'react'
-import { useAppDispatch, useAppStore } from 'app/providers/StoreProvider/config/store'
-import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema'
 import { Reducer } from '@reduxjs/toolkit'
+import { useAppDispatch, useAppStore } from '@/app/providers/StoreProvider/config/store'
+import { StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema'
 
 export type ReducersList = {
   [name in StateSchemaKey]?: Reducer

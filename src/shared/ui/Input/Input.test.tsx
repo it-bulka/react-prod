@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import { componentRender } from 'shared/libs/test/componentRender'
+import { componentRender } from '@/shared/libs/test/componentRender'
 import { Input } from './Input'
 
 describe('Input', () => {

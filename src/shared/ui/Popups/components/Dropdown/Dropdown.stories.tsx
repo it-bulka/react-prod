@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from 'shared/ui'
-import { PositionDecorator } from 'shared/config/storybook'
+import { Button } from '@/shared/ui'
+import { PositionDecorator } from '@/shared/config/storybook'
 import { Dropdown } from './Dropdown'
 
 const meta = {

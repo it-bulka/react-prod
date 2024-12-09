@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article'
 import { ArticlesPageFilters } from './ArticlesPageFilters'
 
 const meta = {

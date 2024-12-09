@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PositionDecorator, DECORATOR_POSITION } from 'shared/config/storybook'
-import { Input } from 'shared/ui/Input/Input'
 import { action } from '@storybook/addon-actions'
+import { PositionDecorator, DECORATOR_POSITION } from '@/shared/config/storybook'
+import { Input } from '@/shared/ui/Input/Input'
 
 const meta = {
   title: 'shared/Input',

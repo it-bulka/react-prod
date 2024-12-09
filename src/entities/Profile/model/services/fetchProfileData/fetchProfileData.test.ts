@@ -1,5 +1,5 @@
-import { TestAsyncThunk } from 'shared/libs/test/TestAsyncThunk/TestAsyncThunk'
-import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData'
+import { TestAsyncThunk } from '@/shared/libs/test/TestAsyncThunk/TestAsyncThunk'
+import { fetchProfileData } from '@/entities/Profile/model/services/fetchProfileData/fetchProfileData'
 
 describe('fetchProfileData', () => {
   it('should run successfully', async () => {

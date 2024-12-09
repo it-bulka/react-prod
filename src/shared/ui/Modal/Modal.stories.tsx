@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Modal } from 'shared/ui/Modal/Modal'
 import { useArgs } from '@storybook/preview-api'
+import { Modal } from '@/shared/ui/Modal/Modal'
 
 const meta = {
   title: 'shared/Modal',

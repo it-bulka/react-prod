@@ -1,5 +1,5 @@
-import { Text, TextTheme } from 'shared/ui/Text/ui/Text'
 import { render, screen } from '@testing-library/react'
+import { Text, TextTheme } from '@/shared/ui/Text/ui/Text'
 
 describe('Text', () => {
   it('should render correctly', () => {

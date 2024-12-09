@@ -1,1 +1,1 @@
-export { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect'
+export { CurrencySelect } from '@/entities/Currency/ui/CurrencySelect/CurrencySelect'

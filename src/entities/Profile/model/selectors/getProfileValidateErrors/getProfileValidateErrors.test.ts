@@ -1,5 +1,5 @@
-import { DeepPartial } from 'shared/types/DeepPartial'
-import { StateSchema } from 'app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+import { StateSchema } from '@/app/providers/StoreProvider'
 import { ValidateProfileError } from '../../const/const'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
 

@@ -1,17 +1,17 @@
 import { memo, useCallback } from 'react'
-import classnames from 'shared/libs/classnames/classnames'
 import { useTranslation } from 'react-i18next'
-import { Input } from 'shared/ui/Input/Input'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
-import { Text, TextTheme } from 'shared/ui/Text/ui/Text'
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
-import { loginByUserName } from 'features/AuthByUsername/model/services/loginByUsername/loginByUserName'
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store'
-import { DynamicModuleLoader, ReducersList } from 'shared/libs/components/DynamicModalLoader'
+import classnames from '@/shared/libs/classnames/classnames'
+import { Input } from '@/shared/ui/Input/Input'
+import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { Text, TextTheme } from '@/shared/ui/Text/ui/Text'
+import { loginActions, loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
+import { loginByUserName } from '@/features/AuthByUsername/model/services/loginByUsername/loginByUserName'
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
+import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
 import {
   getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername
-} from 'features/AuthByUsername/model/selectors'
+} from '@/features/AuthByUsername/model/selectors'
 import cls from './LoginForm.module.scss'
 
 const initialReducers: ReducersList = {

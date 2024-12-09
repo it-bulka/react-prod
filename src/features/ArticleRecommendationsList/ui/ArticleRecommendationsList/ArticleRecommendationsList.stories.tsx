@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 import { http, HttpResponse } from 'msw'
-import { article } from 'shared/const/storybookMockData'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+import { article } from '@/shared/const/storybookMockData'
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 // TODO: fix need of reloading to get data

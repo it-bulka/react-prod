@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-import { DeepPartial } from 'shared/types/DeepPartial'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/types/DeepPartial'
 import {
   getArticleDetailsData,
   getArticleDetailsError,

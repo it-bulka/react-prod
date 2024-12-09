@@ -2,7 +2,7 @@ import {
   InputHTMLAttributes, SyntheticEvent, memo,
   useCallback, useRef, useState, useEffect, ChangeEvent
 } from 'react'
-import classnames from 'shared/libs/classnames/classnames'
+import classnames from '@/shared/libs/classnames/classnames'
 import cls from './Input.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>

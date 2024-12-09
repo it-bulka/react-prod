@@ -1,11 +1,11 @@
 import { createEntityAdapter, createSlice , PayloadAction } from '@reduxjs/toolkit'
 import {
   Article, ArticleView, ArticleSortField, ArticleType
-} from 'entities/Article'
-import { StateSchema } from 'app/providers/StoreProvider'
+} from '@/entities/Article'
+import { StateSchema } from '@/app/providers/StoreProvider'
 
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage'
-import { SortOrder } from 'shared/types'
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
+import { SortOrder } from '@/shared/types'
 import { fetchArticlesList } from '../service/fetchArticlesList/fetchArticlesList'
 import { ArticlesPageSchema } from '../types/articlesPageSchema'
 

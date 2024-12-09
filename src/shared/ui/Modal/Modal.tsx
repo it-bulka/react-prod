@@ -1,8 +1,8 @@
-import { Portal } from 'shared/ui/Portal/Portal'
 import { PropsWithChildren, memo } from 'react'
-import { Overlay } from 'shared/ui/Overlay/Overlay'
-import { useModal } from 'shared/libs/hooks/useModal/useModal'
-import classnames from 'shared/libs/classnames/classnames'
+import { Portal } from '@/shared/ui/Portal/Portal'
+import { Overlay } from '@/shared/ui/Overlay/Overlay'
+import { useModal } from '@/shared/libs/hooks/useModal/useModal'
+import classnames from '@/shared/libs/classnames/classnames'
 import cls from './Modal.module.scss'
 
 export interface ModalProps {

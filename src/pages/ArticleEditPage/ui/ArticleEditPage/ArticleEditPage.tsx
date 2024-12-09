@@ -1,7 +1,7 @@
-import classnames from 'shared/libs/classnames/classnames'
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
 import { useParams } from 'react-router'
+import classnames from '@/shared/libs/classnames/classnames'
 import cls from './ArticleEditPage.module.scss'
 
 interface ArticleEditPageProps {

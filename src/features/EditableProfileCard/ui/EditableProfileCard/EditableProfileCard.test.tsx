@@ -1,13 +1,13 @@
 import 'whatwg-fetch' // mock fetch in jest
-import { Profile , profileReducer } from 'entities/Profile'
-import { Currency , Country } from 'shared/const/common'
-
-import { componentRender } from 'shared/libs/test/componentRender'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import userEvent from '@testing-library/user-event'
-
 import { screen } from '@testing-library/react'
-import { api } from 'shared/api/api'
+import { Profile , profileReducer } from '@/entities/Profile'
+import { Currency , Country } from '@/shared/const/common'
+
+import { componentRender } from '@/shared/libs/test/componentRender'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+
+import { api } from '@/shared/api/api'
 import { EditableProfileCard } from './EditableProfileCard'
 
 class MockResizeObserver {

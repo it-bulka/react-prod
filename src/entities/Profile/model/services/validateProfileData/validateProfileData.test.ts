@@ -1,4 +1,4 @@
-import { Currency, Country } from 'shared/const/common'
+import { Currency, Country } from '@/shared/const/common'
 import { validateProfileData } from './validateProfileData'
 import { ValidateProfileError } from '../../const/const'
 

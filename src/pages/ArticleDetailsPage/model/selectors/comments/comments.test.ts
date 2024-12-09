@@ -1,10 +1,10 @@
 import {
   getArticleCommentsIsLoading,
   getArticleCommentsError
-} from 'pages/ArticleDetailsPage/model/selectors/comments/comments'
+} from '@/pages/ArticleDetailsPage/model/selectors/comments/comments'
 
-import { DeepPartial } from 'shared/types/DeepPartial'
-import { StateSchema } from 'app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getArticleCommentsIsLoading', () => {
   it('should return loading', () => {

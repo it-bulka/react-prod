@@ -1,4 +1,4 @@
-import { Country, Currency } from 'shared/const/common'
+import { Country, Currency } from '@/shared/const/common'
 import { ValidateProfileError } from '../const/const'
 
 export interface Profile {

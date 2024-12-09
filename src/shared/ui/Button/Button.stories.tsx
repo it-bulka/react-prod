@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { PositionDecorator, DECORATOR_POSITION } from 'shared/config/storybook'
+import { PositionDecorator, DECORATOR_POSITION } from '@/shared/config/storybook'
 import { Button, ThemeButton, ButtonSize } from './Button'
 
 const meta = {

@@ -1,9 +1,9 @@
-import classnames from 'shared/libs/classnames/classnames'
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
-import { VStack } from 'shared/ui/Stack'
-import { Text, TextSize } from 'shared/ui'
-import { ArticleList } from 'entities/Article'
+import classnames from '@/shared/libs/classnames/classnames'
+import { VStack } from '@/shared/ui/Stack'
+import { Text, TextSize } from '@/shared/ui'
+import { ArticleList } from '@/entities/Article'
 import cls from './ArticleRecommendationsList.module.scss'
 import {
   useGetArticleRecommendationsListQuery

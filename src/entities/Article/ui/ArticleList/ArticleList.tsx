@@ -1,9 +1,9 @@
-import classnames from 'shared/libs/classnames/classnames'
 import {
  memo, HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRef
 } from 'react'
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso'
+import classnames from '@/shared/libs/classnames/classnames'
+import { ArticleListItemSkeleton } from '@/entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
 import cls from './ArticleList.module.scss'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleView } from '../../model/const/const'
