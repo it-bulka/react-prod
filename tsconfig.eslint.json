@@ -5,6 +5,7 @@
     "config/**/*",
     "webpack.config.ts",
     ".eslintrc.js",
-    "scripts/refactor/*"
+    "scripts/refactor/*",
+    "./vite.config.ts"
   ]
 }
