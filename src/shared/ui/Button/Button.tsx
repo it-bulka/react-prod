@@ -25,6 +25,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   theme?: ThemeButton,
   square?: boolean,
   size?: ButtonSize
+  fullWidth?: boolean
+  disabled?: boolean;
 }
 export const Button = memo(({
   className,
@@ -32,18 +34,23 @@ export const Button = memo(({
   theme = ThemeButton.MAIN,
   square = false,
   size = ButtonSize.M,
+  disabled = false,
+  fullWidth = false,
   ...rest
 }: ButtonProps) => {
   const mods: Record<string, boolean> = {
     [cls[theme]]: true,
     [cls.square]: square,
-    [cls[size]]: true
+    [cls[size]]: true,
+    [cls.disabled]: disabled,
+    [cls.fullWidth]: fullWidth
   }
 
   return (
     <button
       type="button"
       className={classnames(cls.button, mods, [className])}
+      disabled={disabled}
       {...rest}
     >
       {children}

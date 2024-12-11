@@ -25,7 +25,9 @@ const meta = {
       control: { type: 'select' },
       options: [ButtonSize.M, ButtonSize.L, ButtonSize.XL]
     },
-    square: { control: { type: 'boolean' } }
+    square: { control: { type: 'boolean' } },
+    disabled: { control: { type: 'boolean' } },
+    fullWidth: { control: { type: 'boolean' } }
   },
   args: {
     onClick: fn(),
