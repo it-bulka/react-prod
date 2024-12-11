@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import classnames from '@/shared/libs/classnames/classnames'
 import cls from './Icon.module.scss'
 
-interface IconProps {
+interface IconProps extends React.SVGProps<SVGSVGElement> {
     className?: string;
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>
     inverted?: boolean
