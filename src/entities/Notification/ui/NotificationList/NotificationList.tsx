@@ -14,7 +14,7 @@ export const NotificationList = memo(({
   className
 }: NotificationListProps) => {
   const { data, isLoading} = useNotification(null, {
-    pollingInterval: 10000
+    pollingInterval: __PROJECT_ENV__ === 'storybook' ? undefined : 10000
   })
 
   if(isLoading) {
