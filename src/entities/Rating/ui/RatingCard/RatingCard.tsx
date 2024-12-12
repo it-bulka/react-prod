@@ -67,7 +67,7 @@ export const RatingCard = memo(({
     )
 
     return (
-      <Card className={className}>
+      <Card className={className} max>
         <VStack align="center" gap="8">
           <Text title={title} />
           <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
