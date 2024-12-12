@@ -5,10 +5,10 @@ import StarIcon from '../../assets/icons/star.svg'
 import cls from './StarRating.module.scss'
 
 interface StarRatingProps {
-  className?: string;
-  onSelect?: (starsCount: number) => void;
-  size?: number;
-  selectedStars?: number;
+  className?: string
+  onSelect?: (starsCount: number) => void
+  size?: number
+  selectedStars?: number
 }
 
 const stars = [1, 2, 3, 4, 5]
@@ -16,7 +16,7 @@ const stars = [1, 2, 3, 4, 5]
 export const StarRating = memo(({
   className, onSelect, selectedStars, size
 }: StarRatingProps) => {
-  const [currentStarsCount, setCurrentStarsCount] = useState(0)
+  const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
   const onHover = (starsCount: number) => () => {
@@ -46,14 +46,14 @@ export const StarRating = memo(({
           className={classnames(
             cls.starIcon,
             { [cls.selected]: isSelected },
-            [currentStarsCount >= starNumber ? cls.hovered : cls.normal]
+            [currentStarsCount && currentStarsCount >= starNumber ? cls.hovered : cls.normal]
           )}
           Svg={StarIcon}
           key={starNumber}
           width={size}
           height={size}
-          onMouseLeave={onLeave}
-          onMouseEnter={onHover(starNumber)}
+          onPointerLeave={onLeave}
+          onPointerEnter={onHover(starNumber)}
           onClick={onClick(starNumber)}
         />
       ))}

@@ -11,6 +11,7 @@ import {
   ArticleDetailsPageHeader
 } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
+import { ArticleRating } from '@/features/ArticleRating'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -37,6 +38,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
       <div className={classnames(cls.articleDetailsPage, {}, ['page-wrapper', className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={params.id} />
+        <ArticleRating articleId={params.id} />
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={params.id} />
       </div>

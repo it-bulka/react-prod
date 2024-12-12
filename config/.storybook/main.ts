@@ -12,7 +12,7 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    "@storybook/addon-interactions"
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -60,6 +60,12 @@ const config: StorybookConfig = {
 
     const isDev = process.env.NODE_ENV !== 'production'
     config.plugins?.push(buildDefinePlugin({ isDev, apiUrl: '', projectEnv: 'storybook' }));
+
+    if (config.resolve) {
+      config.resolve.alias = {
+        '@': paths.src
+      }
+    }
 
     return config
   },

@@ -10,12 +10,13 @@ import { useDevice } from '@/shared/libs/hooks/useDevice/useDevice'
 import { Drawer } from '@/shared/ui/Drawer/Drawer'
 
 interface RatingCardProps {
-    className?: string;
-    title?: string;
-    feedbackTitle?: string;
-    hasFeedback?: boolean;
-    onCancel?: (starsCount: number) => void;
-    onAccept?: (starsCount: number, feedback?: string) => void;
+  className?: string
+  title?: string
+  feedbackTitle?: string
+  hasFeedback?: boolean
+  onCancel?: (starsCount: number) => void
+  onAccept?: (starsCount: number, feedback?: string) => void
+  rate?: number
 }
 
 export const RatingCard = memo(({
@@ -24,11 +25,12 @@ export const RatingCard = memo(({
   feedbackTitle,
   hasFeedback,
   onAccept,
-  onCancel
+  onCancel,
+  rate = 0
 }: RatingCardProps) => {
-    const { t } = useTranslation('rating')
+    const { t } = useTranslation()
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [starsCount, setStarsCount] = useState(0)
+    const [starsCount, setStarsCount] = useState(rate)
     const [feedback, setFeedback] = useState('')
     const isMobile = useDevice()
 
@@ -68,7 +70,7 @@ export const RatingCard = memo(({
       <Card className={className}>
         <VStack align="center" gap="8">
           <Text title={title} />
-          <StarRating size={40} onSelect={onSelectStars} />
+          <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
         </VStack>
         {
             isMobile ? (
