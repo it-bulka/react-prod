@@ -9,7 +9,7 @@ import {
   getArticlesPageType,
   getArticlesPageOrder,
   getArticlesPageSearch
-} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors'
+} from './articlesPageSelectors'
 import { DeepPartial } from '@/shared/types/DeepPartial'
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article'

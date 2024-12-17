@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useArgs } from '@storybook/preview-api'
 import { fn } from '@storybook/test'
-import { LoginModal } from '@/features/AuthByUsername'
+import { LoginModal } from './LoginModal'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
 const meta = {

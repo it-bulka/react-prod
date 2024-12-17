@@ -6,7 +6,7 @@ import i18n from '@/shared/config/i18n/i18nextForTests'
 import { StoreProvider } from '@/app/providers/StoreProvider/ui/StoreProvider'
 import { DeepPartial } from '@/shared/types/DeepPartial'
 import { StateSchema } from '@/app/providers/StoreProvider'
-import { ReducersList } from '@/shared/libs/components/DynamicModalLoader'
+import { ReducersList } from '../components/DynamicModalLoader'
 
 interface ComponentRenderOptions {
   route?: string

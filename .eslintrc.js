@@ -16,7 +16,8 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'fsd-checker-gen'
   ],
   globals: {
     __IS_DEV__: true,
@@ -32,6 +33,8 @@ module.exports = {
     }
   ],
   rules: {
+    'fsd-checker-gen/path-checker': ['error', { alias: '@' }],
+    'fsd-checker-gen/public-api-imports': 'off',
     semi: ['error', 'never'],
     'no-underscore-dangle': 'off',
     'implicit-arrow-linebreak': 'off',

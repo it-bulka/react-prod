@@ -1,6 +1,6 @@
 import classnames from '@/shared/libs/classnames/classnames'
 import { Code } from '@/shared/ui/Code/Code'
-import { ArticleCodeBlock } from '@/entities/Article'
+import { ArticleCodeBlock } from '../../../model/types/articles'
 import cls from './ArticleCodeBlockComponent.module.scss'
 
 interface ArticleCodeBlockComponentProps {

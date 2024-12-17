@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
-import { Article } from '@/entities/Article/model/types/articles'
-import { ArticleType, ArticleBlockType } from '@/entities/Article'
+import { Article } from '../../model/types/articles'
+import { ArticleType, ArticleBlockType } from '../../model/const/const'
 import { ArticleDetails } from './ArticleDetails'
 
 // eslint-disable-next-line storybook/prefer-pascal-case

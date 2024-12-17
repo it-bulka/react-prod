@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { ArticlesPageFilters } from '@/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters'
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import classnames from '@/shared/libs/classnames/classnames'
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
 import cls from './ArticlesPage.module.scss'

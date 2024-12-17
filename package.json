@@ -117,6 +117,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "axios": "^1.7.7",
     "D": "^1.0.0",
+    "eslint-plugin-fsd-checker-gen": "^1.0.0",
     "i18next": "^23.15.1",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-chained-backend": "^4.6.2",

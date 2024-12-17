@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import classnames from '@/shared/libs/classnames/classnames'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import { useDebounce } from '@/shared/libs/hooks/useDebounce/useDebounce'
-import { articlesPageActions } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
+import { articlesPageActions } from '../../model/slice/articlesPageSlice'
 import {
   ArticleView,
   ArticleType,

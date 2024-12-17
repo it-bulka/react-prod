@@ -3,14 +3,14 @@ import { useCallback, useEffect , memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArticleList } from '@/entities/Article'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
-import { articlesPageActions, getArticles } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
+import { articlesPageActions, getArticles } from '../../model/slice/articlesPageSlice'
 import {
   getArticlesPageIsLoading,
   getArticlesPageView,
   getArticlesPageError
-} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors'
-import { fetchArticlesList } from '@/pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList'
-import { fetchNextArticlesPage } from '@/pages/ArticlesPage/model/service/fetchNextArticlesPage/fetchNextArticlesPage'
+} from '../../model/selectors/articlesPageSelectors'
+import { fetchArticlesList } from '../../model/service/fetchArticlesList/fetchArticlesList'
+import { fetchNextArticlesPage } from '../../model/service/fetchNextArticlesPage/fetchNextArticlesPage'
 import { Text } from '@/shared/ui'
 
 interface IArticleInfiniteList {

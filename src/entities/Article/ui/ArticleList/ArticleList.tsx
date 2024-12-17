@@ -3,7 +3,7 @@ import {
 } from 'react'
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso'
 import classnames from '@/shared/libs/classnames/classnames'
-import { ArticleListItemSkeleton } from '@/entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import cls from './ArticleList.module.scss'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleView } from '../../model/const/const'

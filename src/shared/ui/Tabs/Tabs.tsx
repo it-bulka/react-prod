@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react'
 import classnames from '@/shared/libs/classnames/classnames'
-import { TabItem } from '@/shared/ui/Tabs/types'
+import { TabItem } from './types'
 import { Card, CardTheme } from '../Card/Card'
 import cls from './Tabs.module.scss'
 

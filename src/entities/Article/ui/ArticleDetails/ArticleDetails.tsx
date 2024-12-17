@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux'
 import { useCallback , useEffect, memo } from 'react'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
   getArticleDetailsData
-} from '@/entities/Article/model/selectors/articleDetails'
+} from '../../model/selectors/articleDetails'
 import { Text, TextAlign, TextSize } from '@/shared/ui'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Icon } from '@/shared/ui/Icon/Icon'

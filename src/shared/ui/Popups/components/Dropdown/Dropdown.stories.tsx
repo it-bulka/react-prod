@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '@/shared/ui'
+import { Button } from '../../../Button/Button'
 import { PositionDecorator } from '@/shared/config/storybook'
 import { Dropdown } from './Dropdown'
 

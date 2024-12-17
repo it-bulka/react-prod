@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { componentRender } from '@/shared/libs/test/componentRender'
-import { LoginModal } from '@/features/AuthByUsername'
+import { LoginModal } from './LoginModal'
 
 const mockedOnSuccess = jest.fn()
 

@@ -3,18 +3,18 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Text } from '@/shared/ui'
 import { VStack } from '@/shared/ui/Stack'
-import cls from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss'
+import cls from '../ArticleDetailsPage/ArticleDetailsPage.module.scss'
 import { AddCommentFormAsync } from '@/features/addCommentForm'
 import { CommentList } from '@/entities/Comment'
-import { getArticleDetailsComments } from '@/pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice'
-import { getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage/model/selectors/comments/comments'
+import { getArticleDetailsComments } from '../../model/slice/articleDetailsCommentsSlice'
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments/comments'
 import {
   addCommentForArticle
-} from '@/pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
+} from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import {
   fetchCommentsByArticleId
-} from '@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import classnames from '@/shared/libs/classnames/classnames'
 
 interface ArticleDetailsCommentsProps {

@@ -1,5 +1,5 @@
 import { StoreProvider } from '@/app/providers/StoreProvider/ui/StoreProvider'
-import { DecoratorFactory } from '@/shared/config/storybook/types'
+import { DecoratorFactory } from './types'
 import { ReducersList } from '@/shared/libs/components/DynamicModalLoader'
 import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
 import { profileReducer } from '@/entities/Profile'

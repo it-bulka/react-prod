@@ -3,7 +3,7 @@ import { memo, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import classnames from '@/shared/libs/classnames/classnames'
-import { EditableProfilePageHeader } from '@/features/EditableProfileCard/ui/EditableProfilePageHeader/EditableProfilePageHeader'
+import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader'
 import { Text, TextTheme } from '@/shared/ui'
 import {
     fetchProfileData,

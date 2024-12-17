@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import { componentRender } from '@/shared/libs/test/componentRender'
-import LoginForm from '@/features/AuthByUsername/ui/LoginForm/LoginForm'
+import LoginForm from './LoginForm'
 
 const mockedOnSuccess = jest.fn()
 

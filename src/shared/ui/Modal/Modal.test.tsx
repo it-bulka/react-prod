@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { componentRender } from '@/shared/libs/test/componentRender'
-import { Modal } from '@/shared/ui/Modal/Modal'
+import { Modal } from './Modal'
 
 describe('Modal', () => {
   it('should show  modal', () => {

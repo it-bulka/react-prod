@@ -1,7 +1,7 @@
 import {
   getArticleCommentsIsLoading,
   getArticleCommentsError
-} from '@/pages/ArticleDetailsPage/model/selectors/comments/comments'
+} from './comments'
 
 import { DeepPartial } from '@/shared/types/DeepPartial'
 import { StateSchema } from '@/app/providers/StoreProvider'

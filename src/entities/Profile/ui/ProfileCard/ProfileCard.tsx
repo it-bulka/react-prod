@@ -9,7 +9,7 @@ import {
   Text, TextTheme, TextAlign, Input,
   Loader
 } from '@/shared/ui'
-import { Profile } from '@/entities/Profile'
+import { Profile } from '../../model/types/profile'
 import { CurrencySelect } from '@/entities/Currency'
 import { CountrySelect } from '@/entities/Country/ui/CountrySelect'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'

@@ -1,7 +1,7 @@
 import {
   getAddCommentFormError,
   getAddCommentFormText
-} from '@/features/addCommentForm/model/selectors/addCommentFormSelectors'
+} from './addCommentFormSelectors'
 import { DeepPartial } from '@/shared/types/DeepPartial'
 import { StateSchema } from '@/app/providers/StoreProvider'
 
