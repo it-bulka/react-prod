@@ -1,4 +1,4 @@
-import { userActions } from '@/entities/User/model/slice/userSlice'
+import { userActions } from '@/entities/User/testing'
 import { TestAsyncThunk } from '@/shared/libs/test/TestAsyncThunk/TestAsyncThunk'
 import { loginByUserName } from './loginByUserName'
 

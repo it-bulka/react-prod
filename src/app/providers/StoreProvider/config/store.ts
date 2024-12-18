@@ -1,6 +1,6 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 import { useDispatch, useStore } from 'react-redux'
-import { userReducers } from '@/entities/User/model/slice/userSlice'
+import { userReducers } from '@/entities/User'
 import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager'
 import { api } from '@/shared/api/api'
 import { uiReducer } from '@/features/UI'

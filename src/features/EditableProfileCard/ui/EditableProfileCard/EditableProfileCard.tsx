@@ -11,11 +11,11 @@ import {
     getProfileFormData,
     getProfileReadonly,
     getProfileValidateErrors, profileActions,
-    ProfileCard, profileReducer
+    ProfileCard, profileReducer,
+    ValidateProfileError,
+    getProfileIsLoading
 } from '@/entities/Profile'
 import { VStack } from '@/shared/ui/Stack'
-import { getProfileIsLoading } from '@/entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading'
-import { ValidateProfileError } from '@/entities/Profile/model/const/const'
 import { Country, Currency } from '@/shared/const/common'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'

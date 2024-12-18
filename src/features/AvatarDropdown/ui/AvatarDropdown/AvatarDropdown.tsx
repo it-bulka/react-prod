@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Dropdown } from '@/shared/ui'
-import { isUserAdmin, isUserManager , getUserAuthData } from '@/entities/User'
-import { userActions } from '@/entities/User/model/slice/userSlice'
+import {
+  isUserAdmin, isUserManager , getUserAuthData, userActions
+} from '@/entities/User'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 
 interface AvatarDropdownProps {

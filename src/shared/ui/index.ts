@@ -11,7 +11,6 @@ import {
 import { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher'
 import { Card, CardTheme } from './Card/Card'
 import { Icon } from './Icon/Icon'
-import { PageWithInfinite } from '@/widgets/PageWithInfinite/PageWithInfinite'
 import { Tabs } from './Tabs/Tabs'
 import { Dropdown } from './Popups/components/Dropdown/Dropdown'
 
@@ -33,7 +32,6 @@ export {
   Card,
   CardTheme,
   Icon,
-  PageWithInfinite,
   Tabs,
   Dropdown
 }

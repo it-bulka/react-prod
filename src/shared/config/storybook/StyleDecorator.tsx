@@ -1,3 +1,4 @@
+// eslint-disable-next-line fsd-checker-gen/layer-imports
 import '@/app/styles/index.scss'
 import { Decorator } from '@storybook/react'
 

@@ -7,7 +7,7 @@ import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage'
 import { AdminPanelPage } from '@/pages/AdminPanelPage'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
-import { ProtectedRoutes } from '@/app/providers/ProtectedRoutes/ProtectedRoutes'
+import { ProtectedRoutes } from '../../providers/ProtectedRoutes/ProtectedRoutes'
 import { UserRole } from '@/entities/User'
 import { RootPage } from '../../RootPage'
 

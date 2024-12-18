@@ -3,3 +3,4 @@ export { getUserRoles, isUserAdmin, isUserManager } from './model/selectors/role
 
 export { UserRole } from '@/entities/User/model/consts/consts'
 export type { User, UserSchema } from '@/entities/User/model/types/user'
+export { userActions, userReducers } from './model/slice/userSlice'

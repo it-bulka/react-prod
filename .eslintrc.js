@@ -33,8 +33,9 @@ module.exports = {
     }
   ],
   rules: {
+    'fsd-checker-gen/layer-imports': ['error', { alias: '@', ignoreImportPatterns: ['**/StoreProvider/**', '**/testing*'] }],
     'fsd-checker-gen/path-checker': ['error', { alias: '@' }],
-    'fsd-checker-gen/public-api-imports': 'off',
+    'fsd-checker-gen/public-api-imports': ['error', { alias: '@', testFilesPatterns: ['**/*.test.ts', '**/*.stories.tsx', '**/storybookMockData/*', '**/shared/**/storybook/**'] }],
     semi: ['error', 'never'],
     'no-underscore-dangle': 'off',
     'implicit-arrow-linebreak': 'off',

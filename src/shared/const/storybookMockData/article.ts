@@ -1,4 +1,4 @@
-import { Article as IArticle, ArticleBlockType, ArticleType } from '@/entities/Article'
+import { Article as IArticle, ArticleBlockType, ArticleType } from '@/entities/Article/testing'
 
 export const article: IArticle = {
   'id': '1',

@@ -1,7 +1,7 @@
 import '../../src/app/styles/index.scss'
 import type { Preview } from "@storybook/react";
 import { ThemeDecorator, withI18nDecorator, SuspenseDecorator } from '../../src/shared/config/storybook'
-import { Theme } from '../../src/app/providers/lib/ThemeContext'
+import { Theme } from '@/shared/libs/context/ThemeContext'
 import { withRouter } from 'storybook-addon-react-router-v6'
 // TODO: fix bug with store msw-intersepded data in rtk. No updating components. Data = undefined. Thought Network has Response
 import { initialize, mswLoader } from 'msw-storybook-addon'

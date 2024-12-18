@@ -5,9 +5,10 @@ import classnames from '@/shared/libs/classnames/classnames'
 import { Text, Button, ThemeButton } from '@/shared/ui'
 import { Translations } from '@/shared/const/common'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
-import { profileActions, updateProfileData, getProfileReadonly } from '@/entities/Profile'
+import {
+  profileActions, updateProfileData, getProfileReadonly, getProfileData
+} from '@/entities/Profile'
 import { getUserAuthData } from '@/entities/User'
-import { getProfileData } from '@/entities/Profile/model/selectors/getProfileData/getProfileData'
 import cls from './EditableProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {

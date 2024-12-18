@@ -11,7 +11,7 @@ import {
 } from '@/shared/ui'
 import { Profile } from '../../model/types/profile'
 import { CurrencySelect } from '@/entities/Currency'
-import { CountrySelect } from '@/entities/Country/ui/CountrySelect'
+import { CountrySelect } from '@/entities/Country'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import cls from './ProfileCard.module.scss'
 

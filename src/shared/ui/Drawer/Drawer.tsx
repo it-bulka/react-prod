@@ -6,7 +6,7 @@ import { useDrag } from '@use-gesture/react'
 import classnames, { Mods } from '@/shared/libs/classnames/classnames'
 import { Portal } from '../Portal/Portal'
 import { Overlay } from '../Overlay/Overlay'
-import { useTheme } from '@/app/providers'
+import { useTheme } from '@/shared/libs/const/useTheme'
 import { withAnimationProvider, useAnimationLibs } from '@/shared/libs/components/AnimationProvider'
 import cls from './Drawer.module.scss'
 

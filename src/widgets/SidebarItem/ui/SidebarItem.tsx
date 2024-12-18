@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import classnames from '@/shared/libs/classnames/classnames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
-import { SidebarItemType } from '@/widgets/SideBar/model/types/items'
+import { SidebarItemType } from '../../SideBar/model/types/items'
 import { getUserAuthData } from '@/entities/User'
 import cls from './SidebarItem.module.scss'
 
