@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { PositionDecorator, DECORATOR_POSITION } from '@/shared/config/storybook'
+
 import { AppLink, AppLinkTheme } from './AppLink'
 
 const meta = {

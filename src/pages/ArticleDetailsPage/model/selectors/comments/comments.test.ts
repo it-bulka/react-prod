@@ -1,10 +1,10 @@
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+
 import {
   getArticleCommentsIsLoading,
   getArticleCommentsError
 } from './comments'
-
-import { DeepPartial } from '@/shared/types/DeepPartial'
-import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getArticleCommentsIsLoading', () => {
   it('should return loading', () => {

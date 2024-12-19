@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import type { Meta, StoryObj } from '@storybook/react'
+
 import { ArticleList } from './ArticleList'
-import { Article } from '../../model/types/articles'
 import { ArticleView } from '../../model/const/const'
+import { Article } from '../../model/types/articles'
 import { article } from '../ArticleDetails/ArticleDetails.stories'
 
 const articles: Article[] = [

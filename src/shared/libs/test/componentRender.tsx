@@ -1,11 +1,13 @@
-import { ReactNode } from 'react'
-import { MemoryRouter } from 'react-router'
 import { render } from '@testing-library/react'
+import { ReactNode } from 'react'
 import { I18nextProvider } from 'react-i18next'
-import i18n from '@/shared/config/i18n/i18nextForTests'
-import { StoreProvider } from '@/app/providers/StoreProvider/ui/StoreProvider'
-import { DeepPartial } from '@/shared/types/DeepPartial'
+import { MemoryRouter } from 'react-router'
+
 import { StateSchema } from '@/app/providers/StoreProvider'
+import { StoreProvider } from '@/app/providers/StoreProvider/ui/StoreProvider'
+import i18n from '@/shared/config/i18n/i18nextForTests'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+
 import { ReducersList } from '../components/DynamicModalLoader'
 
 interface ComponentRenderOptions {

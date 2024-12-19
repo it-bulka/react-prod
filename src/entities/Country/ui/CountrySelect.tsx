@@ -1,7 +1,8 @@
-import { useTranslation } from 'react-i18next'
 import { useCallback, memo } from 'react'
-import classnames from '@/shared/libs/classnames/classnames'
+import { useTranslation } from 'react-i18next'
+
 import { Country } from '@/shared/const/common'
+import classnames from '@/shared/libs/classnames/classnames'
 import { ListBox } from '@/shared/ui/Popups/components/ListBox/ListBox'
 
 interface CountrySelectProps {

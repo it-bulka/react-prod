@@ -1,14 +1,16 @@
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useCallback } from 'react'
-import classnames from '@/shared/libs/classnames/classnames'
-import { Text, Button, ThemeButton } from '@/shared/ui'
-import { Translations } from '@/shared/const/common'
+
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import {
   profileActions, updateProfileData, getProfileReadonly, getProfileData
 } from '@/entities/Profile'
 import { getUserAuthData } from '@/entities/User'
+import { Translations } from '@/shared/const/common'
+import classnames from '@/shared/libs/classnames/classnames'
+import { Text, Button, ThemeButton } from '@/shared/ui'
+
 import cls from './EditableProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {

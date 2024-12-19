@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Comment } from '../../model/types/comment'
+
 import { CommentList } from './CommentList'
+import { Comment } from '../../model/types/comment'
 
 const comments: Comment[] = [
   {

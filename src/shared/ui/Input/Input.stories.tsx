@@ -1,6 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import type { Meta, StoryObj } from '@storybook/react'
+
 import { PositionDecorator, DECORATOR_POSITION } from '@/shared/config/storybook'
+
 import { Input } from './Input'
 
 const meta = {

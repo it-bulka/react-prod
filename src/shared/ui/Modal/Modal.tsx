@@ -1,9 +1,12 @@
 import { PropsWithChildren, memo } from 'react'
-import { Portal } from '../Portal/Portal'
-import { Overlay } from '../Overlay/Overlay'
-import { useModal } from '@/shared/libs/hooks/useModal/useModal'
+
 import classnames from '@/shared/libs/classnames/classnames'
+import { useModal } from '@/shared/libs/hooks/useModal/useModal'
+
 import cls from './Modal.module.scss'
+
+import { Overlay } from '../Overlay/Overlay'
+import { Portal } from '../Portal/Portal'
 
 export interface ModalProps {
   className?: string;

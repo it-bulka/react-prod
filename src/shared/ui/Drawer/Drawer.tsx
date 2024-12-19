@@ -1,14 +1,17 @@
+import { useSpring, config, animated } from '@react-spring/web'
+import { useDrag } from '@use-gesture/react'
 import {
  memo, PropsWithChildren, useCallback, useEffect
 } from 'react'
-import { useSpring, config, animated } from '@react-spring/web'
-import { useDrag } from '@use-gesture/react'
+
 import classnames, { Mods } from '@/shared/libs/classnames/classnames'
-import { Portal } from '../Portal/Portal'
-import { Overlay } from '../Overlay/Overlay'
-import { useTheme } from '@/shared/libs/const/useTheme'
 import { withAnimationProvider, useAnimationLibs } from '@/shared/libs/components/AnimationProvider'
+import { useTheme } from '@/shared/libs/const/useTheme'
+
 import cls from './Drawer.module.scss'
+
+import { Overlay } from '../Overlay/Overlay'
+import { Portal } from '../Portal/Portal'
 
 interface DrawerProps {
   className?: string;

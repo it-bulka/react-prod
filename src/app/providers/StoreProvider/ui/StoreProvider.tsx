@@ -1,8 +1,10 @@
-import { Provider } from 'react-redux'
-import { PropsWithChildren } from 'react'
 import { ReducersMapObject } from '@reduxjs/toolkit'
-import { DeepPartial } from '@/shared/types/DeepPartial'
+import { PropsWithChildren } from 'react'
+import { Provider } from 'react-redux'
+
 import { StateSchema } from '@/app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+
 import { createStore } from '../config/store'
 
 interface StoreProviderProps {

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { NotFound as NotFoundPage } from './NotFound'
 
 const meta = {

@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { useArgs } from '@storybook/preview-api'
+import type { Meta, StoryObj } from '@storybook/react'
+
 import { Modal } from './Modal'
 
 const meta = {

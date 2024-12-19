@@ -1,4 +1,5 @@
 import { Decorator } from '@storybook/react'
+
 import style from './PositionDecorator.module.scss'
 
 // instead of parameters pf stories, due to having vars in theming

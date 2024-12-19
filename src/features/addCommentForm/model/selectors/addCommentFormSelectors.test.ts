@@ -1,9 +1,10 @@
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+
 import {
   getAddCommentFormError,
   getAddCommentFormText
 } from './addCommentFormSelectors'
-import { DeepPartial } from '@/shared/types/DeepPartial'
-import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getAddCommentFormText', () => {
   it('should return text', () => {

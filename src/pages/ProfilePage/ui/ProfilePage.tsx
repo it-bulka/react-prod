@@ -1,5 +1,5 @@
-import classnames from '@/shared/libs/classnames/classnames'
 import { EditableProfileCard } from '@/features/EditableProfileCard'
+import classnames from '@/shared/libs/classnames/classnames'
 
 interface ProfilePageProps {
   className?: string

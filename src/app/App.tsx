@@ -1,13 +1,15 @@
 import { FC, Suspense } from 'react'
 import { RouterProvider } from 'react-router-dom'
-import { router } from './config/router/router'
-import './styles/index.scss'
-import { ThemeProvider } from './providers/ui/ThemeProvider'
+
 import { PageLoader } from '@/shared/ui/PageLoader/ui/PageLoader'
+import '@/shared/config/i18n/i18n'
+
+import { router } from './config/router/router'
 import ErrorBoundary from './providers/ErrorBoundary/ErrorBoundary'
 import { StoreProvider } from './providers/StoreProvider/ui/StoreProvider'
+import { ThemeProvider } from './providers/ui/ThemeProvider'
 
-import '@/shared/config/i18n/i18n'
+import './styles/index.scss'
 
 export const App: FC = () => (
   <ErrorBoundary>

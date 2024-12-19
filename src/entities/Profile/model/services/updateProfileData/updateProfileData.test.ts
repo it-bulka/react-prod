@@ -1,10 +1,11 @@
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { Country, Currency } from '@/shared/const/common'
 import { TestAsyncThunk } from '@/shared/libs/test/TestAsyncThunk/TestAsyncThunk'
 import { DeepPartial } from '@/shared/types/DeepPartial'
-import { StateSchema } from '@/app/providers/StoreProvider'
-import { Profile } from '../../types/profile'
-import { Country, Currency } from '@/shared/const/common'
-import { ValidateProfileError } from '../../const/const'
+
 import { updateProfileData } from './updateProfileData'
+import { ValidateProfileError } from '../../const/const'
+import { Profile } from '../../types/profile'
 
 describe('updateProfileData', () => {
   it('should return updated profile data', async () => {

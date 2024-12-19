@@ -1,10 +1,9 @@
-import { useTranslation } from 'react-i18next'
 import { memo, useCallback, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
-import classnames from '@/shared/libs/classnames/classnames'
-import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader'
-import { Text, TextTheme } from '@/shared/ui'
+
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import {
     fetchProfileData,
     getProfileError,
@@ -15,10 +14,13 @@ import {
     ValidateProfileError,
     getProfileIsLoading
 } from '@/entities/Profile'
-import { VStack } from '@/shared/ui/Stack'
 import { Country, Currency } from '@/shared/const/common'
-import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
+import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
+import { Text, TextTheme } from '@/shared/ui'
+import { VStack } from '@/shared/ui/Stack'
+
+import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader'
 
 interface EditableProfileCardProps {
     className?: string

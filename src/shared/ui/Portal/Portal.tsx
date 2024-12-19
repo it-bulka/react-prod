@@ -1,5 +1,5 @@
-import { createPortal } from 'react-dom'
 import { PropsWithChildren } from 'react'
+import { createPortal } from 'react-dom'
 
 interface PortalProps {
   element?: HTMLElement;

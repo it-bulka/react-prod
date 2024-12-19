@@ -1,19 +1,22 @@
 import { useTranslation } from 'react-i18next'
-import classnames from '@/shared/libs/classnames/classnames'
+
+import { CountrySelect } from '@/entities/Country'
+import { CurrencySelect } from '@/entities/Currency'
 import {
  Translations ,
   Currency,
   Country
 } from '@/shared/const/common'
+import classnames from '@/shared/libs/classnames/classnames'
 import {
   Text, TextTheme, TextAlign, Input,
   Loader
 } from '@/shared/ui'
-import { Profile } from '../../model/types/profile'
-import { CurrencySelect } from '@/entities/Currency'
-import { CountrySelect } from '@/entities/Country'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
+
 import cls from './ProfileCard.module.scss'
+
+import { Profile } from '../../model/types/profile'
 
 interface ProfileCardProps {
   className?: string

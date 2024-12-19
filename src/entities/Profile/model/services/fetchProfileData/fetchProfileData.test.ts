@@ -1,4 +1,5 @@
 import { TestAsyncThunk } from '@/shared/libs/test/TestAsyncThunk/TestAsyncThunk'
+
 import { fetchProfileData } from './fetchProfileData'
 
 describe('fetchProfileData', () => {

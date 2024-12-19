@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'airbnb-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'airbnb-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended', 'plugin:import/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,7 +17,8 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    'fsd-checker-gen'
+    'fsd-checker-gen',
+    'unused-imports'
   ],
   globals: {
     __IS_DEV__: true,
@@ -33,6 +34,44 @@ module.exports = {
     }
   ],
   rules: {
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before'
+          },
+          {
+            pattern: '@/**',
+            group: 'external',
+            position: 'after'
+          },
+          {
+            pattern: './*.module.*',
+            group: 'internal',
+            position: 'after'
+          }
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true
+        }
+      }
+    ],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        'vars': 'all',
+        'varsIgnorePattern': '^_',
+        'args': 'after-used',
+        'argsIgnorePattern': '^_'
+      }
+    ],
     'fsd-checker-gen/layer-imports': ['error', { alias: '@', ignoreImportPatterns: ['**/StoreProvider/**', '**/testing*'] }],
     'fsd-checker-gen/path-checker': ['error', { alias: '@' }],
     'fsd-checker-gen/public-api-imports': ['error', { alias: '@', testFilesPatterns: ['**/*.test.ts', '**/*.stories.tsx', '**/storybookMockData/*', '**/shared/**/storybook/**'] }],

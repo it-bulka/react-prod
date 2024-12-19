@@ -3,12 +3,14 @@ import {
 } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
+
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
+import { getUIScrollByPath, uiActions } from '@/features/UI'
 import classnames from '@/shared/libs/classnames/classnames'
 import { useInfiniteScroll } from '@/shared/libs/hooks/useInfiniteScroll'
-import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
-import { StateSchema } from '@/app/providers/StoreProvider'
-import { getUIScrollByPath, uiActions } from '@/features/UI'
 import { useThrottle } from '@/shared/libs/hooks/useThrottle/useThrottle'
+
 import cls from './PageWithInfinite.module.scss'
 
 interface PageProps {

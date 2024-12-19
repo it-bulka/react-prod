@@ -1,5 +1,7 @@
 import { screen, fireEvent } from '@testing-library/react'
+
 import { componentRender } from '@/shared/libs/test/componentRender'
+
 import { LangSwitcher } from './LangSwitcher'
 
 describe('LangSwitcher', () => {

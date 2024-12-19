@@ -1,13 +1,14 @@
-import { StoreProvider } from '@/app/providers/StoreProvider/ui/StoreProvider'
-import { DecoratorFactory } from './types'
-import { ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { loginReducer } from '@/features/AuthByUsername/testing'
-import { profileReducer } from '@/entities/Profile/testing'
-import { DeepPartial } from '../../types/DeepPartial'
 import { StateSchema } from '@/app/providers/StoreProvider'
+import { StoreProvider } from '@/app/providers/StoreProvider/ui/StoreProvider'
 import { articleDetailsReducer } from '@/entities/Article/testing'
-import { articlesPageReducer } from '@/pages/ArticlesPage/testing'
+import { profileReducer } from '@/entities/Profile/testing'
+import { loginReducer } from '@/features/AuthByUsername/testing'
 import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/testing'
+import { articlesPageReducer } from '@/pages/ArticlesPage/testing'
+import { ReducersList } from '@/shared/libs/components/DynamicModalLoader'
+
+import { DecoratorFactory } from './types'
+import { DeepPartial } from '../../types/DeepPartial'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,

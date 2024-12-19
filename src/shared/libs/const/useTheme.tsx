@@ -1,4 +1,5 @@
 import { useCallback, useContext, useEffect } from 'react'
+
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../context/ThemeContext'
 
 export const useTheme = () => {

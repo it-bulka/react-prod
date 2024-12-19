@@ -1,3 +1,7 @@
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+
 import {
   getArticlesPageIsLoading,
   getArticlesPageError,
@@ -10,9 +14,6 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch
 } from './articlesPageSelectors'
-import { DeepPartial } from '@/shared/types/DeepPartial'
-import { StateSchema } from '@/app/providers/StoreProvider'
-import { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article'
 
 describe('getArticlesPageIsLoading', () => {
   it('should return loading', () => {

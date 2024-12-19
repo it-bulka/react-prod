@@ -1,14 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom'
+
+import { UserRole } from '@/entities/User'
 import { AboutPage } from '@/pages/AboutPage'
+import { AdminPanelPage } from '@/pages/AdminPanelPage'
+import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage'
+import { ArticlesPageAsync } from '@/pages/ArticlesPage'
+import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { HomePage } from '@/pages/Home'
 import { ProfilePage } from '@/pages/ProfilePage'
-import { ArticlesPageAsync } from '@/pages/ArticlesPage'
-import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage'
-import { AdminPanelPage } from '@/pages/AdminPanelPage'
-import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+
 import { ProtectedRoutes } from '../../providers/ProtectedRoutes/ProtectedRoutes'
-import { UserRole } from '@/entities/User'
 import { RootPage } from '../../RootPage'
 
 export const router = createBrowserRouter([

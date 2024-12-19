@@ -1,8 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { useArgs } from '@storybook/preview-api'
+import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { LoginModal } from './LoginModal'
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+
+import { LoginModal } from './LoginModal'
 
 const meta = {
   title: 'feature/LoginModal',

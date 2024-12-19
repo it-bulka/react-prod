@@ -1,10 +1,13 @@
 import { memo } from 'react'
-import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
+
 import classnames from '@/shared/libs/classnames/classnames'
-import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
+import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
+
 import cls from './ArticlesPage.module.scss'
+
+import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 
 interface ArticlesPageProps {
   className?: string

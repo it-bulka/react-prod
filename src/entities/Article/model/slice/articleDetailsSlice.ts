@@ -1,7 +1,7 @@
 import { createSlice , PayloadAction } from '@reduxjs/toolkit'
-import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
-import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
 
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
+import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
 import { Article } from '../types/articles'
 
 const initialState: ArticleDetailsSchema = {

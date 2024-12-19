@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { ErrorPage } from './ErrorPage'
 
 const meta = {

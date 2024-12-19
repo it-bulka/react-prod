@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { Country, Currency } from '@/shared/const/common'
+
 import { EditableProfileCard } from './EditableProfileCard'
 
 const meta = {

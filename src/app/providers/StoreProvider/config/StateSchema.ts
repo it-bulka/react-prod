@@ -2,15 +2,16 @@ import {
   ReducersMapObject, UnknownAction, Reducer
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
-import { UserSchema } from '@/entities/User'
-import { LoginSchema } from '@/features/AuthByUsername'
-import { ProfileSchema } from '@/entities/Profile'
+
 import { RootState } from '@/app/providers/StoreProvider/config/store'
 import { ArticleDetailsSchema } from '@/entities/Article'
-import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
+import { ProfileSchema } from '@/entities/Profile'
+import { UserSchema } from '@/entities/User'
 import { AddCommentFormSchema } from '@/features/addCommentForm'
-import { ArticlesPageSchema } from '@/pages/ArticlesPage'
+import { LoginSchema } from '@/features/AuthByUsername'
 import { UISchema } from '@/features/UI'
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
+import { ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { rtkApi } from '@/shared/api/rtkApi'
 
 export interface StateSchema {

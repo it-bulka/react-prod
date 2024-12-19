@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+
 import { Text, TextTheme } from './Text'
 
 describe('Text', () => {

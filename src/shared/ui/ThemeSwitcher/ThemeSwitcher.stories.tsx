@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { DECORATOR_POSITION, PositionDecorator } from '@/shared/config/storybook'
+
 import { ThemeProvider } from '@/app/providers/testing'
+import { DECORATOR_POSITION, PositionDecorator } from '@/shared/config/storybook'
+
 import { ThemeSwitcher } from './ThemeSwitcher'
 
 const meta = {

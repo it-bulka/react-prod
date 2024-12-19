@@ -1,9 +1,12 @@
-import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
+
 import classnames from '@/shared/libs/classnames/classnames'
 import { Text } from '@/shared/ui'
 import { VStack } from '@/shared/ui/Stack'
+
 import cls from './CommentList.module.scss'
+
 import { Comment } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
 

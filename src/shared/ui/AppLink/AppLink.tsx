@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
+
 import classnames from '@/shared/libs/classnames/classnames'
+
 import cls from './AppLink.module.scss'
 
 /* eslint-disable no-unused-vars */

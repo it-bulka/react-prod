@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { http, HttpResponse } from 'msw'
+
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+
 import ArticleRating from './ArticleRating'
 import { feedback } from '../../const/storybookMockData'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
 const meta = {
   title: 'features/ArticleRating',

@@ -2,12 +2,15 @@ import {
  memo, HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRef
 } from 'react'
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso'
+
 import classnames from '@/shared/libs/classnames/classnames'
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+
 import cls from './ArticleList.module.scss'
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+
 import { ArticleView } from '../../model/const/const'
 import { Article } from '../../model/types/articles'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 
 // Should be fixed height for virtualization from parent component className
 interface ArticleListProps {

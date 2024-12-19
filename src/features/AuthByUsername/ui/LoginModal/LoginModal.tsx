@@ -1,7 +1,9 @@
 import { Suspense, memo } from 'react'
-import { Modal, ModalProps } from '@/shared/ui/Modal/Modal'
-import { LoginFormAsync } from '../LoginForm/LoginForm.async'
+
 import { Loader } from '@/shared/ui/Loader/ui/Loader'
+import { Modal, ModalProps } from '@/shared/ui/Modal/Modal'
+
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 
 interface LoginModalProps extends ModalProps {
   onSuccess: () => void

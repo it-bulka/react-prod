@@ -1,10 +1,13 @@
 import { memo, useCallback } from 'react'
-import classnames from '@/shared/libs/classnames/classnames'
-import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg'
+
 import ListIcon from '@/shared/assets/icons/list-24-24.svg'
+import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg'
+import classnames from '@/shared/libs/classnames/classnames'
 import { Button, ThemeButton, Icon } from '@/shared/ui'
-import { ArticleView } from '../../model/const/const'
+
 import cls from './ArticleViewSelector.module.scss'
+
+import { ArticleView } from '../../model/const/const'
 
 interface ArticleViewSelectorProps {
   className?: string

@@ -1,9 +1,11 @@
-import { useSelector } from 'react-redux'
 import { useCallback, useEffect , memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ArticleList } from '@/entities/Article'
+import { useSelector } from 'react-redux'
+
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
-import { articlesPageActions, getArticles } from '../../model/slice/articlesPageSlice'
+import { ArticleList } from '@/entities/Article'
+import { Text } from '@/shared/ui'
+
 import {
   getArticlesPageIsLoading,
   getArticlesPageView,
@@ -11,7 +13,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors'
 import { fetchArticlesList } from '../../model/service/fetchArticlesList/fetchArticlesList'
 import { fetchNextArticlesPage } from '../../model/service/fetchNextArticlesPage/fetchNextArticlesPage'
-import { Text } from '@/shared/ui'
+import { articlesPageActions, getArticles } from '../../model/slice/articlesPageSlice'
 
 interface IArticleInfiniteList {
   className?: string

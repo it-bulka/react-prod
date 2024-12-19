@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+
 import { ProjectEnv } from '../types'
 
 interface IDefPlugin {

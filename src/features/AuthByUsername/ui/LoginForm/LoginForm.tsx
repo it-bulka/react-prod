@@ -1,18 +1,21 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import classnames from '@/shared/libs/classnames/classnames'
-import { Input } from '@/shared/ui/Input/Input'
-import { Button, ThemeButton } from '@/shared/ui/Button/Button'
-import { Text, TextTheme } from '@/shared/ui/Text/ui/Text'
-import { loginActions, loginReducer } from '../../model/slice/loginSlice'
-import { loginByUserName } from '../../model/services/loginByUsername/loginByUserName'
+
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
+import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
+import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { Input } from '@/shared/ui/Input/Input'
+import { Text, TextTheme } from '@/shared/ui/Text/ui/Text'
+
+import cls from './LoginForm.module.scss'
+
 import {
   getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername
 } from '../../model/selectors'
-import cls from './LoginForm.module.scss'
+import { loginByUserName } from '../../model/services/loginByUsername/loginByUserName'
+import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer

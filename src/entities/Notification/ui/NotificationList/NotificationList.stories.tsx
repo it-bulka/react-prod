@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { http, HttpResponse, delay } from 'msw'
+
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
+
 import { NotificationList } from './NotificationList'
 import { mockNotification } from '../../model/mockData/storybookMockData'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 
 const meta = {
   title: 'entities/NotificationList',

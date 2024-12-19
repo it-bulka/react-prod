@@ -1,7 +1,10 @@
 import { memo } from 'react'
+
 import classnames from '@/shared/libs/classnames/classnames'
 import { Card, CardTheme, Text } from '@/shared/ui'
+
 import cls from './NotificationItem.module.scss'
+
 import { Notification } from '../../model/types/notification'
 
 interface NotificationItemProps {

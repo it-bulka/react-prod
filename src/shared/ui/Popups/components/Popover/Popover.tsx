@@ -1,9 +1,12 @@
-import { ReactNode, PropsWithChildren } from 'react'
 import { Popover as HPopover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { mapDirectionClass } from '../../styles/consts'
-import { DropdownDirection } from '@/shared/types/ui'
+import { ReactNode, PropsWithChildren } from 'react'
+
 import classnames from '@/shared/libs/classnames/classnames'
+import { DropdownDirection } from '@/shared/types/ui'
+
 import cls from './Popover.module.scss'
+
+import { mapDirectionClass } from '../../styles/consts'
 import popupCls from '../../styles/popup.module.scss'
 
 interface PopoverProps {

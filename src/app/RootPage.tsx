@@ -1,10 +1,11 @@
 import { FC , useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
+
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
+import { userActions } from '@/entities/User'
 import cls from '@/shared/libs/classnames/classnames'
 import { NavBar } from '@/widgets/NavBar'
 import { SideBar } from '@/widgets/SideBar'
-import { userActions } from '@/entities/User'
-import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 
 export const RootPage: FC = () => {
   const dispatch = useAppDispatch()

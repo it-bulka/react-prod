@@ -1,7 +1,8 @@
-import { DeepPartial } from '@/shared/types/DeepPartial'
 import { StateSchema } from '@/app/providers/StoreProvider'
-import { ValidateProfileError } from '../../const/const'
+import { DeepPartial } from '@/shared/types/DeepPartial'
+
 import { getProfileValidateErrors } from './getProfileValidateErrors'
+import { ValidateProfileError } from '../../const/const'
 
 describe('getProfileValidateErrors', () => {
   it('should work succesfully', () => {

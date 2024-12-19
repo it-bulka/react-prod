@@ -1,10 +1,13 @@
-import { memo, ReactNode, Fragment } from 'react'
 import {
  Listbox as HListbox, ListboxButton, ListboxOption, ListboxOptions, Field, Label
 } from '@headlessui/react'
+import { memo, ReactNode, Fragment } from 'react'
+
 import classnames from '@/shared/libs/classnames/classnames'
-import { Button } from '../../../Button/Button'
+
 import cls from './ListBox.module.scss'
+
+import { Button } from '../../../Button/Button'
 import popupCls from '../../styles/popup.module.scss'
 
 export interface ListBoxItem {
