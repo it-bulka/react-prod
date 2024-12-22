@@ -3,6 +3,7 @@
   "include": [
     "src/**/*",
     "config/**/*",
+    "docs/**/*",
     "webpack.config.ts",
     ".eslintrc.js",
     "scripts/refactor/*",

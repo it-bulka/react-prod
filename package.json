@@ -15,10 +15,10 @@
     "lint:fix": "npx eslint --fix \"**/*.{ts,tsx}\" \".eslintrc.js\"",
     "lint:scss": "npx stylelint \"src/**/*.scss\"",
     "lint:scss:fix": "npx stylelint --fix \"src/**/*.scss\"",
-    "test": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:file": "jest --config ./config/jest/jest.config.ts --testPathPattern",
     "storybook": "storybook dev -p 6006 -c config/.storybook",
-    "build-storybook": "storybook build -c config/.storybook",
+    "storybook:build": "storybook build -c config/.storybook",
     "prepare": "npx husky",
     "generate:slice": "node ./scripts/createSlice/index.js"
   },

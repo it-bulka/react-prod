@@ -2,6 +2,22 @@ import {
  useCallback, useEffect, useRef, useState
 } from 'react'
 
+/**
+ * Custom hook to manage modal open, close, and animation states.
+ *
+ * @param {Object} UseModalProps - Props for configuring the hook.
+ * @param {boolean} [UseModalProps.isOpen=false] - Initial open state of the modal.
+ * @param {() => void} [UseModalProps.onClose] - Callback function triggered when
+ *   the modal is closed.
+ * @param {number} [UseModalProps.animationDelay=300] - Delay in milliseconds for
+ *   the close animation.
+ *
+ * @returns {Object} Hook state and functions.
+ * @returns {boolean} isClosing - Indicates whether the modal is in the closing
+ *   animation phase.
+ * @returns {() => void} closeHandler - Function to handle closing the modal.
+ */
+
 interface UseModalProps {
   isOpen?: boolean
   onClose?: () => void
@@ -9,6 +25,12 @@ interface UseModalProps {
 }
 
 const ANIMATION_DELAY = 300
+
+/**
+ * useModal hook to manage modal state and animations.
+ *
+ * @param {UseModalProps} param - Configuration parameters for the modal.
+ */
 
 export const useModal = ({
   onClose,
