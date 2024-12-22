@@ -3,7 +3,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider/ui/StoreProvider'
 import { articleDetailsReducer } from '@/entities/Article/testing'
 import { profileReducer } from '@/entities/Profile/testing'
 import { loginReducer } from '@/features/AuthByUsername/testing'
-import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/testing'
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
 import { articlesPageReducer } from '@/pages/ArticlesPage/testing'
 import { ReducersList } from '@/shared/libs/components/DynamicModalLoader'
 
@@ -15,7 +15,7 @@ const defaultAsyncReducers: ReducersList = {
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   articlesPage: articlesPageReducer,
-  articleDetailsPage: articleDetailsCommentsReducer
+  articleDetailsPage: articleDetailsPageReducer
 }
 
 interface IStoreDecorator {
