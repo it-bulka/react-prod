@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { getRouteProfile } from '@/shared/config/routeConfig/routeConfig'
 import classnames from '@/shared/libs/classnames/classnames'
 import { Text, AppLink } from '@/shared/ui'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
@@ -38,7 +38,7 @@ export const CommentCard = memo(({
 
   return (
     <VStack gap="8" max className={classnames(cls.commentCard, {}, [className])}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
         <Text className={cls.username} title={comment.user.username} />
       </AppLink>

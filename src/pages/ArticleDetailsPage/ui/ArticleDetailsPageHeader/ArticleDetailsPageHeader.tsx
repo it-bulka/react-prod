@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 
 import { getArticleDetailsData } from '@/entities/Article'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/config/routeConfig/routeConfig'
 import classnames from '@/shared/libs/classnames/classnames'
 import { Button, ThemeButton } from '@/shared/ui'
 
@@ -25,11 +25,12 @@ export const ArticleDetailsPageHeader = memo(({
   const article = useSelector(getArticleDetailsData)
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
+    navigate(getRouteArticles())
   }, [navigate])
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article?.id}/edit`)
+    if (!article?.id) return
+    navigate(getRouteArticleEdit(article?.id))
   }, [navigate, article?.id])
 
   return (

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { getRouteArticleDetails } from '@/shared/config/routeConfig/routeConfig'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { article } from '@/shared/const/storybookMockData'
 
@@ -26,7 +27,7 @@ type Story = StoryObj<typeof meta>
 export const WithArticleIdFounded: Story = {
   parameters: {
     reactRouter: {
-      routePath: '/articles/:id',
+      routePath: getRouteArticleDetails(':id'),
       routeParams: { id: '1' }
     }
   }

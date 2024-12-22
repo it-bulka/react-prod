@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
         element: <AboutPage />
       },
       {
-        path: `${RoutePath.profile}:id`,
+        path: RoutePath.profile,
         element: (
           <ProtectedRoutes>
             <ProfilePage />
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
         )
       },
       {
-        path: `${RoutePath.article_details}:id`,
+        path: RoutePath.article_details,
         element: (
           <ProtectedRoutes>
             <ArticleDetailsPageAsync />
