@@ -5,6 +5,7 @@ import { buildBabelLoader } from '../loaders/buildBabelLoader'
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const svgUrlCssLoader = {
+    exclude: /node_modules/,
     test: /\.svg$/,
     type: 'asset/resource',
     issuer: /\.(s?)css$/,
@@ -24,12 +25,14 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   }
 
   const svgUrlJsxLoader = {
+    exclude: /node_modules/,
     test: /\.svg$/i,
     type: 'asset',
     resourceQuery: /url/, // *.svg?url
   }
 
   const svgComponentLoader = {
+    exclude: /node_modules/,
     test: /\.svg$/,
     issuer: /\.[jt]sx?$/,
     use: ['@svgr/webpack'],
@@ -37,6 +40,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   }
 
   const fileLoader = {
+    exclude: /node_modules/,
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
