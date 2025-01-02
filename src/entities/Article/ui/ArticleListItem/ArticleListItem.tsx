@@ -7,7 +7,9 @@ import classnames from '@/shared/libs/classnames/classnames'
 import {
  Card, Icon, Text , Button, ThemeButton, AppLink
 } from '@/shared/ui'
+import { AppImage } from '@/shared/ui/AppImage'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 
 import cls from './ArticleListItem.module.scss'
 
@@ -53,7 +55,12 @@ export const ArticleListItem = memo(({
           </div>
           <Text title={article.title} className={cls.title} />
           {types}
-          <img src={article.img} className={cls.img} alt={article.title} />
+          <AppImage
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+            fallback={<Skeleton width="100%" height={250} />}
+          />
           {textBlock && (
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
           )}
@@ -81,7 +88,12 @@ export const ArticleListItem = memo(({
     >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
-          <img alt={article.title} src={article.img} className={cls.img} />
+          <AppImage
+            alt={article.title}
+            src={article.img}
+            className={cls.img}
+            fallback={<Skeleton width={200} height={200} />}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>
