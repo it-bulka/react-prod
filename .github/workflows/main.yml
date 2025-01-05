@@ -14,26 +14,23 @@ jobs:
       matrix:
         node-version: [20.x]
     runs-on: ubuntu-latest
-    outputs:
-      node-version: ${{ matrix.node-version }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache Node.js modules
+        uses: ./github/actions/cache-node-modules
       - name: install modules
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
   lint:
     runs-on: ubuntu-latest
     needs: setup
     steps:
       - uses: actions/checkout@v4
+      - name: Restore Node.js modules cache
+        uses: ./github/actions/cache-node-modules
       - name: linting typescript
         run: npm run lint
       - name: linting css
@@ -44,14 +41,18 @@ jobs:
     needs: setup
     steps:
       - uses: actions/checkout@v4
+      - name: Restore Node.js modules cache
+        uses: ./github/actions/cache-node-modules
       - name: unit testing
-        run: npm run test
+        run: npm run test:unit
 
   build:
     runs-on: ubuntu-latest
-    needs: setup
+    needs: [test, lint]
     steps:
       - uses: actions/checkout@v4
+      - name: Restore Node.js modules cache
+        uses: ./github/actions/cache-node-modules
       - name: build production project
         run: npm run build
       - name: Log results
