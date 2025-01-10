@@ -7,6 +7,7 @@ import { uiReducer } from '@/features/UI'
 import { api } from '@/shared/api/api'
 import { rtkApi } from '@/shared/api/rtkApi'
 
+import { loadStateFromLocalStorage } from './loadStateFromLocalStorage'
 import { ReducerManager, StateSchema } from './StateSchema'
 
 interface createStoreProps {
@@ -21,11 +22,13 @@ export const createStore = ({ initialState, asyncReducers }: createStoreProps) =
     [rtkApi.reducerPath]: rtkApi.reducer
   }
 
+  const preloadState = loadStateFromLocalStorage()
   const reducerManager = createReducerManager(rootReducer)
+
   const store = configureStore({
     devTools: __IS_DEV__,
     reducer: reducerManager.reduce,
-    preloadedState: initialState || {},
+    preloadedState: initialState || preloadState,
     middleware: getDefaultMiddleware => {
       return getDefaultMiddleware({
         thunk: {
