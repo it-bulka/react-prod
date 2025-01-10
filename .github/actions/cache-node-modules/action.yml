@@ -15,10 +15,10 @@ runs:
     - name: Generate cache key
       id: generate-key
       run: echo "key=${{ inputs.key || runner.os }}-node-${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_OUTPUT
+      shell: bash
 
     - name: Restore Node.js modules cache
       uses: actions/cache@v3
       with:
         path: ${{ inputs.path }}
         key: ${{ steps.generate-key.outputs.key }}
-h
