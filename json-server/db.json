@@ -26,9 +26,28 @@
       "password": "123",
       "role": "USER",
       "avatar": "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
+    },
+    {
+      "id": "0",
+      "roles": "ADMIN",
+      "username": "testuser",
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
     }
   ],
   "profile": [
+    {
+      "id": "0",
+      "first": "TestUser",
+      "lastname": "TestUser",
+      "age": 29,
+      "currency": "UAN",
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "username": "testuser",
+      "avatar":  "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
+    },
     {
       "id": "1",
       "first": "Iv",

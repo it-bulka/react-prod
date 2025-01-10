@@ -8,7 +8,7 @@ import cls from './NotFound.module.scss'
 export const NotFound: FC = () => {
   const { t } = useTranslation()
   return (
-    <div className={classnames(cls.NotFoundPage)}>
+    <div className={classnames(cls.NotFoundPage)} data-testid="NotFoundPage">
       {t('notFound')}
     </div>
   )

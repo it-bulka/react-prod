@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 const Home: FC = () => {
   const { t } = useTranslation()
   return (
-    <div className="page-wrapper">
+    <div className="page-wrapper" data-testid="HomePage">
       {t('main')}
     </div>
   )

@@ -7,7 +7,7 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
   return (
-    <div className={classnames('page-wrapper', {}, [className])}>
+    <div className={classnames('page-wrapper', {}, [className])} data-testid="ProfilePage">
       <EditableProfileCard />
     </div>
   )

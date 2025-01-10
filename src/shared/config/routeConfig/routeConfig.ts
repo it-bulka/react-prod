@@ -8,7 +8,7 @@ export enum AppRoutes {
   ARTICLE_EDIT = 'article_edit',
   ADMIN_PANEL = 'admin_panel',
   FORBIDDEN = 'forbidden',
-  NOT_FOUND = 'not-found',
+  NOT_FOUND = 'not_found',
 }
 
 export const getRouteHome = () => '/'
@@ -20,7 +20,7 @@ export const getRouteArticleCreate = () => '/articles/new'
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`
 export const getRouteAdmin = () => '/admin'
 export const getRouteForbidden = () => '/forbidden'
-export const getRouteNotFound = () => '/not-found'
+export const getRouteNotFound = () => '/*'
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.HOME]: getRouteHome(),

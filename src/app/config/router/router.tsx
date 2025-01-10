@@ -7,6 +7,7 @@ import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage'
 import { ArticlesPageAsync } from '@/pages/ArticlesPage'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { HomePage } from '@/pages/Home'
+import { NotFound } from '@/pages/NotFound'
 import { ProfilePage } from '@/pages/ProfilePage'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePath.forbidden,
         element: <ForbiddenPage />
+      },
+      {
+        path: RoutePath.not_found,
+        element: <NotFound />
       }
     ]
   }

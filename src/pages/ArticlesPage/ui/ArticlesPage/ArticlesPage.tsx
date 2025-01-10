@@ -19,7 +19,7 @@ const reducers: ReducersList = {
 const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classnames(cls.ArticlesPage, {}, [className, 'page-wrapper'])}>
+      <div className={classnames(cls.ArticlesPage, {}, [className, 'page-wrapper'])} data-testid="ArticlesPage">
         <ArticlesPageFilters />
         <ArticleInfiniteList className={cls.list} />
       </div>
