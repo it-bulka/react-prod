@@ -89,7 +89,7 @@ export const ArticleList = memo(({
 
   if(!virtualization) {
     return (
-      <div className={classnames(cls.articleList, {}, [className, cls[view]])}>
+      <div className={classnames(cls.articleList, {}, [className, cls[view]])} data-testid="ArticleList">
         {articles.map(article => (
           (
             <ArticleListItem
@@ -105,7 +105,7 @@ export const ArticleList = memo(({
   }
 
   return (
-    <div className={classnames(cls.articleList, {}, [className, cls[view]])}>
+    <div className={classnames(cls.articleList, {}, [className, cls[view]])} data-testid="ArticleList">
       {view === 'BIG'
         ? (
           <Virtuoso

@@ -36,6 +36,7 @@ $viewWidth: 800px;
 
   .content {
     transform: scale(1);
+    z-index: var(--modal-z-index);
   }
 }
 

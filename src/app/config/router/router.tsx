@@ -4,6 +4,7 @@ import { UserRole } from '@/entities/User'
 import { AboutPage } from '@/pages/AboutPage'
 import { AdminPanelPage } from '@/pages/AdminPanelPage'
 import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage'
+import { ArticleEditPageAsync } from '@/pages/ArticleEditPage'
 import { ArticlesPageAsync } from '@/pages/ArticlesPage'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { HomePage } from '@/pages/Home'
@@ -48,6 +49,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoutes>
             <ArticleDetailsPageAsync />
+          </ProtectedRoutes>
+        )
+      },
+      {
+        path: RoutePath.article_create,
+        element: (
+          <ProtectedRoutes>
+            <ArticleEditPageAsync />
           </ProtectedRoutes>
         )
       },

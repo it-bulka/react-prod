@@ -98,6 +98,7 @@ export const ArticlesPageFilters = memo(({
           onChange={onChangeSearch}
           value={search}
           placeholder={t('search', { ns: 'translation'})}
+          data-testid="ArticlesPageFilters.search"
         />
       </Card>
       <ArticleTypeTabs

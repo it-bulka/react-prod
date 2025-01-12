@@ -45,6 +45,8 @@ jobs:
         uses: ./github/actions/cache-node-modules
       - name: unit testing
         run: npm run test:unit
+      - name: e2e testing
+        run: npm run test:e2e
 
   build:
     runs-on: ubuntu-latest

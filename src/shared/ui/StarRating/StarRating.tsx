@@ -19,7 +19,7 @@ const stars = [1, 2, 3, 4, 5]
 export const StarRating = memo(({
   className, onSelect, selectedStars, size
 }: StarRatingProps) => {
-  const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
+  const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars || 0)
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
   const onHover = (starsCount: number) => () => {
@@ -58,6 +58,8 @@ export const StarRating = memo(({
           onPointerLeave={onLeave}
           onPointerEnter={onHover(starNumber)}
           onClick={onClick(starNumber)}
+          data-testid={`StarRating.${starNumber}`}
+          data-selected={currentStarsCount >= starNumber}
         />
       ))}
     </div>
