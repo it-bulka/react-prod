@@ -31,4 +31,12 @@ describe('Article page for authorized user', () => {
     cy.setRate(4, 'feedback')
     cy.get('[data-selected=true]').should('have.length', 4)
   })
+
+  it('should rate article (fixture)', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' })
+    cy.getByTestId('ArticleDetails.Info')
+    cy.getByTestId('RatingCard').scrollIntoView()
+    cy.setRate(4, 'feedback')
+    cy.get('[data-selected=true]').should('have.length', 4)
+  })
 })

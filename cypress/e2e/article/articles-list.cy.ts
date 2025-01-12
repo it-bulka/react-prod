@@ -4,20 +4,24 @@ describe('Articles page', () => {
       cy.visit('articles')
     })
   })
-  it('shoud show articles list', () => {
+  it('should show articles list', () => {
     cy.getByTestId('ArticleList').should('exist')
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3)
   })
 
-  it('should filter articles by category', () => {
+  it('should show articles list (fixtures)', () => {
+    cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' })
+    cy.getByTestId('ArticleList').should('exist')
+    cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3)
+  })
+
+  it.only('should filter articles by category', () => {
     // Натискаємо на кнопку "IT"
     cy.getByTestId('Tab.IT').contains('IT').click()
     cy.getByTestId('Tab.IT').should('have.attr', 'data-selected', 'true')
 
-    cy.wait(1000)
-
     cy.getByTestId('ArticleListItem').each($card => {
-      cy.wrap($card).contains('IT')
+      cy.wrap($card).find('[data-testid="ArticleListItem.Type.Paragraph"]').should('contain.text', 'IT')
     })
   })
 

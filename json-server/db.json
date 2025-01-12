@@ -927,7 +927,7 @@
       "title": "Quantum Computing: The Next Frontier",
       "subtitle": "Exploring the potential of quantum technology",
       "img": "https://quantum.example.com/quantum.jpg",
-      "views": 1700,
+      "views": 500,
       "createdAt": "05.09.2023",
       "userId": "2",
       "type": [
@@ -1041,6 +1041,35 @@
           ]
         }
       ]
+    },
+    {
+      "title": "TEST JavaScript News",
+      "subtitle": "Latest in JavaScript for 2023",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "01.03.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "JavaScript continues to evolve with new features, making it a powerful tool for web developers worldwide.",
+            "The latest updates in JavaScript aim to improve performance and simplify coding for developers.",
+            "Stay tuned for more insights on how to leverage these new capabilities in your projects."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "console.log('Welcome to the new JavaScript!');"
+        }
+      ],
+      "id": "MKCaG8I"
     }
   ],
   "comments": [

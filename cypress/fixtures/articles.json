@@ -1,0 +1,199 @@
+[
+  {
+    "id": "1",
+    "title": "JavaScript News",
+    "subtitle": "Latest in JavaScript for 2023",
+    "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+    "views": 1022,
+    "createdAt": "01.03.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "Introduction",
+        "paragraphs": [
+          "JavaScript continues to evolve with new features, making it a powerful tool for web developers worldwide.",
+          "The latest updates in JavaScript aim to improve performance and simplify coding for developers.",
+          "Stay tuned for more insights on how to leverage these new capabilities in your projects."
+        ]
+      },
+      {
+        "id": "2",
+        "type": "CODE",
+        "code": "console.log('Welcome to the new JavaScript!');"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "The Rise of AI in IT",
+    "subtitle": "How AI is changing the tech landscape",
+    "img": "https://d3g5ywftkpzr0e.cloudfront.net/wp-content/uploads/2023/07/13220529/Artificial-Intelligence-in-Indonesia-The-current-state-and-its-opportunities.jpeg",
+    "views": 1345,
+    "createdAt": "10.05.2023",
+    "userId": "2",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "Impact of AI",
+        "paragraphs": [
+          "Artificial Intelligence is reshaping how companies operate, making processes more efficient.",
+          "The integration of AI with existing technologies is opening up new possibilities.",
+          "From automation to decision-making, AI is a game-changer in tech."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Quantum Computing Advances",
+    "subtitle": "What does the future hold?",
+    "img": "https://dwg31ai31okv0.cloudfront.net/images/Article_Images/ImageForArticle_88_17256255059219994.jpg",
+    "views": 987,
+    "createdAt": "18.07.2023",
+    "userId": "1",
+    "type": [
+      "SCIENCE"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "Quantum Computing Basics",
+        "paragraphs": [
+          "Quantum computing leverages quantum mechanics to perform computations at incredible speeds.",
+          "With quantum technology, problems previously deemed unsolvable are now within reach.",
+          "Companies and researchers are investing heavily to make quantum computing mainstream."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Economic Trends in 2023",
+    "subtitle": "How inflation is shaping economies",
+    "img": "https://insights.ise.org.uk/wp-content/uploads/2022/10/Economic-trends-that-will-affect-recruitment-and-employment.png",
+    "views": 2020,
+    "createdAt": "05.04.2023",
+    "userId": "1",
+    "type": [
+      "ECONOMICS"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "Global Economic Shifts",
+        "paragraphs": [
+          "Inflation rates are causing economic shifts globally, impacting both individuals and businesses.",
+          "Policies are being revised to cope with inflation, affecting multiple sectors.",
+          "Economists predict varied outcomes depending on regional approaches to inflation control."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Advances in Machine Learning",
+    "subtitle": "What's new in ML algorithms?",
+    "img": "https://cdn.pixabay.com/photo/2024/01/29/22/47/ai-generated-8540915_640.jpg",
+    "views": 1125,
+    "createdAt": "22.06.2023",
+    "userId": "2",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "New Techniques in ML",
+        "paragraphs": [
+          "Machine Learning algorithms are becoming more sophisticated, enabling better predictions.",
+          "New techniques like transfer learning and meta-learning are gaining traction.",
+          "These advancements promise more accurate and efficient models."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "The Economics of Climate Change",
+    "subtitle": "Financial impacts of global warming",
+    "img": "https://cdn.mos.cms.futurecdn.net/TY6SwtikwK9QzrrmuZcfoj.jpg",
+    "views": 1210,
+    "createdAt": "20.07.2023",
+    "userId": "1",
+    "type": [
+      "ECONOMICS"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "Climate Change Costs",
+        "paragraphs": [
+          "Global warming is increasing costs for governments and businesses.",
+          "Economies are adapting to address these financial challenges.",
+          "Investments in renewable energy are essential to mitigate economic losses."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Artificial Intelligence in Healthcare",
+    "subtitle": "How AI is revolutionizing medicine",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCBiKbiVO079IJ7ONdNjcxC5Ae8QrNv4eZ1w&s",
+    "views": 1890,
+    "createdAt": "05.10.2023",
+    "userId": "1",
+    "type": [
+      "SCIENCE"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "AI Applications in Healthcare",
+        "paragraphs": [
+          "AI tools are being developed to assist in diagnostics and patient care.",
+          "Machine learning algorithms help detect diseases earlier and more accurately.",
+          "AI is paving the way for more personalized and effective treatments."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "5G Network Expansion",
+    "subtitle": "Impact of 5G on technology and society",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqfnaRuWROEykzhn-FWi9AaQL8fQTYgEyqWQ&s",
+    "views": 980,
+    "createdAt": "13.09.2023",
+    "userId": "1",
+    "type": [
+      "IT"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "TEXT",
+        "title": "What 5G Means for Technology",
+        "paragraphs": [
+          "5G is set to revolutionize the internet with faster speeds and lower latency.",
+          "This network upgrade will support IoT, autonomous vehicles, and smart cities.",
+          "With 5G, devices can communicate more efficiently, enhancing user experiences."
+        ]
+      }
+    ]
+  }
+]
