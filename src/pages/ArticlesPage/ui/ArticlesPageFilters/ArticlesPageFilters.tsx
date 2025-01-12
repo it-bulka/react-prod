@@ -46,7 +46,7 @@ export const ArticlesPageFilters = memo(({
   const search = useSelector(getArticlesPageSearch)
 
   const fetchData = useCallback(() => {
-    dispatch(fetchArticlesList())
+    dispatch(fetchArticlesList({ replace: true }))
   }, [dispatch])
 
   const debounceFetchData = useDebounce(fetchData, DEBAUNCE_FETCH_DATA_DELAY)
