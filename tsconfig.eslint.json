@@ -6,7 +6,7 @@
     "docs/**/*",
     "webpack.config.ts",
     ".eslintrc.js",
-    "scripts/refactor/*",
+    "scripts/**/*",
     "./vite.config.ts",
     "cypress/**/*",
     "cypress.config.ts"
