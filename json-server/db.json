@@ -17,6 +17,10 @@
       "roles": "ADMIN",
       "username": "admin",
       "password": "123",
+      "role": "ADMIN",
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724457600&semt=ais_hybrid"
     },
     {
@@ -24,6 +28,9 @@
       "roles": "USER",
       "username": "user",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "role": "USER",
       "avatar": "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
     },
@@ -33,6 +40,9 @@
       "username": "testuser",
       "password": "123",
       "role": "ADMIN",
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
     }
   ],

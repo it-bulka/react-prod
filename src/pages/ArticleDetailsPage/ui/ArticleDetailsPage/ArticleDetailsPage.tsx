@@ -7,6 +7,7 @@ import { ArticleRating } from '@/features/ArticleRating'
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
+import { getFeatureFlags } from '@/shared/libs/features/setGetFeatures'
 
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -27,6 +28,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation('articles')
   const params = useParams<{ id: string }>()
+  const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled')
 
   if(!params.id) {
     return (
@@ -41,7 +43,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
       <div className={classnames(cls.articleDetailsPage, {}, ['page-wrapper', className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={params.id} />
-        <ArticleRating articleId={params.id} />
+        {isArticleRatingEnabled && <ArticleRating articleId={params.id} />}
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={params.id} />
       </div>
