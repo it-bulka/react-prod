@@ -7,7 +7,7 @@ import { ArticleRating } from '@/features/ArticleRating'
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { toggleFeatures } from '@/shared/libs/features/toggleFeatures'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
 import { Card } from '@/shared/ui'
 
 import cls from './ArticleDetailsPage.module.scss'
@@ -24,16 +24,6 @@ interface ArticleDetailsPageProps {
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer
-}
-
-const ArticleRatingCard = ({ id }: { id: string }) => {
-  const { t } = useTranslation('articles')
-
-  return toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('Rating will be soon!')}</Card>
-  })
 }
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
@@ -53,7 +43,11 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
       <div className={classnames(cls.articleDetailsPage, {}, ['page-wrapper', className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={params.id} />
-        <ArticleRatingCard id={params.id} />
+        <ToggleFeaturesComponent
+          feature="isArticleRatingEnabled"
+          on={<ArticleRating articleId={params.id} />}
+          off={<Card>{t('Rating will be soon!')}</Card>}
+        />
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={params.id} />
       </div>
