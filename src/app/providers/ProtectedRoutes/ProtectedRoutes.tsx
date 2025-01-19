@@ -2,7 +2,7 @@ import { PropsWithChildren, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation , Navigate } from 'react-router'
 
-import { getUserAuthData, getUserRoles, UserRole } from '@/entities/User'
+import { getUserRoles, UserRole, getUserInited } from '@/entities/User'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
 interface ProtectedRoutesProps {
@@ -10,7 +10,7 @@ interface ProtectedRoutesProps {
 }
 
 export const ProtectedRoutes = ({ children, roles }:PropsWithChildren<ProtectedRoutesProps>) => {
-  const auth = useSelector(getUserAuthData)
+  const isAutorized = useSelector(getUserInited)
   const location = useLocation()
   const userRoles = useSelector(getUserRoles)
 
@@ -23,7 +23,7 @@ export const ProtectedRoutes = ({ children, roles }:PropsWithChildren<ProtectedR
     })
   }, [roles, userRoles])
 
-  if(!auth) {
+  if(!isAutorized) {
     return <Navigate to={RoutePath.home} replace state={{ from: location }} />
   }
 

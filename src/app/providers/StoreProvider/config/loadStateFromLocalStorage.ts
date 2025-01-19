@@ -9,8 +9,8 @@ export const loadStateFromLocalStorage = (): Partial<StateSchema> | {} => {
       return {}
     }
 
-    const authData = JSON.parse(serializedUser)
-    return { user: { authData} }
+    const user = JSON.parse(serializedUser)
+    return { user: { _inited: !!user } }
   } catch (e) {
     console.error('Could not load state', e)
     return {}

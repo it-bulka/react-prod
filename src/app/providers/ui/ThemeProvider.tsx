@@ -1,8 +1,9 @@
 import {
   PropsWithChildren, FC, useState, useMemo, useEffect
 } from 'react'
+import { useSelector } from 'react-redux'
 
-import { useJsonSettings } from '@/entities/User'
+import { useJsonSettings , getUserAuthData } from '@/entities/User'
 import { ThemeContext, LOCAL_STORAGE_THEME_KEY, Theme } from '@/shared/libs/context/ThemeContext'
 
 const defaultTheme: Theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT
@@ -10,6 +11,7 @@ const defaultTheme: Theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as The
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [theme, setTheme] = useState(defaultTheme)
   const { theme: bdTheme } = useJsonSettings()
+  const authData = useSelector(getUserAuthData)
 
   const defaultProps = useMemo(() => ({
     theme,
@@ -17,6 +19,8 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   }), [theme])
 
   useEffect(() => {
+    console.log('bdTheme', bdTheme)
+    console.log('authData', authData)
     function addTheme() {
       document.body.classList.add(bdTheme! || theme)
     }
@@ -34,7 +38,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
       addTheme()
     })
-  }, [bdTheme])
+  }, [bdTheme, authData])
 
   return (
     <ThemeContext.Provider value={defaultProps}>

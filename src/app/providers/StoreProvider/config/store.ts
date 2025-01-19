@@ -22,13 +22,13 @@ export const createStore = ({ initialState, asyncReducers }: createStoreProps) =
     [rtkApi.reducerPath]: rtkApi.reducer
   }
 
-  const preloadState = loadStateFromLocalStorage()
+  const preloadStore = loadStateFromLocalStorage()
   const reducerManager = createReducerManager(rootReducer)
 
   const store = configureStore({
     devTools: __IS_DEV__,
     reducer: reducerManager.reduce,
-    preloadedState: initialState || preloadState,
+    preloadedState: initialState || preloadStore,
     middleware: getDefaultMiddleware => {
       return getDefaultMiddleware({
         thunk: {
