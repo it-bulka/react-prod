@@ -13,5 +13,5 @@ export interface IThemeContext {
   setTheme?: (theme: Theme) => void;
 }
 
-export const ThemeContext = createContext<IThemeContext>({})
+export const ThemeContext = createContext<IThemeContext>({ theme: Theme.DARK})
 export const LOCAL_STORAGE_THEME_KEY = 'theme'

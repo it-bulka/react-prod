@@ -1,22 +1,32 @@
-import { useCallback, useContext, useEffect } from 'react'
+import { useCallback, useContext } from 'react'
 
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../context/ThemeContext'
 
-export const useTheme = () => {
+type SaveAction = (theme: Theme) => void
+type ToggleTheme = (updatedTheme: Theme, saveAction?: SaveAction) => void
+
+interface UseThemeResult {
+  toggleTheme: ToggleTheme
+  theme: Theme | undefined
+}
+
+export const useTheme = (): UseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext)
 
-  const toggleTheme = useCallback((updatedTheme: Theme) => {
+  const toggleTheme = useCallback((
+    updatedTheme: Theme,
+    saveAction?: SaveAction
+  ) => {
     const newTheme = updatedTheme || Theme.DARK
     document.body.className = newTheme
     setTheme?.(newTheme)
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
-  }, [theme])
 
-  useEffect(() => {
-    if(document.body.className === '') {
-      document.body.className = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || Theme.LIGHT
+    if (saveAction) {
+      saveAction(newTheme)
+    } else {
+      localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
     }
-  }, [])
+  }, [theme])
 
   return { theme, toggleTheme }
 }

@@ -2,6 +2,9 @@ import React, {
   memo, useState, useRef, useCallback, KeyboardEvent
 } from 'react'
 
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
+// eslint-disable-next-line fsd-checker-gen/layer-imports
+import { saveJsonSettings } from '@/entities/User'
 import DarkIcon from '@/shared/assets/icons/theme-dark.svg'
 import LightIcon from '@/shared/assets/icons/theme-light.svg'
 import OrangeIcon from '@/shared/assets/icons/theme-orange.svg'
@@ -33,6 +36,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLUListElement | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
+  const dispatch = useAppDispatch()
 
   const IconComponent = theme && IThemes[theme].Icon
 
@@ -41,7 +45,12 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   }, [setIsOpen])
 
   const handleSelect = useCallback((value: Theme) => {
-    toggleTheme(value)
+    toggleTheme(
+      value,
+      newTheme => {
+        dispatch(saveJsonSettings({ theme: newTheme }))
+      }
+    )
     setIsOpen(false)
   }, [toggleTheme, setIsOpen])
 
