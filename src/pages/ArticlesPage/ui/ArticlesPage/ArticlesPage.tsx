@@ -1,5 +1,6 @@
 import { memo } from 'react'
 
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
 
@@ -22,6 +23,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
       <div className={classnames(cls.ArticlesPage, {}, [className, 'page-wrapper'])} data-testid="ArticlesPage">
         <ArticlesPageFilters />
         <ArticleInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </div>
     </DynamicModuleLoader>
   )
