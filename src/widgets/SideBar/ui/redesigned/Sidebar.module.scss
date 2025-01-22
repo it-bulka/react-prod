@@ -1,0 +1,15 @@
+.SidebarRedesigned {
+  background: var(--light-bg-redesigned);
+  width: 220px;
+  height: 100%;
+  border-radius: 32px;
+  color: var(--text-redesigned);
+}
+
+.appLogo {
+  padding-top: 20px;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}

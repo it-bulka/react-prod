@@ -19,8 +19,6 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   }), [theme])
 
   useEffect(() => {
-    console.log('bdTheme', bdTheme)
-    console.log('authData', authData)
     function addTheme() {
       document.body.classList.add(bdTheme! || theme)
     }

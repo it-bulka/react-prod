@@ -6,17 +6,14 @@ import { useSelector } from 'react-redux'
 
 import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
-import { AvatarDropdown } from '@/features/AvatarDropdown'
-import { NotificationButton } from '@/features/NotificationButton'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import classnames from '@/shared/libs/classnames/classnames'
-import {
-  Text, TextTheme, AppLink, AppLinkTheme
-} from '@/shared/ui'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
-import { HStack } from '@/shared/ui/Stack'
 
 import cls from './NavBar.module.scss'
+
+import { NavBar as DeprecatedNavBar } from './deprecated/NavBar'
+import { NavBar as RedesignedNavBar } from './redesigned/NavBar'
 
 interface NavBarProps {
   className?: string
@@ -32,24 +29,11 @@ export const NavBar = memo(({ className }: NavBarProps) => {
 
   if(authData) {
     return (
-      <nav className={classnames(cls.navbar, {}, [className])}>
-        <Text
-          className={cls.appName}
-          title={t('Iv.G. App')}
-          theme={TextTheme.INVERTED}
-        />
-        <AppLink
-          to={RoutePath.article_create}
-          theme={AppLinkTheme.SECONDARY}
-          className={cls.createBtn}
-        >
-          {t('creation article')}
-        </AppLink>
-        <HStack gap="16" className={cls.actions}>
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </nav>
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={<DeprecatedNavBar />}
+        on={<RedesignedNavBar />}
+      />
     )
   }
   return (
