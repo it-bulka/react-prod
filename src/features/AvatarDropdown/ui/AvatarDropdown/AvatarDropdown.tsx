@@ -8,7 +8,7 @@ import {
 } from '@/entities/User'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { Dropdown } from '@/shared/ui'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
 
 interface AvatarDropdownProps {
     className?: string

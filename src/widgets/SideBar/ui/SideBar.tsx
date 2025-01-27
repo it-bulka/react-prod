@@ -18,7 +18,13 @@ export const SideBar = memo(() => {
   return (
     <ToggleFeaturesComponent
       feature="isAppRedesigned"
-      on={<RedesignedSideBar collapsed={collapsed} sidebarItemsList={sidebarItemsList} />}
+      on={(
+        <RedesignedSideBar
+          collapsed={collapsed}
+          sidebarItemsList={sidebarItemsList}
+          onToggle={onToggle}
+        />
+      )}
       off={(
         <DeprecatedSideBar
           onToggle={onToggle}

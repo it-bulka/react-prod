@@ -1,8 +1,8 @@
 import { memo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
-import { VStack } from '@/shared/ui/Stack'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
+import { VStack } from '@/shared/ui/deprecated/Stack'
 
 import cls from './NotificationList.module.scss'
 

@@ -5,7 +5,7 @@ import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import { saveJsonSettings, useJsonSettings } from '@/entities/User'
 import { useDevice } from '@/shared/libs/hooks/useDevice/useDevice'
 import { Modal, Text } from '@/shared/ui'
-import { Drawer } from '@/shared/ui/Drawer/Drawer'
+import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer'
 
 export const ArticlePageGreeting = memo(() => {
   const { t } = useTranslation('articles')

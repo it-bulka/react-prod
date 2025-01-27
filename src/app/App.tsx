@@ -1,7 +1,7 @@
 import { FC, Suspense } from 'react'
 import { RouterProvider } from 'react-router-dom'
 
-import { PageLoader } from '@/shared/ui/PageLoader/ui/PageLoader'
+import { PageLoader } from '@/shared/ui/deprecated/PageLoader/ui/PageLoader'
 import '@/shared/config/i18n/i18n'
 
 import { router } from './config/router/router'

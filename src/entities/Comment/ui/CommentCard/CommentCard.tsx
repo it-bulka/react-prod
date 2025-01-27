@@ -3,9 +3,9 @@ import { memo } from 'react'
 import { getRouteProfile } from '@/shared/config/routeConfig/routeConfig'
 import classnames from '@/shared/libs/classnames/classnames'
 import { Text, AppLink } from '@/shared/ui'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
-import { VStack } from '@/shared/ui/Stack'
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
+import { VStack } from '@/shared/ui/deprecated/Stack'
 
 import cls from './CommentCard.module.scss'
 

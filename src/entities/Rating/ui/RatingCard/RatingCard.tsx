@@ -5,10 +5,10 @@ import { useDevice } from '@/shared/libs/hooks/useDevice/useDevice'
 import {
  Text, Input, Card , Modal
 } from '@/shared/ui'
-import { Button, ThemeButton, ButtonSize } from '@/shared/ui/Button/Button'
-import { Drawer } from '@/shared/ui/Drawer/Drawer'
-import { VStack, HStack } from '@/shared/ui/Stack'
-import { StarRating } from '@/shared/ui/StarRating/StarRating'
+import { Button, ThemeButton, ButtonSize } from '@/shared/ui/deprecated/Button/Button'
+import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer'
+import { VStack, HStack } from '@/shared/ui/deprecated/Stack'
+import { StarRating } from '@/shared/ui/deprecated/StarRating/StarRating'
 
 interface RatingCardProps {
   className?: string

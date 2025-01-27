@@ -7,7 +7,7 @@ import { CommentList } from '@/entities/Comment'
 import { AddCommentFormAsync } from '@/features/addCommentForm'
 import classnames from '@/shared/libs/classnames/classnames'
 import { Text } from '@/shared/ui'
-import { VStack } from '@/shared/ui/Stack'
+import { VStack } from '@/shared/ui/deprecated/Stack'
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments/comments'
 import {

@@ -1,0 +1,19 @@
+.icon {
+    fill: var(--icon-redesigned);
+}
+
+.button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+
+    @media (pointer: fine) and (hover: hover) {
+        &:hover .icon {
+            color: var(--accent-redesigned);
+        }
+    }
+}
+

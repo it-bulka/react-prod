@@ -12,7 +12,7 @@ import {
   Text, TextTheme, TextAlign, Input,
   Loader
 } from '@/shared/ui'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
 
 import cls from './ProfileCard.module.scss'
 

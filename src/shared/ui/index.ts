@@ -1,18 +1,17 @@
-import { AppLink, AppLinkTheme } from './AppLink/AppLink'
-import { Button, ThemeButton } from './Button/Button'
-import { Card, CardTheme } from './Card/Card'
-import { Icon } from './Icon/Icon'
-import { Input } from './Input/Input'
-import { LangSwitcher } from './LangSwitcher/LangSwitcher'
-import { Loader } from './Loader/ui/Loader'
-import { Modal } from './Modal/Modal'
-import { PageLoader } from './PageLoader/ui/PageLoader'
-import { Dropdown } from './Popups/components/Dropdown/Dropdown'
-import { Tabs } from './Tabs/Tabs'
+import { AppLink, AppLinkTheme } from './deprecated/AppLink/AppLink'
+import { Button, ThemeButton } from './deprecated/Button/Button'
+import { Card, CardTheme } from './deprecated/Card/Card'
+import { Icon } from './deprecated/Icon/Icon'
+import { Input } from './deprecated/Input/Input'
+import { Loader } from './deprecated/Loader/ui/Loader'
+import { Modal } from './deprecated/Modal/Modal'
+import { PageLoader } from './deprecated/PageLoader/ui/PageLoader'
+import { Dropdown } from './deprecated/Popups/components/Dropdown/Dropdown'
+import { Tabs } from './deprecated/Tabs/Tabs'
 import {
  Text, TextTheme, TextAlign, TextSize
-} from './Text/ui/Text'
-import { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher'
+} from './deprecated/Text/ui/Text'
+import { ThemeSwitcher } from './deprecated/ThemeSwitcher/ThemeSwitcher'
 
 export {
   AppLink,
@@ -20,7 +19,6 @@ export {
   Button,
   ThemeButton,
   Input,
-  LangSwitcher,
   Loader,
   Modal,
   PageLoader,
@@ -36,4 +34,4 @@ export {
   Dropdown
 }
 
-export type { TabItem } from './Tabs/types'
+export type { TabItem } from '@/shared/ui/deprecated/Tabs/types'

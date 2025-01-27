@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { Button, ThemeButton } from '@/shared/ui/Button/Button'
-import { Input } from '@/shared/ui/Input/Input'
-import { Text, TextTheme } from '@/shared/ui/Text/ui/Text'
+import { Button, ThemeButton } from '@/shared/ui/deprecated/Button/Button'
+import { Input } from '@/shared/ui/deprecated/Input/Input'
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/ui/Text'
 
 import cls from './LoginForm.module.scss'
 

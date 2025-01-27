@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import classnames from '@/shared/libs/classnames/classnames'
 import { Text } from '@/shared/ui'
-import { VStack } from '@/shared/ui/Stack'
+import { VStack } from '@/shared/ui/deprecated/Stack'
 
 import cls from './CommentList.module.scss'
 

@@ -1,5 +1,5 @@
 import classnames from '@/shared/libs/classnames/classnames'
-import { Code } from '@/shared/ui/Code/Code'
+import { Code } from '@/shared/ui/deprecated/Code/Code'
 
 import cls from './ArticleCodeBlockComponent.module.scss'
 

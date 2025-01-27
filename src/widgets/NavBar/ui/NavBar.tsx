@@ -8,7 +8,7 @@ import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import classnames from '@/shared/libs/classnames/classnames'
 import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
-import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { Button, ThemeButton } from '@/shared/ui/deprecated/Button/Button'
 
 import cls from './NavBar.module.scss'
 

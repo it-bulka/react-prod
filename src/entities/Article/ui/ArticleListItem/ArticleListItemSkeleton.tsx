@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
 import { Card } from '@/shared/ui'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
 
 import cls from './ArticleListItem.module.scss'
 

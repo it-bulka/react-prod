@@ -1,12 +1,13 @@
 import classnames from '@/shared/libs/classnames/classnames'
 import {
- Button, LangSwitcher, ThemeButton, ThemeSwitcher
+ Button, ThemeButton, ThemeSwitcher
 } from '@/shared/ui'
-import { ButtonSize } from '@/shared/ui/Button/Button'
-import { VStack } from '@/shared/ui/Stack'
+import { ButtonSize } from '@/shared/ui/deprecated/Button/Button'
+import { VStack } from '@/shared/ui/deprecated/Stack'
 
 import cls from './SideBar.module.scss'
 
+import { LangSwitcher } from '../../../LangSwitcher/LangSwitcher'
 import { SidebarItem } from '../../../SidebarItem/ui/SidebarItem'
 import { SidebarItemType } from '../../model/types/items'
 

@@ -1,7 +1,7 @@
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { NotificationButton } from '@/features/NotificationButton'
 import classnames from '@/shared/libs/classnames/classnames'
-import { HStack } from '@/shared/ui/Stack'
+import { HStack } from '@/shared/ui/deprecated/Stack'
 
 import cls from '../NavBar.module.scss'
 
