@@ -6,7 +6,7 @@ import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import {
  AppLink, AppLinkTheme, Text, TextTheme
 } from '@/shared/ui'
-import { HStack } from '@/shared/ui/deprecated/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from '../NavBar.module.scss'
 

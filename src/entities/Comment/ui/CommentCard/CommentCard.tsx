@@ -5,7 +5,7 @@ import classnames from '@/shared/libs/classnames/classnames'
 import { Text, AppLink } from '@/shared/ui'
 import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from './CommentCard.module.scss'
 

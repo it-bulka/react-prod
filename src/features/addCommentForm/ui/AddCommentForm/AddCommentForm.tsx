@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
 import { Input, Button, ThemeButton } from '@/shared/ui'
-import { HStack } from '@/shared/ui/deprecated/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from './AddCommentForm.module.scss'
 

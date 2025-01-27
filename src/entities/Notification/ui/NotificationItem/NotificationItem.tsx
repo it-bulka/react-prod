@@ -1,7 +1,10 @@
 import { memo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
-import { Card, CardTheme, Text } from '@/shared/ui'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { Card as CardDeprecated, CardTheme, Text as TextDeprecated } from '@/shared/ui'
+import { Card } from '@/shared/ui/redesigned/Card/Card'
+import { Text } from '@/shared/ui/redesigned/Text/ui/Text'
 
 import cls from './NotificationItem.module.scss'
 
@@ -17,14 +20,25 @@ export const NotificationItem = memo(({
   item
 }: NotificationItemProps) => {
     const content = (
-      <Card
-        theme={CardTheme.OUTLINED}
-        className={classnames(cls.notificationItem, {}, [className])}
-      >
-        <Text title={item.title} text={item.description} />
-      </Card>
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        on={(
+          <Card
+            className={classnames(cls.notificationItem, {}, [className])}
+          >
+            <Text title={item.title} text={item.description} />
+          </Card>
+        )}
+        off={(
+          <CardDeprecated
+            theme={CardTheme.OUTLINED}
+            className={classnames(cls.notificationItem, {}, [className])}
+          >
+            <TextDeprecated title={item.title} text={item.description} />
+          </CardDeprecated>
+        )}
+      />
     )
-
     if (item.href) {
         return (
           <a className={cls.link} target="_blank" href={item.href} rel="noreferrer">

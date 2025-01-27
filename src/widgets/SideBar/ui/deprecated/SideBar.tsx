@@ -3,7 +3,7 @@ import {
  Button, ThemeButton, ThemeSwitcher
 } from '@/shared/ui'
 import { ButtonSize } from '@/shared/ui/deprecated/Button/Button'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from './SideBar.module.scss'
 

@@ -11,7 +11,7 @@ import { Text, TextAlign, TextSize } from '@/shared/ui'
 import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
 import { Icon } from '@/shared/ui/deprecated/Icon/Icon'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack'
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from './ArticleDetails.module.scss'
 

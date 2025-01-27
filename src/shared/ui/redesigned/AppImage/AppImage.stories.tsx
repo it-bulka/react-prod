@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { AppImage } from './AppImage'
-import { Skeleton } from '../Skeleton/Skeleton'
+import { Skeleton } from '../../deprecated/Skeleton/Skeleton'
 
 const meta = {
   title: 'entities/AppImage',

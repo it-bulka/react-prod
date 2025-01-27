@@ -1,9 +1,9 @@
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
 import classnames from '@/shared/libs/classnames/classnames'
 import { ThemeSwitcher } from '@/shared/ui'
-import { VStack } from '@/shared/ui/deprecated/Stack'
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo'
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from './SideBar.module.scss'
 

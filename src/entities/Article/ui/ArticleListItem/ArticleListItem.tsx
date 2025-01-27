@@ -7,9 +7,9 @@ import classnames from '@/shared/libs/classnames/classnames'
 import {
  Card, Icon, Text , Button, ThemeButton, AppLink
 } from '@/shared/ui'
-import { AppImage } from '@/shared/ui/deprecated/AppImage'
 import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
+import { AppImage } from '@/shared/ui/redesigned/AppImage'
 
 import cls from './ArticleListItem.module.scss'
 

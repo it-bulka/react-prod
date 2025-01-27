@@ -7,8 +7,8 @@ import {
 } from '@/shared/ui'
 import { Button, ThemeButton, ButtonSize } from '@/shared/ui/deprecated/Button/Button'
 import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer'
-import { VStack, HStack } from '@/shared/ui/deprecated/Stack'
 import { StarRating } from '@/shared/ui/deprecated/StarRating/StarRating'
+import { VStack, HStack } from '@/shared/ui/redesigned/Stack'
 
 interface RatingCardProps {
   className?: string

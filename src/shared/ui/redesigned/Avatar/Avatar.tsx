@@ -5,7 +5,7 @@ import classnames from '@/shared/libs/classnames/classnames'
 import cls from './Avatar.module.scss'
 
 import UserIcon from '../../../assets/icons/user-filled.svg'
-import { AppImage } from '../../redesigned/AppImage'
+import { AppImage } from '../AppImage'
 import { Icon } from '../Icon/Icon'
 import { Skeleton } from '../Skeleton/Skeleton'
 
@@ -14,14 +14,10 @@ interface AvatarProps {
   src?: string
   size?: number
   alt?: string
-  fallbackInverted?: boolean
 }
 
-/**
- * @deprecated
- */
 export const Avatar = ({
- className, src, size, alt, fallbackInverted
+ className, src, size, alt
 }: AvatarProps) => {
   const style = useMemo<CSSProperties>(() => ({
     width: size || 100,
@@ -31,7 +27,7 @@ export const Avatar = ({
   const fallback = <Skeleton width={size} height={size} border="50%" />
 
   const errorFallback = (
-    <Icon inverted={fallbackInverted} width={size} height={size} Svg={UserIcon} />
+    <Icon width={size} height={size} Svg={UserIcon} />
   )
 
   return (

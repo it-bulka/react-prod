@@ -2,11 +2,13 @@ import { memo, useState, useCallback } from 'react'
 
 import { NotificationList } from '@/entities/Notification'
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
-import classnames from '@/shared/libs/classnames/classnames'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
 import { useDevice } from '@/shared/libs/hooks/useDevice/useDevice'
-import { Button, ThemeButton, Icon } from '@/shared/ui'
-import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer'
-import { Popover } from '@/shared/ui/deprecated/Popups'
+import { Button as DeprecatedButton, ThemeButton } from '@/shared/ui/deprecated/Button/Button'
+import { Drawer as DeprecatedDrawer } from '@/shared/ui/deprecated/Drawer/Drawer'
+import { Icon as DeprecatedIcon } from '@/shared/ui/deprecated/Icon/Icon'
+import { Icon } from '@/shared/ui/redesigned/Icon/Icon'
+import { Popover } from '@/shared/ui/redesigned/Popups'
 
 import cls from './NotificationButton.module.scss'
 
@@ -28,25 +30,48 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     }, [])
 
     const trigger = (
-      <Button theme={ThemeButton.CLEAR} onClick={isMobile ? onOpenDrawer: undefined}>
-        <Icon Svg={NotificationIcon} inverted />
-      </Button>
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        on={
+          <Icon Svg={NotificationIcon} clickable onClick={onOpenDrawer} />
+        }
+        off={(
+          <DeprecatedButton theme={ThemeButton.CLEAR} onClick={isMobile ? onOpenDrawer: undefined}>
+            <DeprecatedIcon Svg={NotificationIcon} inverted />
+          </DeprecatedButton>
+        )}
+      />
     )
 
+    console.log('isMobile', isMobile)
     return isMobile ? (
       <>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-          <NotificationList />
-        </Drawer>
+        <DeprecatedDrawer isOpen={isOpen} onClose={onCloseDrawer}>
+          <NotificationList className={cls.notifications} />
+        </DeprecatedDrawer>
       </>
     ) : (
-      <Popover
-        className={classnames('', {}, [className])}
-        direction="bottom left"
-        trigger={trigger}
-      >
-        <NotificationList className={cls.notifications} />
-      </Popover>
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={(
+          <Popover
+            className={className}
+            direction="bottom left"
+            trigger={trigger}
+          >
+            <NotificationList className={cls.notifications} />
+          </Popover>
+        )}
+        on={(
+          <Popover
+            className={className}
+            direction="bottom left"
+            trigger={trigger}
+          >
+            <NotificationList className={cls.notifications} />
+          </Popover>
+        )}
+      />
     )
 })

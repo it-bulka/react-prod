@@ -5,7 +5,7 @@ import classnames from '@/shared/libs/classnames/classnames'
 
 import cls from './AppLogo.module.scss'
 
-import { HStack } from '../../../deprecated/Stack'
+import { HStack } from '../../Stack'
 
 interface AppLogoProps {
   className?: string

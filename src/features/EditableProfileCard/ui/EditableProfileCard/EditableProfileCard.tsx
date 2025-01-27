@@ -18,7 +18,7 @@ import { Country, Currency } from '@/shared/const/common'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
 import { Text, TextTheme } from '@/shared/ui'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 
 import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader'
 

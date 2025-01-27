@@ -13,9 +13,6 @@ export interface ModalProps {
   onClose?: () => void;
 }
 
-/**
- * @deprecated
- */
 export const Modal = memo(({
   children,
   className,

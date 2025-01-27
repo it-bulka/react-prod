@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ArticleList } from '@/entities/Article'
 import classnames from '@/shared/libs/classnames/classnames'
 import { Text, TextSize } from '@/shared/ui'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from './ArticleRecommendationsList.module.scss'
 

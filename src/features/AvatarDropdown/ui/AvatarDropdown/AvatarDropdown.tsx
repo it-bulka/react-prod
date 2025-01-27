@@ -7,8 +7,11 @@ import {
   isUserAdmin, isUserManager , getUserAuthData, userActions
 } from '@/entities/User'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
-import { Dropdown } from '@/shared/ui'
-import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { Dropdown as DropdownDeprecated } from '@/shared/ui'
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar/Avatar'
+import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar'
+import { Dropdown } from '@/shared/ui/redesigned/Popups'
 
 interface AvatarDropdownProps {
     className?: string
@@ -34,25 +37,40 @@ export const AvatarDropdown = memo(({
         return null
     }
 
+    const items = [
+      ...(isAdminPanelAvailable ? [{
+        content: t('admin'),
+        href: RoutePath.admin_panel
+      }] : []),
+      {
+        content: t('profile'),
+        href: `${RoutePath.profile}${authData.id}`
+      },
+      {
+        content: t('log_out'),
+        onClick: onLogout
+      }
+    ]
+
     return (
-      <Dropdown
-        direction="bottom left"
-        className={className}
-        items={[
-            ...(isAdminPanelAvailable ? [{
-                content: t('admin'),
-                href: RoutePath.admin_panel
-            }] : []),
-            {
-                content: t('profile'),
-                href: `${RoutePath.profile}${authData.id}`
-            },
-            {
-                content: t('log_out'),
-                onClick: onLogout
-            }
-        ]}
-        trigger={<Avatar size={30} src={authData.avatar} />}
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        on={(
+          <Dropdown
+            direction="bottom left"
+            className={className}
+            items={items}
+            trigger={<Avatar size={40} src={authData.avatar} />}
+          />
+        )}
+        off={(
+          <DropdownDeprecated
+            direction="bottom left"
+            className={className}
+            items={items}
+            trigger={<AvatarDeprecated size={30} src={authData.avatar} />}
+          />
+        )}
       />
     )
 })
