@@ -1,93 +1,89 @@
-import {
-  InputHTMLAttributes, SyntheticEvent, memo,
-  useCallback, useRef, useState, useEffect, ChangeEvent
+import React, {
+  InputHTMLAttributes,
+  memo,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState
 } from 'react'
 
-import classnames from '@/shared/libs/classnames/classnames'
+import classnames, { Mods } from '@/shared/libs/classnames/classnames'
 
 import cls from './Input.module.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>
 
 interface InputProps extends HTMLInputProps {
   className?: string
-  value?: string
+  value?: string | number
   onChange?: (value: string) => void
   autofocus?: boolean
-  focus?: boolean
-  readOnly?: boolean
+  readonly?: boolean
+  addonLeft?: ReactNode
+  addonRight?: ReactNode
 }
 
 export const Input = memo(({
   className,
   value,
   onChange,
-  autofocus ,
-  placeholder,
   type = 'text',
-  focus,
-  readOnly = false,
-  ...rest
+  placeholder,
+  autofocus,
+  readonly = false,
+  addonLeft,
+  addonRight,
+  ...otherProps
 }: InputProps) => {
-  const [isFocused, setFocused] = useState(false)
-  const [caretPosition, setCaretPosition] = useState(0)
   const ref = useRef<HTMLInputElement>(null)
-
-  const onChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value)
-    setCaretPosition(e.target.value.length)
-  }, [])
-
-  const onFocus = useCallback(() => {
-    setFocused(true)
-  }, [])
-
-  const onBlur = useCallback(() => {
-    setFocused(false)
-  }, [])
-
-  const onSelect = useCallback((e: SyntheticEvent<HTMLInputElement, Event>) => {
-    setCaretPosition(e?.currentTarget?.selectionStart || 0)
-  }, [])
+  const [isFocused, setIsFocused] = useState(false)
 
   useEffect(() => {
-    if (autofocus || focus) {
-      setFocused(true)
+    if (autofocus) {
+      setIsFocused(true)
       ref.current?.focus()
     }
-  }, [autofocus, focus])
+  }, [autofocus])
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if(readonly) return
+    onChange?.(e.target.value)
+  }
+
+  const onBlur = () => {
+    setIsFocused(false)
+  }
+
+  const onFocus = () => {
+    setIsFocused(true)
+  }
+
+  const mods: Mods = {
+    [cls.readonly]: readonly,
+    [cls.focused]: isFocused,
+    [cls.withAddonLeft]: Boolean(addonLeft),
+    [cls.withAddonRight]: Boolean(addonRight)
+  }
 
   return (
-    <div className={classnames(cls.inputWrapper, {}, [className])} data-testid="input">
-      {placeholder && (
-        <p className={cls.placeholder}>
-          {`${placeholder}>`}
-        </p>
-      )}
-      <div className={cls.caretWrapper}>
-        <input
-          ref={ref}
-          readOnly={readOnly}
-          type={type}
-          value={value || ''}
-          onChange={onChangeHandler}
-          className={cls.input}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onSelect={onSelect}
-          spellCheck="false"
-          {...rest}
-        />
-
-        {isFocused && !readOnly && (
-          <span
-            className={cls.caret}
-            style={{ left: `${caretPosition * 8}px` }}
-          />
-        )}
-      </div>
+    <div className={classnames(cls.inputWrapper, mods, [className])} data-testid="input">
+      {addonLeft && <div className={cls.addonLeft} data-testid="addonLeft">{addonLeft}</div>}
+      <input
+        ref={ref}
+        type={type}
+        value={value}
+        onChange={onChangeHandler}
+        className={cls.input}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        readOnly={readonly}
+        placeholder={placeholder}
+        {...otherProps}
+      />
+      {addonRight && <div className={cls.addonRight} data-testid="addonRight">{addonRight}</div>}
     </div>
   )
 })
-
-Input.displayName = 'Input'

@@ -10,7 +10,7 @@ const meta = {
   component: Input,
   argTypes: {
     autofocus: { control: 'boolean' },
-    focus: { control: 'boolean' },
+    readonly: { control: 'boolean' },
     value: { control: 'text' },
     onChange: { action: 'changed' }
   },

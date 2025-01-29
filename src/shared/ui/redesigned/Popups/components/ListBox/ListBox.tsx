@@ -3,11 +3,13 @@ import {
 } from '@headlessui/react'
 import { ReactNode, Fragment, useMemo } from 'react'
 
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
 import classnames from '@/shared/libs/classnames/classnames'
 
 import cls from './ListBox.module.scss'
 
 import { Button } from '../../../Button/Button'
+import { Icon } from '../../../Icon/Icon'
 import popupCls from '../../styles/popup.module.scss'
 
 export interface ListBoxItem {
@@ -67,7 +69,7 @@ export const ListBox = <T extends string>({
         )}
       >
         <ListboxButton as="div" className={cls.trigger}>
-          <Button disabled={readonly} variant="filled">
+          <Button disabled={readonly} variant="filled" addonRight={<Icon Svg={ArrowIcon} />}>
             {selectedItem?.content ?? defaultValue}
           </Button>
         </ListboxButton>

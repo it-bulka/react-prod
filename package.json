@@ -16,7 +16,7 @@
     "lint:scss": "npx stylelint \"src/**/*.scss\"",
     "lint:scss:fix": "npx stylelint --fix \"src/**/*.scss\"",
     "test:e2e": "npx cypress open",
-    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts --detectOpenHandles",
     "test:file": "jest --config ./config/jest/jest.config.ts --testPathPattern",
     "storybook": "storybook dev -p 6006 -c config/.storybook",
     "storybook:build": "storybook build -c config/.storybook",
