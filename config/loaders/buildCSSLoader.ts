@@ -21,7 +21,12 @@ export const buildCSSLoader = (isDev: boolean) => {
           }
         }
       },
-      'sass-loader'
+      {
+        loader: 'sass-loader',
+        options: {
+          additionalData: `@import '@/app/styles/basic/_mixins.scss';`
+        }
+      }
     ]
   }
 }

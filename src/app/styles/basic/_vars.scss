@@ -1,6 +1,17 @@
 :root {
   --font-family-main: Consolas, "Times New Roman", Serif;
 
+  // screens
+  --mobile-s: 320px;
+  --mobile-m: 375px;
+  --mobile-l: 414px;
+
+  --tablet-s: 768px;
+  --tablet-m: 834px;
+  --tablet-l: 1024px;
+
+  --desktop-s: 1280px;
+
   // s
   --font-size-s: 12px;
   --font-line-s: 20px;
@@ -48,4 +59,12 @@
 
   // xl
   --font-xl-redesigned: var(--font-size-xl) / var(--font-line-xl) var(--font-family-header-redesigned);
+
+  --layout-ofset-m: 32px;
+  --layout-gutter: calc(var(--layout-ofset-m) / 2);
+
+  @media (max-width: var(--tablet-l)) {
+    --layout-ofset-m: 20px;
+  }
 }
+

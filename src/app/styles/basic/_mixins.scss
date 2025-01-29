@@ -1,0 +1,5 @@
+@mixin media-max-tablet-s {
+  @media (width <= 1280px) {
+    @content
+  }
+}
