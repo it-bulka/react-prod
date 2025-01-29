@@ -9,3 +9,8 @@
   }
 
 }
+
+.ArticlesPageRedesigned {
+  height: calc(100vh - var(--layout-ofset-m) * 2);
+  width:  100%;
+}

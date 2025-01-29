@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { ArticleViewSelector } from './ArticleViewSelector'
-import { ArticleView } from '../../model/const/const'
+import { ArticleView } from '../../../entities/Article/model/const/const'
 
 const meta = {
   title: 'entities/ArticleViewSelector',

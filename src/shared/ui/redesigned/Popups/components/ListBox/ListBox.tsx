@@ -1,7 +1,7 @@
 import {
  Listbox as HListbox, ListboxButton, ListboxOption, ListboxOptions, Field, Label
 } from '@headlessui/react'
-import { memo, ReactNode, Fragment } from 'react'
+import { ReactNode, Fragment, useMemo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
 
@@ -18,15 +18,16 @@ export interface ListBoxItem {
 
 type DropdownDirection = 'top' | 'bottom'
 
-interface ListBoxProps {
+interface ListBoxProps<T extends string> {
   className?: string
   items?: ListBoxItem[]
-  value?: string
+  value?: T
   defaultValue?: string
-  onChange: (value: string) => void
+  onChange: (value: T) => void
   readonly?: boolean
   direction?: DropdownDirection
   label?: string
+  fullWidth?: boolean
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
@@ -34,7 +35,7 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
   top: cls.optionsTop
 }
 
-export const ListBox = memo(({
+export const ListBox = <T extends string>({
   className,
   items,
   value,
@@ -42,9 +43,14 @@ export const ListBox = memo(({
   onChange,
   readonly,
   direction = 'bottom',
-  label
-}: ListBoxProps) => {
+  label,
+  fullWidth
+}: ListBoxProps<T>) => {
   const optionsClasses = [mapDirectionClass[direction], popupCls.menu]
+
+  const selectedItem = useMemo(() => {
+    return items?.find(item => item.value === value)
+  }, [items, value])
 
   return (
     <Field className={cls.listBox}>
@@ -54,11 +60,15 @@ export const ListBox = memo(({
         value={value}
         onChange={onChange}
         as="div"
-        className={classnames(cls.listBox, {}, [className, popupCls.popup])}
+        className={classnames(
+          cls.listBox,
+          { [cls.fullWidth]: !!fullWidth },
+          [className, popupCls.popup]
+        )}
       >
         <ListboxButton as="div" className={cls.trigger}>
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
+          <Button disabled={readonly} variant="filled">
+            {selectedItem?.content ?? defaultValue}
           </Button>
         </ListboxButton>
         <ListboxOptions
@@ -89,6 +99,4 @@ export const ListBox = memo(({
       </HListbox>
     </Field>
   )
-})
-
-ListBox.displayName = 'ListBox'
+}

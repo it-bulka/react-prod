@@ -1,0 +1,42 @@
+.mainLayout {
+  display: grid;
+  grid-template-areas:
+            'left content right';
+  grid-template-columns: min-content 1fr min-content;
+
+  @include media-max-tablet-s {
+    grid-template-areas:
+            'content left'
+            'content right'
+            'content .';
+    grid-template-columns: 1fr min-content;
+    grid-row-gap: var(--layout-gutter);
+  }
+}
+
+
+.left {
+  grid-area: left;
+  max-width: fit-content;
+}
+
+.content {
+  grid-area: content;
+  min-width: 180px;
+  max-width: 1200px;
+  justify-self: center;
+  padding: 0 calc(var(--layout-ofset-m) / 2);
+  width: 100%;
+}
+
+.right{
+  grid-area: right;
+}
+
+.left,
+.right {
+  position: sticky;
+  top: var(--layout-ofset-m);
+  height: fit-content;
+}
+

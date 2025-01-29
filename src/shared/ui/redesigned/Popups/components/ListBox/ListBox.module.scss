@@ -1,6 +1,10 @@
 .listBox {
   display: flex;
   align-items: center;
+
+  &.fullWidth {
+    width: 100%;
+  }
 }
 
 .trigger {
@@ -9,10 +13,15 @@
   outline: none;
   padding: 0;
   margin: 0;
+  width: 100%;
+
+  & button {
+    width: 100%;
+  }
 }
 
 .options {
-  background: var(--dark-bg-redesigned-bg);
+  background: var(--dark-bg-redesigned);
   position: absolute;
   z-index: 10000;
   border-radius: 12px;

@@ -8,6 +8,7 @@ import { StateSchema } from '@/app/providers/StoreProvider'
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import { getUIScrollByPath, uiActions } from '@/features/UI'
 import classnames from '@/shared/libs/classnames/classnames'
+import { toggleFeatures } from '@/shared/libs/features/toggleFeatures'
 import { useInfiniteScroll } from '@/shared/libs/hooks/useInfiniteScroll'
 import { useThrottle } from '@/shared/libs/hooks/useThrottle/useThrottle'
 
@@ -36,7 +37,11 @@ export const PageWithInfinite = memo(({
 
   useInfiniteScroll({
     triggerRef,
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => undefined,
+      off: () => wrapperRef
+    }),
     callback: onScrollEnd
   })
 

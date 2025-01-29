@@ -1,8 +1,9 @@
 import { memo, useMemo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import classnames from '@/shared/libs/classnames/classnames'
-import { TabItem, Tabs } from '@/shared/ui'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui'
+import { Tabs } from '@/shared/ui/redesigned/Tabs/Tabs'
 
 import { ArticleType } from '../../model/const/const'
 
@@ -43,13 +44,26 @@ export const ArticleTypeTabs = memo(({
   }, [onChangeType])
 
   return (
-    <div className={classnames('', {}, [className])}>
-      <Tabs
-        tabs={typeTabs}
-        value={value}
-        onTabClick={onTabClick}
-        className={className}
-      />
-    </div>
+    <ToggleFeaturesComponent
+      feature="isAppRedesigned"
+      off={(
+        <TabsDeprecated
+          tabs={typeTabs}
+          value={value}
+          onTabClick={onTabClick}
+          className={className}
+        />
+      )}
+      on={(
+        <Tabs
+          direction="column"
+          tabs={typeTabs}
+          value={value}
+          onTabClick={onTabClick}
+          className={className}
+          fullWidth
+        />
+      )}
+    />
   )
 })

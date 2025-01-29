@@ -16,8 +16,8 @@ interface NonClickableIconProps extends IconBaseProps {
 }
 
 interface ClickableBaseProps extends IconBaseProps {
-  clickable: true;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  clickable: true
+  onClick: MouseEventHandler<HTMLButtonElement>
 }
 
 type IconProps = NonClickableIconProps | ClickableBaseProps
