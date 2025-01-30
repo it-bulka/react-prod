@@ -24,3 +24,19 @@ export interface ProfileSchema {
   readOnly: boolean
   validateErrors?: ValidateProfileError[]
 }
+
+export interface ProfileCardProps {
+  className?: string
+  data?: Profile
+  readOnly?: boolean
+  error?: string
+  isLoading?: boolean
+  onChangeLastname?: (value?: string) => void
+  onChangeFirstname?: (value?: string) => void
+  onChangeCity?: (value?: string) => void
+  onChangeAge?: (value?: string) => void
+  onChangeUsername?: (value?: string) => void
+  onChangeAvatar?: (value?: string) => void
+  onChangeCurrency?: (currency: Currency) => void
+  onChangeCountry?: (country: Country) => void
+}

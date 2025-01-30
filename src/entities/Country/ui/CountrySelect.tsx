@@ -2,8 +2,9 @@ import { useCallback, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Country } from '@/shared/const/common'
-import classnames from '@/shared/libs/classnames/classnames'
-import { ListBox } from '@/shared/ui/deprecated/Popups/components/ListBox/ListBox'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups/components/ListBox/ListBox'
+import { ListBox } from '@/shared/ui/redesigned/Popups'
 
 interface CountrySelectProps {
   className?: string
@@ -30,16 +31,21 @@ export const CountrySelect = memo(({
     onChange?.(val as Country)
   }, [onChange])
 
+  const props = {
+    className,
+    label: t('specify the country'),
+    items: options,
+    onChange: onChangeHandler,
+    defaultValue: options[1].value,
+    value,
+    readonly,
+    direction: 'top' as const
+  }
   return (
-    <ListBox
-      className={classnames('', {}, [className])}
-      label={t('specify the country')}
-      items={options}
-      onChange={onChangeHandler}
-      defaultValue={t('specify the country')}
-      value={value}
-      readonly={readonly}
-      direction="top"
+    <ToggleFeaturesComponent
+      feature="isAppRedesigned"
+      off={<ListBoxDeprecated {...props} />}
+      on={<ListBox {...props} />}
     />
   )
 })
