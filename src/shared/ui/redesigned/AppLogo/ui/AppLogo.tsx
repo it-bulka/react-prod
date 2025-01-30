@@ -19,8 +19,6 @@ export const AppLogo = memo(({ className, size = 50 }: AppLogoProps) => {
       justify="center"
       className={classnames(cls.appLogoWrapper, {}, [className])}
     >
-      <div className={cls.gradientBig} data-testid="AppLogo.gradientBig" />
-      <div className={cls.gradientSmall} data-testid="AppLogo.gradientSmall" />
       <AppSvg
         width={size}
         height={size}
@@ -28,6 +26,8 @@ export const AppLogo = memo(({ className, size = 50 }: AppLogoProps) => {
         className={cls.appLogo}
         data-testid="AppLogo.svg"
       />
+      <div className={cls.gradientBig} data-testid="AppLogo.gradientBig" />
+      <div className={cls.gradientSmall} data-testid="AppLogo.gradientSmall" />
     </HStack>
   )
 })
