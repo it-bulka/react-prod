@@ -11,17 +11,18 @@ export type TextAlign = 'right' | 'left' | 'center'
 export type TextSize = 's' | 'm' | 'l'
 
 interface TextProps {
-  className?: string;
-  title?: string;
-  text?: string;
-  variant?: TextVariant;
-  align?: TextAlign;
-  size?: TextSize;
-
-  'data-testid'?: string;
+  className?: string
+  title?: string
+  text?: string
+  variant?: TextVariant
+  align?: TextAlign
+  size?: TextSize
+  bold?: boolean,
+  semiBold?: boolean,
+  'data-testid'?: string
 }
 
-type HeaderTagType = 'h1' | 'h2' | 'h3';
+type HeaderTagType = 'h1' | 'h2' | 'h3'
 
 const mapSizeToClass: Record<TextSize, string> = {
   s: 'size_s',
@@ -42,16 +43,20 @@ export const Text = memo(({
   variant = 'primary',
   align ='left',
   size = 'm',
+  bold = false,
+  semiBold = false,
   'data-testid': dataTestId = 'Text'
 }: TextProps) => {
   const HeaderTag = mapSizeToHeaderTag[size]
+  const sizeClass = mapSizeToClass[size]
+
   return (
     <div
       data-testid="text"
       className={classnames(
         cls.text,
-        {},
-        [className, cls[variant], cls[align], mapSizeToClass[size]]
+        { [cls.bold]: bold, [cls.semiBold]: semiBold },
+        [className, cls[variant], cls[align], cls[sizeClass]]
       )}
     >
       {title && <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>{title}</HeaderTag>}

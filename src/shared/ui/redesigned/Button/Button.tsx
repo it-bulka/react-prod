@@ -6,7 +6,7 @@ import cls from './Button.module.scss'
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
-export type ButtonSize = 'm' | 'l' | 'xl';
+export type ButtonSize = 's' | 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   className?: string,
@@ -23,7 +23,7 @@ export const Button = memo(({
   children,
   variant = 'outline',
   square = false,
-  size = 'm',
+  size = 's',
   disabled = false,
   fullWidth = false,
   addonLeft,

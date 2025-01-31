@@ -1,0 +1,46 @@
+$margin-xs: 4px;
+$margin-s: 8px;
+$margin-m: 12px;
+$margin-l: 16px;
+$margin-xl: 24px;
+$margin-2xl: 32px;
+
+.BIG {
+  .header {
+    margin-bottom: $margin-m;
+  }
+
+  .username {
+    border-radius: $margin-2xl;
+  }
+
+  .footer {
+    margin-left: auto;
+    border-radius: 22px;
+  }
+
+  .texts {
+    margin-bottom: $margin-xl;
+
+    & > div {
+      border-radius: $margin-xs;
+    }
+  }
+
+  .title {
+    border-radius: $margin-s;
+
+    &:nth-child(1) {
+      margin-bottom: $margin-s;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: $margin-m;
+    }
+  }
+
+  .img {
+    border-radius: $margin-l;
+    margin: 13px 0 19px;
+  }
+}

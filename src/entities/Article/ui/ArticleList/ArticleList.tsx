@@ -10,7 +10,7 @@ import cls from './ArticleList.module.scss'
 import { ArticleView } from '../../model/const/const'
 import { Article } from '../../model/types/articles'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { ArticleListItemSkeleton } from '../ArticleListItem/Skeleton/ArticleListItemSkeleton'
 
 // Should be fixed height for virtualization from parent component className
 interface ArticleListProps {
@@ -71,7 +71,7 @@ export const ArticleList = memo(({
         onClick={() => storeStartArticleNum(index)}
       />
     )
-  }, [storeStartArticleNum])
+  }, [storeStartArticleNum, view])
 
   const renderSeekPlaceholder = ({index}: {index: number}) => (
     <ArticleListItemSkeleton className={cls.card} key={index} view={view} />

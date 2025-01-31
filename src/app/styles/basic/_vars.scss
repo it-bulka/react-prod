@@ -1,5 +1,7 @@
 :root {
   --font-family-main: Consolas, "Times New Roman", Serif;
+  --font-family-text-redesigned: 'Nunito Sans', sans-serif;
+  --font-family-header-redesigned: 'Roboto', sans-serif;
 
   // screens
   --mobile-s: 320px;
@@ -47,15 +49,24 @@
   --overlay-z-index: 100;
 
   // redesigned
+  --font-weight-semibold: 700;
+  --font-weight-bold: 900;
 
   // s
-  --font-s-redesigned: var(--font-size-s) / var(--font-line-s) var(--font-family-text-redesigned);
+  --font-size-s-redesigned: 16px;
+  --font-line-s-redesigned: 21.82px;
+  --font-s-redesigned: var(--font-size-s-redesigned) / var(--font-line-s-redesigned) var(--font-family-text-redesigned);
 
   // m
-  --font-m-redesigned: var(--font-size-m) / var(--font-line-m) var(--font-family-text-redesigned);
+  --font-size-m-redesigned: 24px;
+  --font-line-m-redesigned: 28.13px;
+  --font-m-redesigned: var(--font-size-m-redesigned) / var(--font-line-m-redesigned) var(--font-family-text-redesigned);
 
   // l
-  --font-l-redesigned: var(--font-size-l) / var(--font-line-l) var(--font-family-header-redesigned);
+  --font-size-l-redesigned: 32px;
+  --font-line-l-redesigned: 37.5px;
+  --font-weight-l-redesigned: 900;
+  --font-l-redesigned: var(--font-size-l-redesigned) / var(--font-line-l-redesigned) var(--font-family-header-redesigned);
 
   // xl
   --font-xl-redesigned: var(--font-size-xl) / var(--font-line-xl) var(--font-family-header-redesigned);

@@ -24,6 +24,7 @@ export const useArticleFilters = () => {
   const type = useSelector(getArticlesPageType)
   const search = useSelector(getArticlesPageSearch)
 
+  console.log('view', view)
   const fetchData = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }))
   }, [dispatch])

@@ -1,0 +1,25 @@
+.BIG {
+  .img {
+    width: 100%;
+    aspect-ratio: 732 / 420;
+    object-fit: cover;
+  }
+
+  .textBlock {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @supports not (-webkit-line-clamp: 3) {
+      display: block;
+      overflow: hidden;
+      max-height: 72px;
+    }
+  }
+
+  .heading {
+    margin-bottom: 8px;
+  }
+}

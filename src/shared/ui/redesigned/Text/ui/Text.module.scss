@@ -41,7 +41,7 @@
 
 .size_s {
   .title {
-    font: var(--font-m-redesigned);
+    font: var(--font-s-redesigned);
   }
 
   .text {
@@ -66,5 +66,17 @@
 
   .text {
     font: var(--font-l-redesigned);
+  }
+}
+
+.bold {
+  .title, .text {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.semiBold {
+  .title, .text {
+    font-weight: var(--font-weight-semibold);
   }
 }
