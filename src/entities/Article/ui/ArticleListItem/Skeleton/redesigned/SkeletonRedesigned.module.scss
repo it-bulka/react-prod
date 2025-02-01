@@ -19,14 +19,6 @@ $margin-2xl: 32px;
     border-radius: 22px;
   }
 
-  .texts {
-    margin-bottom: $margin-xl;
-
-    & > div {
-      border-radius: $margin-xs;
-    }
-  }
-
   .title {
     border-radius: $margin-s;
 
@@ -42,5 +34,27 @@ $margin-2xl: 32px;
   .img {
     border-radius: $margin-l;
     margin: 13px 0 19px;
+  }
+
+  .texts {
+    margin-bottom: $margin-xl;
+  }
+}
+
+.SMALL {
+  width: 249px;
+
+  .texts {
+    margin: $margin-s 0 $margin-xs;
+  }
+
+  .info {
+    padding: 8px;
+  }
+}
+
+.texts {
+  & > div {
+    border-radius: $margin-xs;
   }
 }

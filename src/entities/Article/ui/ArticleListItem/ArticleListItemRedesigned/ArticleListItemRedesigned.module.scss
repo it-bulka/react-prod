@@ -1,3 +1,17 @@
+@mixin line-clamp($height-limit) {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @supports not (-webkit-line-clamp: 3) {
+    display: block;
+    overflow: hidden;
+    max-height: $height-limit;
+  }
+}
+
 .BIG {
   .img {
     width: 100%;
@@ -6,20 +20,37 @@
   }
 
   .textBlock {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    @supports not (-webkit-line-clamp: 3) {
-      display: block;
-      overflow: hidden;
-      max-height: 72px;
-    }
+   @include line-clamp(72px);
   }
 
   .heading {
     margin-bottom: 8px;
+  }
+}
+
+.SMALL {
+  display: block;
+  width: 249px;
+  overflow: hidden;
+  cursor: pointer;
+
+  .img {
+    aspect-ratio: 249 / 141;
+    max-height: 249px;
+    object-fit: cover;
+  }
+
+ .info {
+   padding: 8px;
+ }
+
+ .userInfo {
+   padding: 4px 8px;
+ }
+
+  .title {
+    width: 100%;
+
+    @include line-clamp(113px);
   }
 }

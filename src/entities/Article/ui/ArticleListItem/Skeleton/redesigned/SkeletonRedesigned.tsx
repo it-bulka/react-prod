@@ -30,3 +30,30 @@ export const SkeletonBigRedesigned = () => {
     </Card>
   )
 }
+
+export const SkeletonSmallRedesigned = () => {
+  return (
+    <Card
+      padding="0"
+      border="round-l"
+      className={clsSkeleton.SMALL}
+    >
+      <Skeleton height={141} className={clsSkeleton.img} />
+      <VStack className={clsSkeleton.info} gap="4">
+        <VStack gap="6" className={clsSkeleton.texts} max align="start">
+          <Skeleton width="91%" height={17} />
+          <Skeleton width="85%" height={17} />
+          <Skeleton width="95%" height={17} />
+        </VStack>
+        <HStack justify="between" max className={clsSkeleton.texts}>
+          <Skeleton width="20%" height={20} />
+          <Skeleton width="20%" height={20} />
+        </HStack>
+        <HStack gap="8" max>
+          <Skeleton border="50%" height={32} width={32} />
+          <Skeleton width={152} height={24} className={clsSkeleton.username} />
+        </HStack>
+      </VStack>
+    </Card>
+  )
+}

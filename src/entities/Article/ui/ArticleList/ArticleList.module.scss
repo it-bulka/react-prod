@@ -12,5 +12,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
+  & .virtuoso-grid-item {
+    flex-basis: 31.92%;
+    min-width: 200px;
+  }
 }
 
