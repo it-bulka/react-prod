@@ -1,4 +1,23 @@
 .notificationItem,
+.notificationItemRedesigned,
 .link {
   width: 100%;
 }
+
+// redesigned start
+.notificationItemRedesigned {
+  display: block;
+  width: 100%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--bg-redesigned);
+  }
+}
+
+.paragraph {
+  & > p{
+    font: var(--font-s-redesigned) !important;
+  }
+}
+
+// redesigned end

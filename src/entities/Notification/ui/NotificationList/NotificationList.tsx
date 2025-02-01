@@ -1,7 +1,9 @@
 import { memo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
+import { toggleFeatures } from '@/shared/libs/features/toggleFeatures'
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton/Skeleton'
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton/Skeleton'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 
 import cls from './NotificationList.module.scss'
@@ -20,6 +22,12 @@ export const NotificationList = memo(({
     pollingInterval: __PROJECT_ENV__ === 'storybook' ? undefined : 10000
   })
 
+  const Skeleton = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated
+  })
+
   if(isLoading) {
     return (
       <VStack
@@ -34,9 +42,15 @@ export const NotificationList = memo(({
     )
   }
 
+  const gap = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => undefined,
+    off: () => '16' as const
+  })
+
   return (
     <VStack
-      gap="16"
+      gap={gap}
       max
       className={classnames(cls.notificationList, {}, [className])}
     >

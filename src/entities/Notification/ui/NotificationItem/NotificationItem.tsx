@@ -1,6 +1,7 @@
 import { memo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
+import { toggleFeatures } from '@/shared/libs/features/toggleFeatures'
 import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
 import { Card as CardDeprecated, CardTheme, Text as TextDeprecated } from '@/shared/ui'
 import { Card } from '@/shared/ui/redesigned/Card/Card'
@@ -24,9 +25,10 @@ export const NotificationItem = memo(({
         feature="isAppRedesigned"
         on={(
           <Card
-            className={classnames(cls.notificationItem, {}, [className])}
+            className={classnames(cls.notificationItemRedesigned, {}, [className])}
+            border="round-none"
           >
-            <Text title={item.title} text={item.description} />
+            <Text title={item.title} text={item.description} className={cls.paragraph} size="m" />
           </Card>
         )}
         off={(
@@ -39,9 +41,16 @@ export const NotificationItem = memo(({
         )}
       />
     )
+
+    const linkClass = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => cls.notificationItemRedesigned,
+      off: () => cls.link
+    })
+
     if (item.href) {
         return (
-          <a className={cls.link} target="_blank" href={item.href} rel="noreferrer">
+          <a className={linkClass} target="_blank" href={item.href} rel="noreferrer">
             {content}
           </a>
         )

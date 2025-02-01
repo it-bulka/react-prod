@@ -3,6 +3,21 @@
   background: var(--bg-color);
   color: var(--primary-color);
   min-height: 100vh;
+
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--card-bg);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color);
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+  }
 }
 
 .app_drawer {
@@ -15,6 +30,23 @@
   min-height: 100vh;
   font: var(--font-s-redesigned);
   color: var(--text-redesigned);
+
+  $scrollbar-radius: 38px;
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 21px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--bg-redesigned);
+    border-radius: $scrollbar-radius;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--accent-redesigned);
+    border-radius: $scrollbar-radius;
+  }
 }
 
 .content-page {
@@ -26,19 +58,4 @@
   padding: 20px 20px 20px 45px;
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
-}
-
-*::-webkit-scrollbar {
-  width: 12px;
-  height: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--card-bg);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--inverted-primary-color);
-  border-radius: 20px;
-  border: 2px solid var(--primary-color);
 }
