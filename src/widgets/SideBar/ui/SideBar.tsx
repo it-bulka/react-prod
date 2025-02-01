@@ -1,7 +1,7 @@
 import { useCallback, useState, memo } from 'react'
 import { useSelector } from 'react-redux'
 
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
 import { SideBar as DeprecatedSideBar } from './deprecated/SideBar'
 import { SideBar as RedesignedSideBar } from './redesigned/SideBar'

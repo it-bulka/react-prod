@@ -7,7 +7,7 @@ import { ArticleRating } from '@/features/ArticleRating'
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { Card } from '@/shared/ui'
 
 import cls from './ArticleDetailsPage.module.scss'

@@ -1,7 +1,7 @@
 import { useCallback, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { Button } from '@/shared/ui/redesigned/Button/Button'
 
 import { Button as ButtonDeprecated, ThemeButton } from '../../shared/ui/deprecated/Button/Button'

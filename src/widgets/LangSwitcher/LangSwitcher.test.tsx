@@ -5,7 +5,7 @@ import { componentRender } from '@/shared/libs/test/componentRender'
 
 import { LangSwitcher as LangSwitch } from './LangSwitcher'
 
-jest.mock('@/shared/libs/features/ToggleFeaturesComponent', () => ({
+jest.mock('@/shared/libs/features/components/ToggleFeaturesComponent', () => ({
   ToggleFeaturesComponent: jest.fn()
 }))
 
@@ -14,7 +14,7 @@ describe('LangSwitcher', () => {
     let LangSwitcherComp: typeof LangSwitch
     beforeAll(async () => {
       i18n.changeLanguage('en')
-      const { ToggleFeaturesComponent } = await import('@/shared/libs/features/ToggleFeaturesComponent')
+      const { ToggleFeaturesComponent } = await import('@/shared/libs/features/components/ToggleFeaturesComponent')
       const mockedToggleFeaturesComponent = ToggleFeaturesComponent as jest.MockedFunction<
         typeof ToggleFeaturesComponent
       >
@@ -62,7 +62,7 @@ describe('LangSwitcher', () => {
     let LangSwitcherComp: typeof LangSwitch
     beforeAll(async () => {
       i18n.changeLanguage('en')
-      const { ToggleFeaturesComponent } = await import('@/shared/libs/features/ToggleFeaturesComponent')
+      const { ToggleFeaturesComponent } = await import('@/shared/libs/features/components/ToggleFeaturesComponent')
       const mockedToggleFeaturesComponent = ToggleFeaturesComponent as jest.MockedFunction<
         typeof ToggleFeaturesComponent
       >

@@ -1,8 +1,8 @@
 import { memo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
-import { toggleFeatures } from '@/shared/libs/features/toggleFeatures'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
+import { toggleFeatures } from '@/shared/libs/features/lib/toggleFeatures'
 import { Card as CardDeprecated, CardTheme, Text as TextDeprecated } from '@/shared/ui'
 import { Card } from '@/shared/ui/redesigned/Card/Card'
 import { Text } from '@/shared/ui/redesigned/Text/ui/Text'

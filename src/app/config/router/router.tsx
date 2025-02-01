@@ -10,6 +10,7 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { HomePage } from '@/pages/Home'
 import { NotFound } from '@/pages/NotFound'
 import { ProfilePage } from '@/pages/ProfilePage'
+import { SettingsPage } from '@/pages/SettingsPage'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
 import { ProtectedRoutes } from '../../providers/ProtectedRoutes/ProtectedRoutes'
@@ -65,6 +66,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoutes roles={[UserRole.MANAGER, UserRole.ADMIN]}>
             <AdminPanelPage />
+          </ProtectedRoutes>
+        )
+      },
+      {
+        path: RoutePath.settings,
+        element: (
+          <ProtectedRoutes roles={[UserRole.MANAGER, UserRole.ADMIN]}>
+            <SettingsPage />
           </ProtectedRoutes>
         )
       },

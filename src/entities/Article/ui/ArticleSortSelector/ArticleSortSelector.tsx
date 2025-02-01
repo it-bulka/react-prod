@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import classnames from '@/shared/libs/classnames/classnames'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { SortOrder } from '@/shared/types'
 import { SelectOption, Select } from '@/shared/ui/deprecated/Select/Select'
 import { ListBox } from '@/shared/ui/redesigned/Popups'

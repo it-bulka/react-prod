@@ -1,4 +1,4 @@
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
 import { ProfileCardProps } from '../../model/types/profile'
 import {

@@ -4,7 +4,7 @@ import { ArticlePageGreeting } from '@/features/ArticlePageGreeting'
 import { StickyContentLayout } from '@/shared/lauouts/StickyContentLayout'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
 import cls from './ArticlesPage.module.scss'
 

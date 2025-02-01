@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import classnames from '@/shared/libs/classnames/classnames'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { Button, ThemeButton } from '@/shared/ui/deprecated/Button/Button'
 
 import cls from './NavBar.module.scss'

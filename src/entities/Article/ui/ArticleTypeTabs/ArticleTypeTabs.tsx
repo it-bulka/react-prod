@@ -1,7 +1,7 @@
 import { memo, useMemo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui'
 import { Tabs } from '@/shared/ui/redesigned/Tabs/Tabs'
 

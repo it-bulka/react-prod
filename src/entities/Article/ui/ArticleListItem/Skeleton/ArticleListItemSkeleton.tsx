@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
 import { SkeletonBigDeprecated, SkeletonSmallDeprecated } from './deprecated/SkeletonDeprecated'
 import { SkeletonBigRedesigned, SkeletonSmallRedesigned } from './redesigned/SkeletonRedesigned'

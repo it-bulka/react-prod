@@ -2,7 +2,7 @@ import { useCallback, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Currency } from '@/shared/const/common'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups/components/ListBox/ListBox'
 import { ListBox } from '@/shared/ui/redesigned/Popups'
 

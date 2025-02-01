@@ -2,7 +2,7 @@ import { memo, useState, useCallback } from 'react'
 
 import { NotificationList } from '@/entities/Notification'
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { useDevice } from '@/shared/libs/hooks/useDevice/useDevice'
 import { Button as DeprecatedButton, ThemeButton } from '@/shared/ui/deprecated/Button/Button'
 import { Drawer as DeprecatedDrawer } from '@/shared/ui/deprecated/Drawer/Drawer'

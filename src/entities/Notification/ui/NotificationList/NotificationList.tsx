@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
 import classnames from '@/shared/libs/classnames/classnames'
-import { toggleFeatures } from '@/shared/libs/features/toggleFeatures'
+import { toggleFeatures } from '@/shared/libs/features/lib/toggleFeatures'
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton/Skeleton'
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton/Skeleton'
 import { VStack } from '@/shared/ui/redesigned/Stack'

@@ -6,8 +6,8 @@ import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import {
   isUserAdmin, isUserManager , getUserAuthData, userActions
 } from '@/entities/User'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
-import { ToggleFeaturesComponent } from '@/shared/libs/features/ToggleFeaturesComponent'
+import { RoutePath , getRouteSettings } from '@/shared/config/routeConfig/routeConfig'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 import { Dropdown as DropdownDeprecated } from '@/shared/ui'
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar/Avatar'
 import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar'
@@ -45,6 +45,10 @@ export const AvatarDropdown = memo(({
       {
         content: t('profile'),
         href: `${RoutePath.profile}${authData.id}`
+      },
+      {
+        content: t('settings'),
+        href: getRouteSettings()
       },
       {
         content: t('log_out'),

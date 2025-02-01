@@ -12,10 +12,13 @@ export function setFeatureFlags(newFeatureFlags?: FeatureFlags): void {
 export function getFeatureFlags(
   flag?: keyof FeatureFlags | undefined
 ): FeatureFlags[keyof FeatureFlags] | undefined {
-  console.log('flag', flag)
   if (!flag) {
     return undefined
   }
 
   return featureFlags?.[flag]
+}
+
+export function getAllFeatureFlags() {
+  return featureFlags
 }
