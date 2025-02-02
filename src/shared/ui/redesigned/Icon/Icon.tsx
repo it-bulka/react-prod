@@ -9,6 +9,7 @@ type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>
 interface IconBaseProps extends SvgProps {
     className?: string;
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>
+    'data-testid'?: string
 }
 
 interface NonClickableIconProps extends IconBaseProps {
@@ -28,6 +29,7 @@ export const Icon = memo(({
   width = 32,
   height = 32,
   clickable,
+  'data-testid': dataTestId,
   ...rest
 }: IconProps) => {
   const icon = (
@@ -37,13 +39,13 @@ export const Icon = memo(({
       height={height}
       {...rest}
       onClick={undefined}
-      data-testid="icon.svg"
+      data-testid={dataTestId && !clickable ? dataTestId : 'icon.svg'}
     />
   )
   if (clickable) {
     return (
       <button
-        data-testid="icon.btn"
+        data-testid={dataTestId || 'icon.btn'}
         type="button"
         className={cls.button}
         onClick={(rest as ClickableBaseProps).onClick}

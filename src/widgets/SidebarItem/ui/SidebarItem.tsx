@@ -16,8 +16,9 @@ import { SidebarItemType } from '../../SideBar/model/types/items'
 interface SidebarItemProps {
   item: SidebarItemType
   collapsed: boolean
+  'data-testid'?: string
 }
-export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
+export const SidebarItem = memo(({ item, collapsed, 'data-testid': dataTestId }: SidebarItemProps) => {
   const { t } = useTranslation()
   const isAuth = useSelector(getUserAuthData)
 
@@ -33,6 +34,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
           theme={AppLinkTheme.SECONDARY}
           to={item.path}
           className={classnames(cls.item, { [cls.collapsed]: collapsed })}
+          data-testId={dataTestId}
         >
           <item.Icon className={cls.icon} />
           <span className={cls.link}>
@@ -47,6 +49,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
             [cls.collapsedRedesigned]: collapsed
           })}
           activeClassName={cls.active}
+          data-testId={dataTestId}
         >
           <Icon Svg={item.Icon} />
           <span className={cls.link}>{t(item.text)}</span>

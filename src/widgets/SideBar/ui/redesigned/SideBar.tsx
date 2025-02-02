@@ -32,7 +32,7 @@ export const SideBar = ({
       <AppLogo className={cls.appLogo} />
       <VStack role="navigation" gap="8" align="start" className={cls.items}>
         {sidebarItemsList.map(item => (
-          <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+          <SidebarItem item={item} collapsed={collapsed} key={item.path} data-testid="sidebar.item" />
         ))}
       </VStack>
       <Icon

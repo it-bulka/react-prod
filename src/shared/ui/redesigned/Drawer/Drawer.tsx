@@ -5,13 +5,14 @@ import {
 } from 'react'
 
 import { withAnimationProvider, useAnimationLibs } from '@/shared/libs/components/AnimationProvider'
+import { toggleFeatures } from '@/shared/libs/features/lib/toggleFeatures'
 
 import cls from './Drawer.module.scss'
 
 import classnames, { Mods } from '../../../libs/classnames/classnames'
 import { useTheme } from '../../../libs/const/useTheme'
-import { Overlay } from '../../redesigned/Overlay/Overlay'
-import { Portal } from '../../redesigned/Portal/Portal'
+import { Overlay } from '../Overlay/Overlay'
+import { Portal } from '../Portal/Portal'
 
 interface DrawerProps {
   className?: string;
@@ -21,9 +22,6 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100
 
-/**
- * @deprecated
- */
 const DrawerContent = memo(({
   className,
   isOpen = false,
@@ -90,7 +88,17 @@ const DrawerContent = memo(({
 
   return (
     <Portal>
-      <div className={classnames(cls.drawer, mods, [className, theme, 'app_drawer'])}>
+      <div className={classnames(cls.drawer, mods, [
+        className,
+        theme,
+        'app_drawer',
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => cls.drawerNew,
+          off: () => cls.drawerOld
+        })
+      ])}
+      >
         <Overlay onClick={close} />
         <animated.div
           className={cls.sheet}

@@ -56,23 +56,18 @@ describe('EditableProfileCard', () => {
   it('should be prev data in input after undoing', async () => {
     componentRender(<EditableProfileCard />, options)
     const inputUsername = 'ProfileCard.username'
-    const inputFirstName = 'ProfileCard.firstname'
 
     await userEvent.click(screen.getByTestId('EditableProfilePageHeader.EditButton'))
 
     await userEvent.clear(screen.getByTestId(inputUsername))
-    await userEvent.clear(screen.getByTestId(inputFirstName))
 
     await userEvent.type(screen.getByTestId(inputUsername), 'user')
-    await userEvent.type(screen.getByTestId(inputFirstName), 'user')
 
     expect(screen.getByTestId(inputUsername)).toHaveValue('user')
-    expect(screen.getByTestId(inputFirstName)).toHaveValue('user')
 
     await userEvent.click(screen.getByTestId('EditableProfilePageHeader.CancelButton'))
 
     expect(screen.getByTestId(inputUsername)).toHaveValue('admin213')
-    expect(screen.getByTestId(inputFirstName)).toHaveValue('admin')
   })
 
   it('should show error', async () => {

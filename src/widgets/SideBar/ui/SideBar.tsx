@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
-import { SideBar as DeprecatedSideBar } from './deprecated/SideBar'
+import { SideBarDeprecated } from './deprecated/SideBarDeprecated'
 import { SideBar as RedesignedSideBar } from './redesigned/SideBar'
 import { getSidebarItems } from '../model/selectors/getSidebarItem/getSidebarItem'
 
@@ -26,7 +26,7 @@ export const SideBar = memo(() => {
         />
       )}
       off={(
-        <DeprecatedSideBar
+        <SideBarDeprecated
           onToggle={onToggle}
           sidebarItemsList={sidebarItemsList}
           collapsed={collapsed}

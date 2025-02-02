@@ -11,13 +11,13 @@ import { LangSwitcher } from '../../../LangSwitcher/LangSwitcher'
 import { SidebarItem } from '../../../SidebarItem/ui/SidebarItem'
 import { SidebarItemType } from '../../model/types/items'
 
-interface SideBarProps {
+interface SideBarProps extends WithTestId {
   className?: string
   onToggle: () => void
   collapsed: boolean
   sidebarItemsList: SidebarItemType[]
 }
-export const SideBar = ({
+export const SideBarDeprecated = ({
   className,
   onToggle,
   collapsed,
@@ -25,7 +25,7 @@ export const SideBar = ({
 }: SideBarProps) => {
   return (
     <aside
-      data-testid="sidebar"
+      data-testid="sidebar.deprecated"
       className={classnames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
       <Button

@@ -1,5 +1,7 @@
 import { PropsWithChildren, memo } from 'react'
 
+import { toggleFeatures } from '@/shared/libs/features/lib/toggleFeatures'
+
 import cls from './Modal.module.scss'
 
 import classnames from '../../../libs/classnames/classnames'
@@ -33,7 +35,14 @@ export const Modal = memo(({
     <Portal>
       <div
         data-testid="modal"
-        className={classnames(cls.modal, mods, [className])}
+        className={classnames(cls.modal, mods, [
+          className,
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.modalNew,
+            off: () => cls.modalOld
+          })
+        ])}
       >
         <Overlay
           onClick={closeHandler}

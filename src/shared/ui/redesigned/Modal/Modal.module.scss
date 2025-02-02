@@ -18,7 +18,6 @@ $viewWidth: 800px;
 .content {
   padding: 20px;
   border-radius: 12px;
-  background: var(--bg-color);
   transition: 0.3s transform;
   transform: scale(0.5);
   max-width: 60%;
@@ -26,6 +25,20 @@ $viewWidth: 800px;
   @media (max-width: $viewWidth) {
     max-width: 95%;
     min-width: 80%;
+  }
+}
+
+// redesign
+.modalNew {
+  .content {
+    background: var(--light-bg-redesigned);
+  }
+}
+
+// deprecated
+.modalOld {
+  .content {
+    background: var(--bg-color);
   }
 }
 

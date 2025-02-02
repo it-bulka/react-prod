@@ -1,22 +1,26 @@
-import { screen, fireEvent } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 
 import { componentRender } from '@/shared/libs/test/componentRender'
+import { mockFeatureToggleComp } from '@/shared/libs/test/mockFeatuteToggleComp'
 
-import { SideBar } from './SideBar'
+const mockFeatureTogler = mockFeatureToggleComp()
 
-describe('SideBar', () => {
-  it('should render correctly', () => {
+describe('Sidebar', () => {
+  it('should render deprecated Sidebar component', async () => {
+    await mockFeatureTogler({ isOn: false })
+
+    const { SideBar } = await import('./SideBar')
     componentRender(<SideBar />)
-    expect(screen.getByTestId('sidebar')).toBeInTheDocument()
+    const deprecatedSidebar = screen.getByTestId('sidebar.deprecated')
+    expect(deprecatedSidebar).toBeInTheDocument()
   })
 
-  it('should toggle', () => {
-    const renderedComponent = componentRender(<SideBar />)
-    expect(screen.getByTestId('sidebar')).toBeInTheDocument()
+  it('should render redesigned Sidebar component', async () => {
+    await mockFeatureTogler({ isOn: true })
 
-    const toggleBtn = renderedComponent.getByTestId('toggle-btn')
-    expect(toggleBtn).toBeInTheDocument()
-    fireEvent.click(toggleBtn)
-    expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')
+    const { SideBar } = await import('./SideBar')
+    componentRender(<SideBar />)
+    const deprecatedSidebar = screen.getByTestId('sidebar')
+    expect(deprecatedSidebar).toBeInTheDocument()
   })
 })

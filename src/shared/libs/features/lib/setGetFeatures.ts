@@ -1,7 +1,9 @@
 import { FeatureFlags } from '@/shared/types/featureFlaga'
 
 // FEATURES DOES NOT CHANGE via SESSION. NOT NECESSARY TO MAKE REACTIVE
-let featureFlags: FeatureFlags = {}
+let featureFlags: FeatureFlags = {
+  isAppRedesigned: true
+}
 
 export function setFeatureFlags(newFeatureFlags?: FeatureFlags): void {
   if (newFeatureFlags) {

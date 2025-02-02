@@ -6,8 +6,8 @@ import {
  Text, Input, Card , Modal
 } from '@/shared/ui'
 import { Button, ThemeButton, ButtonSize } from '@/shared/ui/deprecated/Button/Button'
-import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer'
 import { StarRating } from '@/shared/ui/deprecated/StarRating/StarRating'
+import { Drawer } from '@/shared/ui/redesigned/Drawer/Drawer'
 import { VStack, HStack } from '@/shared/ui/redesigned/Stack'
 
 interface RatingCardProps {

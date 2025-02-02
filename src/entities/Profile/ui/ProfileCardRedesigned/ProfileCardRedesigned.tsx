@@ -112,6 +112,7 @@ export const ProfileCardRedesigned = memo(({
               label={t('your username')}
               onChange={onChangeUsername}
               readonly={readOnly}
+              data-testid="ProfileCard.username"
             />
             <Input
               value={data?.avatar}
