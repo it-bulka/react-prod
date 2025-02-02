@@ -9,20 +9,25 @@ jest.mock('@/shared/libs/features/components/ToggleFeaturesComponent', () => ({
   ToggleFeaturesComponent: jest.fn()
 }))
 
+const mockFeatureToggle = async (isOn: boolean) => {
+  const { ToggleFeaturesComponent } = await import('@/shared/libs/features/components/ToggleFeaturesComponent')
+  const mockedToggleFeaturesComponent = ToggleFeaturesComponent as jest.MockedFunction<
+    typeof ToggleFeaturesComponent
+  >
+
+  mockedToggleFeaturesComponent.mockImplementation(({ on, off }: any) => (isOn ? on : off))
+
+  const { LangSwitcher } = await import('./LangSwitcher')
+  return LangSwitcher
+}
+
 describe('LangSwitcher', () => {
   describe('when feature if off', () => {
     let LangSwitcherComp: typeof LangSwitch
     beforeAll(async () => {
       i18n.changeLanguage('en')
-      const { ToggleFeaturesComponent } = await import('@/shared/libs/features/components/ToggleFeaturesComponent')
-      const mockedToggleFeaturesComponent = ToggleFeaturesComponent as jest.MockedFunction<
-        typeof ToggleFeaturesComponent
-      >
-      mockedToggleFeaturesComponent.mockImplementation(({ off }: any) => {
-        return off
-      })
 
-      const { LangSwitcher } = await import('./LangSwitcher')
+      const LangSwitcher = await mockFeatureToggle(false)
       LangSwitcherComp = LangSwitcher
     })
 
@@ -62,15 +67,8 @@ describe('LangSwitcher', () => {
     let LangSwitcherComp: typeof LangSwitch
     beforeAll(async () => {
       i18n.changeLanguage('en')
-      const { ToggleFeaturesComponent } = await import('@/shared/libs/features/components/ToggleFeaturesComponent')
-      const mockedToggleFeaturesComponent = ToggleFeaturesComponent as jest.MockedFunction<
-        typeof ToggleFeaturesComponent
-      >
-      mockedToggleFeaturesComponent.mockImplementation(({ on }: any) => {
-        return on
-      })
 
-      const { LangSwitcher } = await import('./LangSwitcher')
+      const LangSwitcher = await mockFeatureToggle(true)
       LangSwitcherComp = LangSwitcher
     })
 
