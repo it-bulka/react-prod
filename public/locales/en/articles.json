@@ -20,5 +20,8 @@
   "rate the article": "Rate the article",
   "leave feedback for quality": "Leave feedback. It`ll help us to upgrade quality",
   "articles greetings": "Welcome to the Article page",
-  "articles greetings content": "Here you can find out and look through articles on different theme"
+  "articles greetings content": "Here you can find out and look through articles on different theme",
+  "views-amount_zero": "{{count}} views",
+  "views-amount_one": "{{count}} view",
+  "views-amount_other": "{{count}} views"
 }

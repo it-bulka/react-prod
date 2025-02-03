@@ -28,7 +28,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
  className, article, view, target
 } = props
   const { t } = useTranslation()
-
+console.log('article.user', article.user)
   const views = (
     <HStack gap="8">
       <Icon Svg={EyeIcon} />
@@ -52,8 +52,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         ])}
       >
         <HStack gap="8" max className={cls.heading}>
-          <Avatar size={32} src={article.user.avatar} />
-          <Text semiBold text={article.user.username} size="s" />
+          {/* <Avatar size={32} src={article.user?.avatar} /> */}
+          <Text semiBold text={article.user?.username} size="s" />
           <Text text={article.createdAt} size="s" />
         </HStack>
         <VStack max gap="16" align="stretch">
@@ -116,8 +116,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
               {views}
             </HStack>
             <HStack gap="4" className={cls.userInfo} justify="start" max>
-              <Avatar size={32} src={article.user.avatar} />
-              <Text text={article.user.username} semiBold size="s" />
+              <Avatar size={32} src={article.user?.avatar} />
+              <Text text={article.user?.username} semiBold size="s" />
             </HStack>
           </VStack>
         </VStack>

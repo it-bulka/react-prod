@@ -20,5 +20,9 @@
   "rate the article": "Оцініть статтю",
   "leave feedback for quality": "Залишіть фітбек. Це допоможе підвищити якість статті",
   "article greetings": "Вітаємо на сторінці статтей",
-  "articles greetings content": "Тут ви можете шукати і проглядати статті на різні теми"
+  "articles greetings content": "Тут ви можете шукати і проглядати статті на різні теми",
+  "views-amount_zero": "{{count}} переглядів",
+  "views-amount_one": "{{count}} перегляд",
+  "views-amount_few": "{{count}} перегляди",
+  "views-amount_other": "{{count}} переглядів"
 }

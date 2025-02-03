@@ -42,7 +42,7 @@ export const Text = memo(({
   title,
   variant = 'primary',
   align ='left',
-  size = 'm',
+  size = 's',
   bold = false,
   semiBold = false,
   'data-testid': dataTestId = 'Text'

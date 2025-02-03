@@ -17,7 +17,6 @@ import {
   fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { getArticleDetailsComments } from '../../model/slice/articleDetailsCommentsSlice'
-import cls from '../ArticleDetailsPage/ArticleDetailsPage.module.scss'
 
 interface ArticleDetailsCommentsProps {
   className?: string
@@ -45,7 +44,7 @@ export const ArticleDetailsComments = ({
 
   return (
     <VStack gap="16" max className={classnames('', {}, [className])}>
-      <Text className={cls.commentTitle} title={t('comments')} />
+      <Text title={t('comments')} />
       <AddCommentFormAsync onSendComment={onSendComment} />
       <CommentList
         isLoading={commentsIsLoading}
