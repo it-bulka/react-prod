@@ -1,5 +1,7 @@
 import classnames from '@/shared/libs/classnames/classnames'
-import { Code } from '@/shared/ui/deprecated/Code/Code'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
+import { Code as CodeDeprecated } from '@/shared/ui/deprecated/Code/Code'
+import { Code } from '@/shared/ui/redesigned/Code/Code'
 
 import cls from './ArticleCodeBlockComponent.module.scss'
 
@@ -13,7 +15,11 @@ interface ArticleCodeBlockComponentProps {
 export const ArticleCodeBlockComponent = ({ className, block }: ArticleCodeBlockComponentProps) => {
   return (
     <div className={classnames(cls.articleCodeBlockComponent, {}, [className])}>
-      <Code text={block.code} />
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={<CodeDeprecated text={block.code} />}
+        on={<Code text={block.code} />}
+      />
     </div>
   )
 }
