@@ -1,15 +1,10 @@
 import { memo } from 'react'
 
-import { getRouteProfile } from '@/shared/config/routeConfig/routeConfig'
-import classnames from '@/shared/libs/classnames/classnames'
-import { Text, AppLink } from '@/shared/ui'
-import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar'
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton'
-import { VStack } from '@/shared/ui/redesigned/Stack'
-
-import cls from './CommentCard.module.scss'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
 import { Comment } from '../../model/types/comment'
+import { CommentCardDeprecated, CommentCardLoadingDeprecated } from '../deprecated/CommentCardDeprecated/CommentCardDeprecated'
+import { CommentCardRedesigned } from '../redesigned/CommentCardRedesigned/CommentCardRedesigned'
 
 interface CommentCardProps {
   className?: string
@@ -24,31 +19,22 @@ export const CommentCard = memo(({
 }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <VStack gap="8" max className={classnames(cls.commentCard, {}, [className, cls.loading])} data-testid="CommentCard.Loading">
-        <div className={cls.header}>
-          <Skeleton width={30} height={30} border="50%" />
-          <Skeleton height={16} width={100} className={cls.username} />
-        </div>
-        <Skeleton className={cls.text} width="100%" height={50} />
-      </VStack>
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={<CommentCardLoadingDeprecated />}
+        on={<CommentCardLoadingDeprecated />}
+      />
     )
   }
 
   if (!comment) return null
 
   return (
-    <VStack
-      gap="8"
-      max
-      className={classnames(cls.commentCard, {}, [className])}
-      data-testid="CommentCard.Content"
-    >
-      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
-        {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
-        <Text className={cls.username} title={comment.user.username} />
-      </AppLink>
-      <Text className={cls.text} text={comment.text} />
-    </VStack>
+    <ToggleFeaturesComponent
+      feature="isAppRedesigned"
+      off={<CommentCardDeprecated comment={comment} className={className} />}
+      on={<CommentCardRedesigned comment={comment} className={className} />}
+    />
   )
 })
 

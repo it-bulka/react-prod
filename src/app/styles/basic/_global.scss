@@ -4,7 +4,7 @@
   color: var(--primary-color);
   min-height: 100vh;
 
-  *::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 12px;
     height: 8px;
   }
@@ -35,7 +35,7 @@
 
   *::-webkit-scrollbar {
     width: 10px;
-    height: 21px;
+    height: 8px;
   }
 
   *::-webkit-scrollbar-track {

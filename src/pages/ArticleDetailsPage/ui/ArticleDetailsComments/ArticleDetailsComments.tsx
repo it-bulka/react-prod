@@ -6,8 +6,10 @@ import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import { CommentList } from '@/entities/Comment'
 import { AddCommentFormAsync } from '@/features/addCommentForm'
 import classnames from '@/shared/libs/classnames/classnames'
-import { Text } from '@/shared/ui'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
+import { Text as TextDeprecated } from '@/shared/ui'
 import { VStack } from '@/shared/ui/redesigned/Stack'
+import { Text } from '@/shared/ui/redesigned/Text'
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments/comments'
 import {
@@ -43,8 +45,12 @@ export const ArticleDetailsComments = ({
   }, [dispatch, id])
 
   return (
-    <VStack gap="16" max className={classnames('', {}, [className])}>
-      <Text title={t('comments')} />
+    <VStack gap="16" max className={classnames('', {}, [className])} align="stretch">
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={<TextDeprecated title={t('comments')} />}
+        on={<Text title={t('comments')} size="l" bold />}
+      />
       <AddCommentFormAsync onSendComment={onSendComment} />
       <CommentList
         isLoading={commentsIsLoading}

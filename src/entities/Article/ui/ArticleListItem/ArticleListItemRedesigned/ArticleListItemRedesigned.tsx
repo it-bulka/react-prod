@@ -28,7 +28,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
  className, article, view, target
 } = props
   const { t } = useTranslation()
-console.log('article.user', article.user)
+
   const views = (
     <HStack gap="8">
       <Icon Svg={EyeIcon} />

@@ -1,17 +1,14 @@
 import { useCallback, memo } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
-import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { Input, Button, ThemeButton } from '@/shared/ui'
-import { HStack } from '@/shared/ui/redesigned/Stack'
-
-import cls from './AddCommentForm.module.scss'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 import { addCommentFormReducer, addCommentFormActions } from '../../model/slice/addCommentFormSlice'
+import { AddCommentFormDeprecated } from '../deprecated/AddCommentFormDeprecated'
+import { AddCommentFormRedesigned } from '../redesigned/AddCommentFormRedesigned'
 
 interface AddCommentFormProps {
   className?: string
@@ -23,7 +20,6 @@ const reducers: ReducersList = {
 }
 
 const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
-  const { t } = useTranslation('comment')
   const dispatch = useAppDispatch()
   const text = useSelector(getAddCommentFormText)
 
@@ -36,26 +32,18 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
     onCommentTextChange('')
   }, [onCommentTextChange, onSendComment, text])
 
+  const commonProps = {
+    text,
+    onCommentTextChange,
+    onSendHandler
+  }
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <HStack justify="between" max className={classnames(cls.addCommentForm, {}, [className])} data-testid="AddCommentForm">
-        <Input
-          className={cls.input}
-          placeholder={t('write a comment')}
-          value={text}
-          onChange={onCommentTextChange}
-          focus
-          autofocus
-          data-testid="AddCommentForm.Input"
-        />
-        <Button
-          theme={ThemeButton.OUTLINE}
-          onClick={onSendHandler}
-          data-testid="AddCommentForm.Button"
-        >
-          {t('send')}
-        </Button>
-      </HStack>
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={<AddCommentFormDeprecated className={className} {...commonProps} />}
+        on={<AddCommentFormRedesigned {...commonProps} />}
+      />
     </DynamicModuleLoader>
   )
 })

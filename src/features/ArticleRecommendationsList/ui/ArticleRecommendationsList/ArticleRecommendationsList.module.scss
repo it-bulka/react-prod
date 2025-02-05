@@ -2,4 +2,13 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
+  padding-bottom: 26px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  // scrollbar-width: thin;
+
+  & > * {
+    flex-shrink: 0;
+  }
 }

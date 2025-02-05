@@ -34,14 +34,17 @@
   overflow: hidden;
   cursor: pointer;
 
+  $img-height: 141;
+
   .img {
-    aspect-ratio: 249 / 141;
-    max-height: 249px;
+    aspect-ratio: 249 / #{$img-height};
+    max-height: #{$img-height}px;
     object-fit: cover;
   }
 
  .info {
    padding: 8px;
+   height: calc(100% - #{$img-height}px);
  }
 
  .userInfo {
@@ -49,8 +52,13 @@
  }
 
   .title {
+    flex: 1;
     width: 100%;
 
     @include line-clamp(113px);
+  }
+
+  .card {
+    height: 100%;
   }
 }
