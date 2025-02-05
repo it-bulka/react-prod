@@ -40,6 +40,7 @@ export const Icon = memo(({
       {...rest}
       onClick={undefined}
       data-testid={dataTestId && !clickable ? dataTestId : 'icon.svg'}
+      viewBox="0 0 32 32"
     />
   )
   if (clickable) {

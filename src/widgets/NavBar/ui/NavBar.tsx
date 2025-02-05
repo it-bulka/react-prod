@@ -8,7 +8,9 @@ import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import classnames from '@/shared/libs/classnames/classnames'
 import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
-import { Button, ThemeButton } from '@/shared/ui/deprecated/Button/Button'
+import { toggleFeatures } from '@/shared/libs/features/lib/toggleFeatures'
+import { Button as ButtonDeprecated, ThemeButton } from '@/shared/ui/deprecated/Button/Button'
+import { Button } from '@/shared/ui/redesigned/Button/Button'
 
 import cls from './NavBar.module.scss'
 
@@ -37,14 +39,36 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     )
   }
   return (
-    <nav className={classnames(cls.navbar, {}, [className])}>
-      <Button
-        theme={ThemeButton.CLEAR_INVERTED}
-        className={cls.links}
-        onClick={openModal}
-      >
-        {t('log_in')}
-      </Button>
+    <nav className={classnames(
+      toggleFeatures({
+        name: 'isAppRedesigned',
+        off: () => cls.navbar,
+        on: () => cls.navbarRedesigned
+      }),
+      {},
+      [className]
+    )}
+    >
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={(
+          <ButtonDeprecated
+            theme={ThemeButton.CLEAR_INVERTED}
+            className={cls.links}
+            onClick={openModal}
+          >
+            {t('log_in')}
+          </ButtonDeprecated>
+        )}
+        on={(
+          <Button
+            noWrap
+            onClick={openModal}
+          >
+            {t('log_in')}
+          </Button>
+        )}
+      />
       {isAuthModalOpen && (
         <LoginModal isOpen={isAuthModalOpen} onClose={closeModal} onSuccess={closeModal} />
       )}

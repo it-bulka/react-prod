@@ -28,5 +28,7 @@
   "close": "Close",
   "thanks for review": "Thanks for your review",
   "creation article": "creation article",
-  "settings": "Settings"
+  "settings": "Settings",
+  "mock-name": "Stefan",
+  "mock-password": "********"
 }

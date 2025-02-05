@@ -43,7 +43,6 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
       />
     )
 
-    console.log('isMobile', isMobile)
     return isMobile ? (
       <>
         {trigger}

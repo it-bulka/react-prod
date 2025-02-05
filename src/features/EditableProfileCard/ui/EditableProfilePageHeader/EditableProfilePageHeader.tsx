@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
@@ -7,20 +6,21 @@ import {
   profileActions, updateProfileData, getProfileReadonly, getProfileData
 } from '@/entities/Profile'
 import { getUserAuthData } from '@/entities/User'
-import { Translations } from '@/shared/const/common'
-import classnames from '@/shared/libs/classnames/classnames'
-import { Text, Button, ThemeButton } from '@/shared/ui'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
 
-import cls from './EditableProfilePageHeader.module.scss'
+import {
+  EditableProfilePageHeaderDeprecated
+} from '../deprecated/EditableProfilePageHeaderDeprecated/EditableProfilePageHeaderDeprecated'
+import {
+  EditableProfilePageHeaderRedesigned
+} from '../redesigned/EditableProfilePageHeaderRedesigned/EditableProfilePageHeaderRedesigned'
 
 interface ProfilePageHeaderProps {
   className?: string
 }
 
 export const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
-  const { t } = useTranslation(Translations.PROFILE)
-
-  const readOnly = useSelector(getProfileReadonly)
+ const readOnly = useSelector(getProfileReadonly)
   const dispatch = useAppDispatch()
   // editing
   const authData = useSelector(getUserAuthData)
@@ -39,46 +39,19 @@ export const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps)
     dispatch(updateProfileData())
   }, [dispatch])
 
+  const commonProps = {
+    className,
+    canEdit,
+    readOnly,
+    onEdit,
+    onCancelEdit,
+    onSave
+  }
   return (
-    <div className={classnames(cls.profilePageHeader, {}, [className])}>
-      <div className={cls.header}>
-        <Text title={t('profile')} />
-        {canEdit && (
-          <div className={cls.btnsWrapper}>
-            {readOnly
-              ? (
-                <Button
-                  className={cls.editBtn}
-                  theme={ThemeButton.OUTLINE}
-                  onClick={onEdit}
-                  data-testid="EditableProfilePageHeader.EditButton"
-                >
-                  {t('edit')}
-                </Button>
-              )
-              : (
-                <>
-                  <Button
-                    className={cls.editBtn}
-                    theme={ThemeButton.OUTLINE_RED}
-                    onClick={onCancelEdit}
-                    data-testid="EditableProfilePageHeader.CancelButton"
-                  >
-                    {t('cancel')}
-                  </Button>
-                  <Button
-                    className={cls.saveBtn}
-                    theme={ThemeButton.OUTLINE}
-                    onClick={onSave}
-                    data-testid="EditableProfilePageHeader.ApplyButton"
-                  >
-                    {t('apply')}
-                  </Button>
-                </>
-              )}
-          </div>
-        )}
-      </div>
-    </div>
+    <ToggleFeaturesComponent
+      feature="isAppRedesigned"
+      off={<EditableProfilePageHeaderDeprecated {...commonProps} />}
+      on={<EditableProfilePageHeaderRedesigned {...commonProps} avatar={authData?.avatar} />}
+    />
   )
 }

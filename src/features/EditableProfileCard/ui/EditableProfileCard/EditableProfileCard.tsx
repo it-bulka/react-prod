@@ -17,8 +17,12 @@ import {
 import { Country, Currency } from '@/shared/const/common'
 import classnames from '@/shared/libs/classnames/classnames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/libs/components/DynamicModalLoader'
-import { Text, TextTheme } from '@/shared/ui'
+import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui'
 import { VStack } from '@/shared/ui/redesigned/Stack'
+import { Text } from '@/shared/ui/redesigned/Text'
+
+import cls from './EditableProfileCard.module.scss'
 
 import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader'
 
@@ -95,16 +99,23 @@ export const EditableProfileCard = memo(({
         removeAfterUnmount
         reducers={reducers}
       >
-        <VStack gap="16" max className={classnames('', {}, [className])}>
+        <VStack max className={classnames(cls.editableProfileCard, {}, [className])}>
           <EditableProfilePageHeader />
-          {validateErrors?.length && validateErrors.map(err => (
-            <Text
-              key={err}
-              theme={TextTheme.ERROR}
-              text={validatedErrTranslation[err]}
-              data-testid="EditableProfileCard.Error"
-            />
-          ))}
+          {validateErrors?.length && validateErrors.map(err => {
+              const commonProps = {
+                  key: err,
+                  theme: TextTheme.ERROR,
+                  text: validatedErrTranslation[err],
+                  'data-testid': 'EditableProfileCard.Error'
+              }
+              return (
+                <ToggleFeaturesComponent
+                  feature="isAppRedesigned"
+                  on={<Text {...commonProps} />}
+                  off={<TextDeprecated {...commonProps} />}
+                />
+              )
+          })}
           <ProfileCard
             data={formData}
             readOnly={readOnly}

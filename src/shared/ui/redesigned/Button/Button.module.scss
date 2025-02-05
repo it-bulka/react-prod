@@ -13,6 +13,10 @@
       color: var(--accent-redesigned);
     }
   }
+
+  &.noWrap {
+    text-wrap: nowrap;
+  }
 }
 
 .clear {

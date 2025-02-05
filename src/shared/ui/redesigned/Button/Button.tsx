@@ -17,6 +17,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   disabled?: boolean
   addonLeft?: ReactNode
   addonRight?: ReactNode
+  noWrap?: boolean
 }
 export const Button = memo(({
   className,
@@ -28,12 +29,14 @@ export const Button = memo(({
   fullWidth = false,
   addonLeft,
   addonRight,
+  noWrap = false,
   ...rest
 }: ButtonProps) => {
   const mods: Record<string, boolean> = {
     [cls.square]: square,
     [cls.disabled]: disabled,
     [cls.fullWidth]: fullWidth,
+    [cls.noWrap]: noWrap,
     [cls.withAddon]: Boolean(addonLeft) || Boolean(addonRight)
   }
 

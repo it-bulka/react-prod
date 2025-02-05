@@ -27,7 +27,7 @@ export const Avatar = ({
   const fallback = <Skeleton width={size} height={size} border="50%" />
 
   const errorFallback = (
-    <Icon width={size} height={size} Svg={UserIcon} />
+    <Icon width={style.width} height={style.height} Svg={UserIcon} />
   )
 
   return (

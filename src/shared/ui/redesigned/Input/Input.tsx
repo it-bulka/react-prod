@@ -11,7 +11,7 @@ import classnames, { Mods } from '@/shared/libs/classnames/classnames'
 
 import cls from './Input.module.scss'
 
-import { HStack } from '../Stack'
+import { HStack, VStack } from '../Stack'
 import { Text } from '../Text/ui/Text'
 
 type HTMLInputProps = Omit<
@@ -21,10 +21,9 @@ type HTMLInputProps = Omit<
 
 type InputSize = 's' | 'm' | 'l'
 
-interface InputProps extends HTMLInputProps {
+interface InputGeneral extends HTMLInputProps {
   className?: string
   value?: string | number
-  label?: string
   onChange?: (value: string) => void
   autofocus?: boolean
   readonly?: boolean
@@ -33,10 +32,16 @@ interface InputProps extends HTMLInputProps {
   size?: InputSize
 }
 
+interface InputWithLabel extends InputGeneral {
+  column?: boolean
+  label: string
+}
+
+type InputProps = InputGeneral | InputWithLabel
+
 export const Input = memo(({
   className,
   value,
-  label,
   onChange,
   type = 'text',
   placeholder,
@@ -96,12 +101,13 @@ export const Input = memo(({
     </div>
   )
 
-  if (label) {
+  if ('label' in otherProps) {
+    const Stack = otherProps.column ? VStack : HStack
     return (
-      <HStack max gap="8">
-        <Text text={label} className={cls.label} />
+      <Stack max gap="8" align={otherProps.column ? 'stretch' : 'center'}>
+        <Text text={otherProps.label} className={cls.label} />
         {input}
-      </HStack>
+      </Stack>
     )
   }
 

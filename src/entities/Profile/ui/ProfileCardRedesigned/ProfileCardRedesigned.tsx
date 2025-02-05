@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 
 import { CountrySelect } from '@/entities/Country'
 import { CurrencySelect } from '@/entities/Currency'
-import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar'
 import { Card } from '@/shared/ui/redesigned/Card/Card'
 import { Input } from '@/shared/ui/redesigned/Input/Input'
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton/Skeleton'
@@ -71,68 +70,61 @@ export const ProfileCardRedesigned = memo(({
 
   return (
     <Card padding="24" max className={className}>
-      <VStack gap="32">
-        {data?.avatar && (
-          <HStack justify="center" max>
-            <Avatar size={128} src={data?.avatar} />
-          </HStack>
-        )}
-        <HStack gap="24" max>
-          <VStack gap="16" max>
-            <Input
-              value={data?.first}
-              label={t('Имя')}
-              onChange={onChangeFirstname}
-              readonly={readOnly}
-              data-testid="ProfileCard.firstname"
-            />
-            <Input
-              value={data?.lastname}
-              label={t('Фамилия')}
-              onChange={onChangeLastname}
-              readonly={readOnly}
-              data-testid="ProfileCard.lastname"
-            />
-            <Input
-              value={data?.age}
-              label={t('Возраст')}
-              onChange={onChangeAge}
-              readonly={readOnly}
-            />
-            <Input
-              value={data?.city}
-              label={t('Город')}
-              onChange={onChangeCity}
-              readonly={readOnly}
-            />
-          </VStack>
-          <VStack gap="16" max align="stretch">
-            <Input
-              value={data?.username}
-              label={t('your username')}
-              onChange={onChangeUsername}
-              readonly={readOnly}
-              data-testid="ProfileCard.username"
-            />
-            <Input
-              value={data?.avatar}
-              label={t('your avatar')}
-              onChange={onChangeAvatar}
-              readonly={readOnly}
-            />
-            <CurrencySelect
-              value={data?.currency}
-              onChange={onChangeCurrency}
-              readOnly={readOnly}
-            />
-            <CountrySelect
-              value={data?.country}
-              onChange={onChangeCountry}
-              readonly={readOnly}
-            />
-          </VStack>
-        </HStack>
-      </VStack>
+      <HStack gap="24" max>
+        <VStack gap="16" max>
+          <Input
+            value={data?.first}
+            label={t('Имя')}
+            onChange={onChangeFirstname}
+            readonly={readOnly}
+            data-testid="ProfileCard.firstname"
+          />
+          <Input
+            value={data?.lastname}
+            label={t('Фамилия')}
+            onChange={onChangeLastname}
+            readonly={readOnly}
+            data-testid="ProfileCard.lastname"
+          />
+          <Input
+            value={data?.age}
+            label={t('Возраст')}
+            onChange={onChangeAge}
+            readonly={readOnly}
+          />
+          <Input
+            value={data?.city}
+            label={t('Город')}
+            onChange={onChangeCity}
+            readonly={readOnly}
+          />
+        </VStack>
+        <VStack gap="16" max align="stretch">
+          <Input
+            value={data?.username}
+            label={t('your username')}
+            onChange={onChangeUsername}
+            readonly={readOnly}
+            data-testid="ProfileCard.username"
+          />
+          <Input
+            value={data?.avatar}
+            label={t('your avatar')}
+            onChange={onChangeAvatar}
+            readonly={readOnly}
+          />
+          <CurrencySelect
+            value={data?.currency}
+            onChange={onChangeCurrency}
+            readOnly={readOnly}
+          />
+          <CountrySelect
+            value={data?.country}
+            onChange={onChangeCountry}
+            readonly={readOnly}
+          />
+        </VStack>
+      </HStack>
     </Card>
   )
 })

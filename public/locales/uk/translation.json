@@ -28,5 +28,7 @@
   "close": "Закрити",
   "thanks for review": "Дякуємо за оцінку!",
   "creation article": "Створити статтю",
-  "settings": "Налаштування"
+  "settings": "Налаштування",
+  "mock-name": "Степашка",
+  "mock-password": "********"
 }
