@@ -24,7 +24,7 @@ export const buildCSSLoader = (isDev: boolean) => {
       {
         loader: 'sass-loader',
         options: {
-          additionalData: `@import '@/app/styles/basic/_mixins.scss';`
+          additionalData: `@use '@/app/styles/basic/mixins' as *;`
         }
       }
     ]

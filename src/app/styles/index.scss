@@ -1,7 +1,7 @@
-@import "basic/reset";
-@import "basic/vars";
-@import "basic/mixins";
-@import "themes/dark";
-@import "themes/light";
-@import "themes/orange";
-@import "basic/global";
+@forward "basic/reset";
+@forward "basic/vars";
+@forward "basic/mixins";
+@forward "themes/dark";
+@forward "themes/light";
+@forward "themes/orange";
+@forward "basic/global";
