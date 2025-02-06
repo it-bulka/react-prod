@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
+import { setThemeStorage } from '@/shared/libs/const/useTheme'
 import { setFeatureFlags } from '@/shared/libs/features/lib/setGetFeatures'
 
 import { initAuthData } from '../services/initAuthData'
@@ -20,6 +21,10 @@ const userSlice = createSlice({
       state.authData = action.payload
       setFeatureFlags(action.payload.features)
       localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id)
+      const theme = action.payload.jsonSettings?.theme
+      if (theme) {
+        setThemeStorage(theme)
+      }
     },
     logout: state => {
       state.authData = undefined
@@ -42,7 +47,6 @@ const userSlice = createSlice({
     builder.addCase(
       initAuthData.fulfilled,
       (state, { payload }: PayloadAction<User>) => {
-        console.log('payload', payload.features)
         state.authData = payload
         setFeatureFlags(payload.features)
         state._inited = true

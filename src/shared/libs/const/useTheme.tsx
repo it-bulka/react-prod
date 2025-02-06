@@ -10,6 +10,10 @@ interface UseThemeResult {
   theme: Theme | undefined
 }
 
+export const setThemeStorage = (newTheme: Theme) => {
+  localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
+}
+
 export const useTheme = (): UseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext)
 
@@ -21,11 +25,8 @@ export const useTheme = (): UseThemeResult => {
     document.body.className = newTheme
     setTheme?.(newTheme)
 
-    if (saveAction) {
-      saveAction(newTheme)
-    } else {
-      localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
-    }
+    saveAction?.(newTheme)
+    setThemeStorage(newTheme)
   }, [theme])
 
   return { theme, toggleTheme }

@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import { initAuthData , getUserInited } from '@/entities/User'
+import { AppLoaderLayout } from '@/shared/lauouts/AppLoaderLayout/AppLoaderLayout'
 import { MainLayout } from '@/shared/lauouts/MainLayout'
 import cls from '@/shared/libs/classnames/classnames'
 import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
@@ -21,9 +22,14 @@ export const RootPage: FC = () => {
 
   // TODO: fix loading on user`s log out
   if (!inited) {
-    return <PageLoader />
+    return (
+      <ToggleFeaturesComponent
+        feature="isAppRedesigned"
+        off={<PageLoader />}
+        on={<AppLoaderLayout />}
+      />
+    )
   }
-
   return (
     <ToggleFeaturesComponent
       feature="isAppRedesigned"

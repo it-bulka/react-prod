@@ -16,7 +16,7 @@ export const updateFeatureFlag = createAsyncThunk<
   UpdateFeatureFlagOptions,
   ThunkConfig<string>
 >(
-  'user/saveJsonSettings',
+  'features/updateFeatureFlag',
   async ({ userId, newFeatures }, thunkApi) => {
     const { rejectWithValue, dispatch } = thunkApi
 
