@@ -19,9 +19,10 @@ const initialReducers: ReducersList = {
 
 export interface LoginFormProps {
   className?: string
+  withFocus?: boolean,
   onSuccess: () => void
 }
-const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+const LoginForm = memo(({ className, withFocus, onSuccess }: LoginFormProps) => {
   const dispatch = useAppDispatch()
   const error = useSelector(getLoginError)
   const isLoading = useSelector(getLoginIsLoading)
@@ -57,7 +58,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     <DynamicModuleLoader reducers={initialReducers}>
       <ToggleFeaturesComponent
         feature="isAppRedesigned"
-        off={<LoginFormDeprecated {...commonProps} withFocus />}
+        off={<LoginFormDeprecated {...commonProps} withFocus={withFocus} />}
         on={<LoginFormRedesigned {...commonProps} />}
       />
     </DynamicModuleLoader>
