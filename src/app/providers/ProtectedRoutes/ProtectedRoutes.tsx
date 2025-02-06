@@ -2,7 +2,9 @@ import { PropsWithChildren, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation , Navigate } from 'react-router'
 
-import { getUserRoles, UserRole, getUserInited } from '@/entities/User'
+import {
+ getUserRoles, UserRole, getUserInited
+} from '@/entities/User'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
 interface ProtectedRoutesProps {

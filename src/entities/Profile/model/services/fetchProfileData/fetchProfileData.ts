@@ -10,8 +10,12 @@ export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<st
     try {
       const res = await extra.api.get<Profile>(`/profile/${profileId}`)
       return res.data
-    } catch {
-      return rejectWithValue('error')
+    } catch (error) {
+      let errMsg = 'Failed to fetch profile data'
+      if (error instanceof Error) {
+        errMsg = `Error: ${error.message}`
+      }
+      return rejectWithValue(errMsg)
     }
   }
 )

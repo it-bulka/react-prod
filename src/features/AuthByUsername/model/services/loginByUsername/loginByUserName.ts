@@ -15,14 +15,18 @@ export const loginByUserName = createAsyncThunk<User, LoginByUsernameProps, Thun
     try {
       const response = await thunkAPI.extra.api.post<User>('http://localhost:8000/login', authData)
       if(!response.data) {
-        throw new Error()
+        throw new Error('User not found')
       }
 
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
       thunkAPI.dispatch(userActions.setAuthData(response.data))
       return response.data
     } catch (e) {
-      return thunkAPI.rejectWithValue('error')
+      let errorMessage = 'Something went wrong'
+      if (e instanceof Error) {
+        errorMessage = `error: ${e.message}`
+      }
+      return thunkAPI.rejectWithValue(errorMessage)
     }
   }
 )
