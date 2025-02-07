@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useLocation , Navigate } from 'react-router'
 
 import {
- getUserRoles, UserRole, getUserInited
+ getUserRoles, UserRole, getUserInited, getUserAuthData
 } from '@/entities/User'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
@@ -12,7 +12,8 @@ interface ProtectedRoutesProps {
 }
 
 export const ProtectedRoutes = ({ children, roles }:PropsWithChildren<ProtectedRoutesProps>) => {
-  const isAutorized = useSelector(getUserInited)
+  const isAutorized = useSelector(getUserAuthData)
+  const inited = useSelector(getUserInited)
   const location = useLocation()
   const userRoles = useSelector(getUserRoles)
 
@@ -25,7 +26,7 @@ export const ProtectedRoutes = ({ children, roles }:PropsWithChildren<ProtectedR
     })
   }, [roles, userRoles])
 
-  if(!isAutorized) {
+  if(!isAutorized && !inited) {
     return <Navigate to={RoutePath.home} replace state={{ from: location }} />
   }
 

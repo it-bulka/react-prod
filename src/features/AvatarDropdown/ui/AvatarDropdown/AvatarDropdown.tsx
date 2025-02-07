@@ -1,6 +1,7 @@
 import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store'
 import {
@@ -23,6 +24,7 @@ export const AvatarDropdown = memo(({
     const { t } = useTranslation()
     const dispatch = useAppDispatch()
     const authData = useSelector(getUserAuthData)
+    const navigateTo = useNavigate()
 
     const isAdmin = useSelector(isUserAdmin)
     const isManager = useSelector(isUserManager)
@@ -31,7 +33,10 @@ export const AvatarDropdown = memo(({
         return isAdmin || isManager
     }, [isAdmin, isManager])
 
-    const onLogout = useCallback(() => dispatch(userActions.logout()), [dispatch])
+    const onLogout = useCallback(() => {
+      dispatch(userActions.logout())
+      navigateTo(RoutePath.home, { replace: true })
+    }, [dispatch])
 
     if (!authData) {
         return null

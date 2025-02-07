@@ -28,7 +28,6 @@ const userSlice = createSlice({
     },
     logout: state => {
       state.authData = undefined
-      state._inited = false
       localStorage.removeItem(USER_LOCALSTORAGE_KEY)
     }
   },
@@ -41,9 +40,6 @@ const userSlice = createSlice({
         }
       }
     )
-    builder.addCase(initAuthData.pending, state => {
-      state._inited = false
-    })
     builder.addCase(
       initAuthData.fulfilled,
       (state, { payload }: PayloadAction<User>) => {
