@@ -9,6 +9,7 @@ import { ProfileSchema } from '@/entities/Profile'
 import { UserSchema } from '@/entities/User'
 import { AddCommentFormSchema } from '@/features/addCommentForm'
 import { LoginSchema } from '@/features/AuthByUsername'
+import { ScrollToTopSchema } from '@/features/ScrollToTopButton'
 import { UISchema } from '@/features/UI'
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
 import { ArticlesPageSchema } from '@/pages/ArticlesPage'
@@ -17,6 +18,7 @@ import { rtkApi } from '@/shared/api/rtkApi'
 export interface StateSchema {
   user: UserSchema
   ui: UISchema
+  scrollToTop: ScrollToTopSchema
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
   // async reducers
   loginForm?: LoginSchema

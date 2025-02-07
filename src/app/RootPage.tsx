@@ -8,6 +8,7 @@ import { AppLoaderLayout } from '@/shared/lauouts/AppLoaderLayout/AppLoaderLayou
 import { MainLayout } from '@/shared/lauouts/MainLayout'
 import cls from '@/shared/libs/classnames/classnames'
 import { ToggleFeaturesComponent } from '@/shared/libs/features/components/ToggleFeaturesComponent'
+import { useAppToolbar } from '@/shared/libs/hooks/useAppToolbar/useAppToolbar'
 import { PageLoader } from '@/shared/ui'
 import { NavBar } from '@/widgets/NavBar'
 import { SideBar } from '@/widgets/SideBar'
@@ -15,6 +16,7 @@ import { SideBar } from '@/widgets/SideBar'
 export const RootPage: FC = () => {
   const dispatch = useAppDispatch()
   const inited = useSelector(getUserInited)
+  const toolbar = useAppToolbar()
 
   useEffect(() => {
     dispatch(initAuthData())
@@ -49,6 +51,7 @@ export const RootPage: FC = () => {
               header={<NavBar />}
               content={<Outlet />}
               sidebar={<SideBar />}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>

@@ -1,9 +1,12 @@
 import {
- memo, HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRef
+  memo, HTMLAttributeAnchorTarget, useCallback, useState, useEffect, useRef
 } from 'react'
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso'
 
 import classnames from '@/shared/libs/classnames/classnames'
+import {
+  useScrollVirtualizationToTop
+} from '@/shared/libs/hooks/useScrollVirtualizationToTop/useScrollVirtualizationToTop'
 
 import cls from './ArticleList.module.scss'
 
@@ -43,6 +46,11 @@ export const ArticleList = memo(({
     +(sessionStorage.getItem(START_ARTICLE_KYE) || 0)
   )
   const virtuosoRef = useRef<VirtuosoGridHandle>(null)
+
+  useScrollVirtualizationToTop({
+    virtualization,
+    virtuosoRef
+  })
 
   /* eslint-disable-next-line react/no-unstable-nested-components */
   const Footer = () => {

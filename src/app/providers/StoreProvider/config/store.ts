@@ -3,6 +3,7 @@ import { useDispatch, useStore } from 'react-redux'
 
 import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager'
 import { userReducers } from '@/entities/User'
+import { scrollToTopReducer } from '@/features/ScrollToTopButton'
 import { uiReducer } from '@/features/UI'
 import { api } from '@/shared/api/api'
 import { rtkApi } from '@/shared/api/rtkApi'
@@ -19,6 +20,7 @@ export const createStore = ({ initialState, asyncReducers }: createStoreProps) =
     ...asyncReducers,
     user: userReducers,
     ui: uiReducer,
+    scrollToTop: scrollToTopReducer,
     [rtkApi.reducerPath]: rtkApi.reducer
   }
 
